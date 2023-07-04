@@ -20,7 +20,7 @@ function NavBar() {
     }
 
     function go_source() {
-        window.open("https://gitlab.com/kostya-zero/website", "_blank")
+        window.open("https://gitlab.com/kostya-zero/homepage", "_blank")
     }
     
     return (
