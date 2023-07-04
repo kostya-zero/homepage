@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Projects from './pages/Projects';
 import Workspace from './pages/Workspace';
+import Contacts from './pages/Contacts';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path='/' element={<Home/>} />
                 <Route path='/projects' element={<Projects/>} />
                 <Route path='/workspace' element={<Workspace/>} />
+                <Route path='/contacts' element={<Contacts/>} />
                 <Route path='*' element={<NotFound/>}/>
             </Routes>
         </Router>

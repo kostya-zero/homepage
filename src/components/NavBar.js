@@ -1,5 +1,5 @@
 import { Box, Button, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
-import { FaBars, FaBriefcase, FaGithub, FaHome, FaTools } from "react-icons/fa"
+import { FaBars, FaBriefcase, FaGithub, FaHome, FaTools, FaUserFriends } from "react-icons/fa"
 import { Navigate, useNavigate } from "react-router-dom"
 import { ColorModeSwitcher } from "../ColorModeSwitcher"
 import Logo from "./Logo"
@@ -19,13 +19,17 @@ function NavBar() {
         navigate("/workspace")
     }
 
+    function go_contacts() {
+        navigate("/contacts")
+    }
+
     function go_source() {
         window.open("https://gitlab.com/kostya-zero/homepage", "_blank")
     }
     
     return (
         <>
-        <Box margin="20px">
+        <Box margin="15px">
             <HStack>
                 <Logo/>
                 <Box flex={1} align="right">
@@ -43,6 +47,10 @@ function NavBar() {
 
                             <MenuItem icon={<FaTools/>} onClick={go_workspace}>
                                 Workspace
+                            </MenuItem>
+
+                            <MenuItem icon={<FaUserFriends/>} onClick={go_contacts}>
+                                Contacts
                             </MenuItem>
 
                             <MenuItem icon={<FaGithub/>} onClick={go_source}>

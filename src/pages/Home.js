@@ -41,16 +41,6 @@ function Home() {
                 </Text>
             </Box>
 
-            <Box margin="20px" marginTop="35px">
-                <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700}>Socials.</Heading>
-                </HStack>
-                <Text fontSize="lg">
-                    You can contact me in <a href="https://matrix.to/#/@kostya_zer0:debilosempire.org" target="_blank"><u><b>Matrix</b></u></a> and <a href="https://t.me/@kostya_zer0" target="_blank"><u><b>Telegram</b></u></a>.
-                    Also you can visit my blog on <a href="https://md.debilosempire.org/@kostya_zero" target="_blank"><u><b>Mastodon</b></u></a> and view my repostories on <a href="https://github.com/kostya-zero" target="_blank"><u><b>GitHub</b></u></a> and <a href="https://gitlab.com/kostya-zero" target="_blank"><u><b>GitLab</b></u></a>.
-                    You can view full list on <a href="https://keyoxide.org/00E97048196E61A5738B6C642ECD17D85F3ACBA5" target="_blank"><u><b>Keyoxide</b></u></a>.
-                </Text>
-            </Box>
             <Footer/>
         </Container>
         </>

@@ -4,7 +4,9 @@ function Footer() {
     return (
         <>
             <Container>
-                <Text textAlign={`center`} marginTop="45px" marginBottom="45px">Made by kostya_zer0 with ❤️. Hosted on github-pages.</Text>
+                <Text textAlign={`center`} marginTop="45px" marginBottom="45px">
+                    Made by kostya_zer0 with ❤️. Hosted on Vercel. Sources are available on GitLab and GitHub.
+                </Text>
             </Container>
         </>
     );

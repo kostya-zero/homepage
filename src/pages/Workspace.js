@@ -1,4 +1,4 @@
-import { Text, Box, Container, Heading, HStack,  Image } from "@chakra-ui/react";
+import { Text, Box, Container, Heading, HStack,  Image, Img } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar"
 import { useEffect } from "react";
@@ -24,15 +24,12 @@ function Workspace() {
         <>
         <Container justifyContent="left" maxW={750} marginLeft="auto" marginRight="auto">
             <NavBar/>
-            <Box margin="20px" marginTop="35px" >
+            <Box margin="15px" marginTop="20px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Workspace.</Heading>
+                    <Heading fontSize="6xl" fontWeight={700} textDecoration="underline" fontFamily="Kalam">Workspace.</Heading>
                 </HStack>
-                <Text fontSize="lg">
-                    That is a curated list of what am I using.
-                </Text>
             </Box>
-            <Box margin="20px" marginTop="35px" >
+            <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Main OS.</Heading>
                 </HStack>
@@ -41,14 +38,14 @@ function Workspace() {
                     I have switched to them month ago (I was an ArchLinux user for year btw).
                     I use the default <b>GNOME</b> with some extenstion and Marble theme.
                 </Text>
-                <Image src="desktop.png" borderRadius="5px" boxShadow="md" cursor="pointer" onClick={open_dekstop_img} alt="GNOME with some tweaks." marginTop="10px" 
+                <Img src="desktop.png" borderRadius="5px" boxShadow="md" cursor="pointer" onClick={open_dekstop_img} alt="GNOME with some tweaks." marginTop="10px" 
                 transition="all .2s"
                 _hover={{
                     transform: "scale(1.03)",
                     boxShadow: "xl"
                 }} title="Click to open image in new tab."/>
             </Box>
-            <Box margin="20px" marginTop="35px" >
+            <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Editor.</Heading>
                 </HStack>
@@ -64,7 +61,7 @@ function Workspace() {
                     transform: "scale(1.03)",
                 }} title="Click to open image in new tab."/>
             </Box>
-            <Box margin="20px" marginTop="35px" >
+            <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Shell.</Heading>
                 </HStack>

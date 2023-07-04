@@ -31,21 +31,17 @@ function Projects() {
     function open_resup_gh() {
         window.open("https://github.com/kostya-zero/resup", "_blank", 'noopener,noreferrer')
     }
-        
 
     return (
         <>
         <Container justifyContent="left" maxW={750} marginLeft="auto" marginRight="auto">
             <NavBar/>
-            <Box margin="20px" marginTop="35px" >
+            <Box margin="15px" marginTop="20px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Projects.</Heading>
+                    <Heading fontSize="6xl" textDecoration="underline" fontWeight={700} fontFamily="Kalam">Projects.</Heading>
                 </HStack>
-                <Text fontSize="lg">
-                    Down below you can see all my projects that am I working now.
-                </Text>
             </Box>
-            <Box margin="20px" marginTop="35px" >
+            <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Kamiya</Heading>
                     <Box flex={1} align="right">
@@ -61,7 +57,7 @@ function Projects() {
                     Also support editing in external text editor.
                 </Text>
             </Box>
-            <Box margin="20px" marginTop="35px" >
+            <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Pipe</Heading>
                     <Box flex={1} align="right">
@@ -75,7 +71,7 @@ function Projects() {
                     They use Nuitka, which uses C compilers to compile applications and makes them fast and independent of Python runtime. 
                 </Text>
             </Box>
-            <Box margin="20px" marginTop="35px" >
+            <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Resup</Heading>
                     <Box flex={1} align="right">
