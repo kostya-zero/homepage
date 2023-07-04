@@ -1,7 +1,8 @@
 import { Text, HStack } from "@chakra-ui/react";
 import { FaCoffee } from "react-icons/fa";
 
-function Logo() {
+function Logo() 
+{
     return(
         <>
             <HStack>

@@ -28,7 +28,7 @@ function Workspace() {
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Workspace.</Heading>
                 </HStack>
-                <Text fontSize="xl">
+                <Text fontSize="lg">
                     That is a curated list of what am I using.
                 </Text>
             </Box>
@@ -37,12 +37,12 @@ function Workspace() {
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Main OS.</Heading>
                 </HStack>
                 <Text fontSize="lg">
-                    As my main operating system I use Fedora.
+                    As my main operating system I use <b>Fedora</b>.
                     I have switched to them month ago (I was an ArchLinux user for year btw).
-                    I use the default GNOME with some extenstion and Marble theme.
+                    I use the default <b>GNOME</b> with some extenstion and Marble theme.
                 </Text>
                 <Image src="desktop.png" borderRadius="5px" boxShadow="md" cursor="pointer" onClick={open_dekstop_img} alt="GNOME with some tweaks." marginTop="10px" 
-                transition="transform .2s"
+                transition="all .2s"
                 _hover={{
                     transform: "scale(1.03)",
                     boxShadow: "xl"

@@ -12,7 +12,6 @@ const styles = {
 }
 
 const theme = extendTheme({
-    useSystemColorMode: true,
     fonts: {
         body: 'Nunito, sans-serif',
         heading: 'Kalam, serif',

@@ -15,7 +15,7 @@ function Home() {
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} >Welcome.</Heading>
                     <Box flex={1} align="right">
-                        <Image src="https://avatars.githubusercontent.com/u/89439507" width="48px" rounded="full" alt="Avatar from github."
+                        <Image src="https://avatars.githubusercontent.com/u/89439507" width="48px" rounded="full" alt="Avatar from github." boxShadow="xl"
                         title="My avatar from GitHub." />
                     </Box>
                 </HStack>
