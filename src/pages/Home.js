@@ -1,4 +1,4 @@
-import { Text, Box, Container, Heading, HStack, Image } from "@chakra-ui/react";
+import { Text, Box, Container, Heading, HStack, Image, SkeletonCircle } from "@chakra-ui/react";
 import { useEffect } from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar"
@@ -15,8 +15,10 @@ function Home() {
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} >Welcome.</Heading>
                     <Box flex={1} align="right">
-                        <Image src="https://avatars.githubusercontent.com/u/89439507" width="48px" rounded="full" alt="Avatar from github." boxShadow="xl"
-                        title="My avatar from GitHub." />
+                        <SkeletonCircle isLoaded size="10">
+                            <Image src="https://avatars.githubusercontent.com/u/89439507"  rounded="full" alt="Avatar from github." boxShadow="md"
+                            title="My avatar from GitHub." />
+                        </SkeletonCircle>
                     </Box>
                 </HStack>
                 <Text fontSize="lg">
