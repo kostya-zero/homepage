@@ -15,7 +15,7 @@ function Home() {
                 <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} >Welcome.</Heading>
                     <Box flex={1} align="right">
-                        <SkeletonCircle isLoaded size="10">
+                        <SkeletonCircle isLoaded size="10" fadeDuration={1}>
                             <Image src="https://avatars.githubusercontent.com/u/89439507"  rounded="full" alt="Avatar from github." boxShadow="md"
                             title="My avatar from GitHub." />
                         </SkeletonCircle>
@@ -42,7 +42,6 @@ function Home() {
                     <b>January 2023</b> &bull; Finished learning Rust and broke up with C#. <br/>
                 </Text>
             </Box>
-
             <Footer/>
         </Container>
         </>

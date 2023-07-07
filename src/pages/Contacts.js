@@ -75,7 +75,7 @@ function Contacts() {
                 <Text fontSize="lg">
                     I have blogs on Mastodon (usually posting there). 
                 </Text>
-                <Card marginTop="15px" size="sm" onClick={open_mastodon_de} title="https://md.debilosempire.org/@kostya_zero" transition="all .2s" cursor="pointer" 
+                <Card marginTop="15px" size="sm" onClick={open_mastodon_de}  title="https://md.debilosempire.org/@kostya_zero" transition="all .2s" cursor="pointer" 
                     _hover={{
                         transform: "scale(1.03)",
                         boxShadow: "lg"
