@@ -35,7 +35,7 @@ function NavBar() {
                 <Box flex={1} align="right">
                     <ColorModeSwitcher/>
                     <Menu>
-                        <MenuButton as={IconButton} icon={<FaBars/>}/>
+                        <MenuButton as={IconButton} variant="solid" icon={<FaBars/>}/>
                         <MenuList>
                             <MenuItem icon={<FaHome/>} onClick={go_home}>
                                 Home

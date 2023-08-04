@@ -23,7 +23,7 @@ function Home() {
                 </HStack>
                 <Text fontSize="lg">
                     Hello! My name is Kostya. 
-                    I'm a 17 years old high school student and full-stack indie developer. 
+                    I'm a 17 years old high school student and indie developer. 
                     Programming is my main hobby. I prefer to use Rust and Python for my projects (but usually first one). 
                     I started my hobby in 2017 and doing better day-by-day. 
                     Likewise, I develop application by principal 'One program do one thing well'.
@@ -31,15 +31,10 @@ function Home() {
             </Box>
             <Box margin="20px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700}>My journey.</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Navigation.</Heading>
                 </HStack>
                 <Text fontSize="lg">
-                    <b>May 2017</b> &bull; Started learning PHP to make application in PHP DevelStudio. <br/>
-                    <b>June 2019</b> &bull; Begin switch to C# to make applications with WinForms and WPF. <br/>
-                    <b>February 2020</b> &bull; Finally switched to C# and started learning Python as second language. <br/>
-                    <b>July 2021</b> &bull; Finished learning C# and Python. <br/>
-                    <b>April 2022</b> &bull; Switched to Linux and started learning Rust to switch from C#. <br/>
-                    <b>January 2023</b> &bull; Finished learning Rust and broke up with C#. <br/>
+                    Use menu on top right to navigate through sections (or guess routes, lol).
                 </Text>
             </Box>
             <Footer/>
