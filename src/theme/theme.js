@@ -1,4 +1,4 @@
-import { defineStyleConfig, extendTheme, transition } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
 const styles = {
@@ -30,7 +30,7 @@ const components = {
         }),
         variants: {
             'footer-text': props => ({
-                color: mode("#282828", "#767676")
+                color: mode("#999999", "#999999")(props)
             })
         }
     }

@@ -1,8 +1,9 @@
-import { Text, Box, Container, Heading, HStack, Card, CardBody } from "@chakra-ui/react";
+import { Text, Box, Container, Heading, HStack, Card, CardBody, useColorModeValue } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar"
 import { useEffect } from "react";
 import { FaComment, FaTelegram, FaMailBulk, FaGitlab, FaGithub, FaMastodon } from "react-icons/fa";
+import SocialCard from "../components/SocialCard";
 
 function Contacts() {
     useEffect(() => {
@@ -15,10 +16,6 @@ function Contacts() {
 
     function open_mastodon_de() {
         window.open("https://md.debilosempire.org/@kostya_zero", "_blank", 'noopener,noreferrer')
-    }
-
-    function open_mastodon_ml() {
-        window.open("https://mastodon.ml/@kostya_zer0", "_blank", 'noopener,noreferrer')
     }
 
     function open_matrix() {
@@ -53,20 +50,7 @@ function Contacts() {
                 <Text fontSize="lg">
                     The only one mailbox where you can send me an email.
                 </Text>
-                <Card marginTop="15px" size="sm" onClick={open_email} title="mailto:kostya.zero@outlook.com" transition="all .2s" cursor="pointer" 
-                    _hover={{
-                        transform: "scale(1.03)",
-                        boxShadow: "lg"
-                    }}>
-                    <CardBody>
-                        <HStack flex={1}>
-                            <Text fontWeight={700}>kostya.zero@outlook.com</Text>
-                            <Box flex={1} align="right">
-                                <FaMailBulk/>
-                            </Box>
-                        </HStack>
-                    </CardBody>
-                </Card>
+                <SocialCard url="mailto:kostya.zero@outlook.com" tooltip="mailto:kostya.zero@outlook.com" social="kostya.zero@outlook.com" icon={<FaMailBulk/>}/>
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
@@ -75,34 +59,7 @@ function Contacts() {
                 <Text fontSize="lg">
                     I have blogs on Mastodon (usually posting there). 
                 </Text>
-                <Card marginTop="15px" size="sm" onClick={open_mastodon_de}  title="https://md.debilosempire.org/@kostya_zero" transition="all .2s" cursor="pointer" 
-                    _hover={{
-                        transform: "scale(1.03)",
-                        boxShadow: "lg"
-                    }}>
-                    <CardBody>
-                        <HStack flex={1}>
-                            <Text fontWeight={700}>Mastodon [@kostya_zero@md.debilosempire.org]</Text>
-                            <Box flex={1} align="right">
-                                <FaMastodon/>
-                            </Box>
-                        </HStack>
-                    </CardBody>
-                </Card>
-                <Card marginTop="15px" size="sm" onClick={open_mastodon_ml} title="https://mastodon.ml/@kostya_zer0" transition="all .2s" cursor="pointer" 
-                    _hover={{
-                        transform: "scale(1.03)",
-                        boxShadow: "lg"
-                    }}>
-                    <CardBody>
-                        <HStack flex={1}>
-                            <Text fontWeight={700}>Mastodon [@kostya_zer0@mastodon.ml]</Text>
-                            <Box flex={1} align="right">
-                                <FaMastodon/>
-                            </Box>
-                        </HStack>
-                    </CardBody>
-                </Card>
+                <SocialCard url="https://md.debilosempire.org/@kostya_zero" tooltip="https://md.debilosempire.org/@kostya_zero" social="Mastodon [@kostya_zero@md.debilosempire.org]" icon={<FaMastodon/>}/>
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
@@ -112,35 +69,8 @@ function Contacts() {
                     That's where you can contact me for any questions. 
                     Note that I can not respond for a long time.
                 </Text>
-
-                <Card marginTop="15px" size="sm" onClick={open_matrix} title="https://matrix.to/#/@kostya_zer0:debilosempire.org" transition="all .2s" cursor="pointer" 
-                    _hover={{
-                        transform: "scale(1.03)",
-                        boxShadow: "lg"
-                    }}>
-                    <CardBody>
-                        <HStack flex={1}>
-                            <Text fontWeight={700}>Matrix [@kostya_zer0:debilosempire.org]</Text>
-                            <Box flex={1} align="right">
-                                <FaComment/>
-                            </Box>
-                        </HStack>
-                    </CardBody>
-                </Card>
-                <Card marginTop="15px" size="sm" onClick={open_telegram} title="https://t.me/@kostya_zer0" transition="all .2s" cursor="pointer" 
-                    _hover={{
-                        transform: "scale(1.03)",
-                        boxShadow: "lg"
-                    }}>
-                    <CardBody>
-                        <HStack flex={1}>
-                            <Text fontWeight={700}>Telegram [@kostya_zer0]</Text>
-                            <Box flex={1} align="right">
-                                <FaTelegram/>
-                            </Box>
-                        </HStack>
-                    </CardBody>
-                </Card>
+                <SocialCard url="https://matrix.to/#/@kostya_zer0:debilosempire.org" tooltip="https://matrix.to/#/@kostya_zer0:debilosempire.org" social="Martix [@kostya_zer0:debilosempire.org]" icon={<FaComment/>}/>
+                <SocialCard url="https://t.me/@kostya_zer0" tooltip="https://t.me/@kostya_zer0" social="Telegram [@kostya_zer0]" icon={<FaTelegram/>}/>
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
@@ -150,34 +80,8 @@ function Contacts() {
                     I have repoistories on GitLab and GitHub (mirror). 
                 </Text>
 
-                <Card marginTop="15px" size="sm" onClick={open_gitlab} title="https://gitlab.com/kostya-zero" transition="all .2s" cursor="pointer" 
-                    _hover={{
-                        transform: "scale(1.03)",
-                        boxShadow: "lg"
-                    }}>
-                    <CardBody>
-                        <HStack flex={1}>
-                            <Text fontWeight={700}>kostya-zero </Text>
-                            <Box flex={1} align="right">
-                                <FaGitlab/>
-                            </Box>
-                        </HStack>
-                    </CardBody>
-                </Card>
-                <Card marginTop="15px" size="sm" onClick={open_github} title="https://github.com/kostya-zero" transition="all .2s" cursor="pointer" 
-                    _hover={{
-                        transform: "scale(1.03)",
-                        boxShadow: "lg"
-                    }}>
-                    <CardBody>
-                        <HStack flex={1}>
-                            <Text fontWeight={700}>kostya-zero </Text>
-                            <Box flex={1} align="right">
-                                <FaGithub/>
-                            </Box>
-                        </HStack>
-                    </CardBody>
-                </Card>
+                <SocialCard url="https://gitlab.com/kostya-zero" tooltip="https://gitlab.com/kostya-zero" social="kostya-zero" icon={<FaGitlab/>}/>
+                <SocialCard url="https://github.com/kostya-zero" tooltip="https://github.com/kostya-zero" social="kostya-zero" icon={<FaGithub/>}/>
             </Box>
             <Footer/>
         </Container>
