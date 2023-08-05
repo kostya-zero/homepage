@@ -1,4 +1,4 @@
-import { Card, CardBody, HStack, Text, Box } from "@chakra-ui/react";
+import { Card, CardBody, HStack, Text, Box, useColorModeValue } from "@chakra-ui/react";
 
 function SocialCard(props) {
     function go_to() {
@@ -10,7 +10,12 @@ function SocialCard(props) {
             <Card marginTop="15px" size="sm" onClick={go_to} title={props.tooltip} transition="all .2s" cursor="pointer" 
                 _hover={{
                     transform: "scale(1.03)",
-                    boxShadow: "lg"
+                    boxShadow: "lg",
+                    background: useColorModeValue("#EEEEEE", "#484848")
+                }}
+
+                _active={{
+                    transform: "scale(0.99)"
                 }}>
                 <CardBody>
                     <HStack flex={1}>
