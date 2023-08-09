@@ -34,9 +34,9 @@ function Workspace() {
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Main OS.</Heading>
                 </HStack>
                 <Text fontSize="lg">
-                    As my main operating system I use <b>Fedora</b>.
-                    I have switched to them month ago (I was an ArchLinux user for year btw).
-                    I use the default <b>GNOME</b> with some extenstion and Marble theme.
+                    I use Fedora Linux as my main operating system.
+                    I switched to it month ago (I was an ArchLinux user for year btw).
+                    I'm using default <b>GNOME</b> with some extenstion.
                 </Text>
                 <Skeleton isLoaded>
                     <Image src="desktop.png" borderRadius="5px" boxShadow="md" cursor="pointer" onClick={open_dekstop_img} alt="GNOME with some tweaks." marginTop="10px" 
@@ -52,10 +52,10 @@ function Workspace() {
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Editor.</Heading>
                 </HStack>
                 <Text fontSize="lg">
-                    As code editor I use <b>Neovim</b>. 
+                    I use <b>Neovim</b> as code editor. 
                     It's my endpoint in searching of the best code editor for me.
                     I was using JetBrains software for many years, but when I switched to Linux I decided to change my common workspace.
-                    I love Neovim for their customization and configuration.
+                    I love Neovim for it's deep customization.
                 </Text>
                 <Skeleton isLoaded>
                 <Image src="editor.png" borderRadius="10px" onClick={open_editor_img} cursor="pointer" alt="GNOME with some tweaks." marginTop="10px"

@@ -26,7 +26,8 @@ const components = {
         baseStyle: props => ({
             color: mode("#191919", "#FCFCFC")(props),
             transitionProperty: "all",
-            transitionDuration: ".3s"
+            transitionDuration: ".3s",
+            fontWeight: "400"
         }),
         variants: {
             'footer-text': props => ({
@@ -38,7 +39,7 @@ const components = {
 
 const theme = extendTheme({
     fonts: {
-        body: 'Nunito, sans-serif',
+        body: 'Inter, sans-serif',
         heading: 'Kalam, serif',
     },
     colors: {
