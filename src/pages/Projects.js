@@ -59,20 +59,6 @@ function Projects() {
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Pipe</Heading>
-                    <Box flex={1} align="right">
-                        <Text>Available on</Text>
-                        <Badge colorScheme="orange" align="right" onClick={open_pipe_gl} cursor="pointer">GitLab</Badge>
-                        <Badge colorScheme="gray" align="right" marginLeft="5px" onClick={open_pipe_gh} cursor="pointer">GitHub</Badge>
-                    </Box>
-                </HStack>
-                <Text fontSize="lg">
-                    A build system for your Python project that uses Nuitka as a backend.
-                    They use Nuitka, which uses C compilers to compile applications and makes them fast and independent of Python runtime. 
-                </Text>
-            </Box>
-            <Box margin="15px" marginTop="35px" >
-                <HStack flex={1}>
                     <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Resup</Heading>
                     <Box flex={1} align="right">
                         <Text>Available on</Text>
