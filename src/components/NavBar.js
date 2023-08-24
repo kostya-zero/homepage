@@ -1,4 +1,4 @@
-import { Box, Button, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
+import { Box, Stack, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
 import { FaBars, FaBriefcase, FaGithub, FaHome, FaTools, FaUserFriends } from "react-icons/fa"
 import { Navigate, useNavigate } from "react-router-dom"
 import { ColorModeSwitcher } from "../ColorModeSwitcher"

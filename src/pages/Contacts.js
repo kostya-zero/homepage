@@ -10,30 +10,6 @@ function Contacts() {
         document.title = "Konstantin Zero - Contacts"
     })
 
-    function open_email() {
-        window.open("mailto:kostya.zero@outlook.com", "_blank", 'noopener,noreferrer')
-    }
-
-    function open_mastodon_de() {
-        window.open("https://md.debilosempire.org/@kostya_zero", "_blank", 'noopener,noreferrer')
-    }
-
-    function open_matrix() {
-        window.open("https://matrix.to/#/@kostya_zer0:debilosempire.org", "_blank", 'noopener,noreferrer')
-    }
-
-    function open_telegram() {
-        window.open("https://t.me/@kostya_zer0", "_blank", 'noopener,noreferrer')
-    }
-
-    function open_gitlab() {
-        window.open("https://gitlab.com/kostya-zero", "_blank", 'noopener,noreferrer')
-    }
-
-    function open_github() {
-        window.open("https://github.com/kostya-zero", "_blank", 'noopener,noreferrer')
-    }
-
     return (
         <>
         <Container justifyContent="left" maxW={750} marginLeft="auto" marginRight="auto">
