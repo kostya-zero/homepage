@@ -26,12 +26,12 @@ function Workspace() {
             <NavBar/>
             <Box margin="15px" marginTop="20px" >
                 <HStack flex={1}>
-                    <Heading fontSize="6xl" fontWeight={700} textDecoration="underline" fontFamily="Kalam">Workspace.</Heading>
+                    <Heading fontSize="6xl" fontWeight={700} textDecoration="underline">Workspace.</Heading>
                 </HStack>
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Main OS.</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Main OS.</Heading>
                 </HStack>
                 <Text fontSize="lg">
                     I use Fedora Linux as my main operating system.
@@ -49,7 +49,7 @@ function Workspace() {
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Editor.</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Editor.</Heading>
                 </HStack>
                 <Text fontSize="lg">
                     I use <b>Neovim</b> as code editor. 
@@ -67,7 +67,7 @@ function Workspace() {
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Shell.</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Shell.</Heading>
                 </HStack>
                 <Text fontSize="lg">
                     As shell I use <b>fish</b>.

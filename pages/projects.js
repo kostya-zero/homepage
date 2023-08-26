@@ -1,13 +1,8 @@
 import { Text, Box, Container, Heading, HStack, Badge } from "@chakra-ui/react";
-import { useEffect } from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar"
 
 function Projects() {
-    useEffect(() => {
-        document.title = "Konstantin Zero - Projects"
-    })
-
     function open_kamiya_gl() {
         window.open("https://gitlab.com/kostya-zero/kamiya", "_blank", 'noopener,noreferrer')
     }
@@ -16,13 +11,6 @@ function Projects() {
     }
     function open_kamiya_cio() {
         window.open("https://crates.io/crates/kamiya", "_blank", 'noopener,noreferrer')
-    }
-
-    function open_pipe_gl() {
-        window.open("https://gitlab.com/kostya-zero/pipe", "_blank", 'noopener,noreferrer')
-    }
-    function open_pipe_gh() {
-        window.open("https://github.com/kostya-zero/pipe", "_blank", 'noopener,noreferrer')
     }
 
     function open_resup_gl() {
@@ -38,12 +26,12 @@ function Projects() {
             <NavBar/>
             <Box margin="15px" marginTop="20px" >
                 <HStack flex={1}>
-                    <Heading fontSize="6xl" textDecoration="underline" fontWeight={700} fontFamily="Kalam">Projects.</Heading>
+                    <Heading fontSize="6xl" textDecoration="underline" fontWeight={700}>Projects.</Heading>
                 </HStack>
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Kamiya</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Kamiya</Heading>
                     <Box flex={1} align="right">
                         <Text>Available on</Text>
                         <Badge colorScheme="orange" align="right" onClick={open_kamiya_gl} cursor="pointer">GitLab</Badge>
@@ -59,7 +47,7 @@ function Projects() {
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Resup</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Resup</Heading>
                     <Box flex={1} align="right">
                         <Text>Available on</Text>
                         <Badge colorScheme="orange" align="right" onClick={open_resup_gl} cursor="pointer">GitLab</Badge>

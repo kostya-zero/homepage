@@ -1,9 +1,9 @@
 import { Text, HStack } from "@chakra-ui/react";
 import { FaCoffee } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
 function Logo() {
-    const navigate = useNavigate();
+    const navigate = useRouter()
     
     function brew_coffee() {
         navigate("/coffee");

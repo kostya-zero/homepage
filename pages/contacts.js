@@ -16,12 +16,12 @@ function Contacts() {
             <NavBar/>
             <Box margin="15px" marginTop="20px">
                 <HStack flex={1}>
-                    <Heading fontSize="6xl" fontWeight={700} textDecoration="underline" fontFamily="Kalam">Contacts.</Heading>
+                    <Heading fontSize="6xl" fontWeight={700} textDecoration="underline">Contacts.</Heading>
                 </HStack>
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Email.</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Email.</Heading>
                 </HStack>
                 <Text fontSize="lg">
                     The only one mailbox where you can send me an email.
@@ -30,7 +30,7 @@ function Contacts() {
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Blogs.</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Blogs.</Heading>
                 </HStack>
                 <Text fontSize="lg">
                     I have blogs on Mastodon (usually posting there). 
@@ -39,7 +39,7 @@ function Contacts() {
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Chats.</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Chats.</Heading>
                 </HStack>
                 <Text fontSize="lg">
                     That's where you can contact me for any questions. 
@@ -50,7 +50,7 @@ function Contacts() {
             </Box>
             <Box margin="15px" marginTop="35px" >
                 <HStack flex={1}>
-                    <Heading fontSize="4xl" fontWeight={700} fontFamily="Kalam">Repositories.</Heading>
+                    <Heading fontSize="4xl" fontWeight={700}>Repositories.</Heading>
                 </HStack>
                 <Text fontSize="lg">
                     I have repoistories on GitLab and GitHub (mirror). 

@@ -1,12 +1,8 @@
 import { Text, Box, Container, Heading, HStack } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar"
-import { useEffect } from "react";
 
 function NotFound() {
-    useEffect(() => {
-        document.title = "Konstantin Zero - Not Found"
-    })
     return (
         <>
         <Container justifyContent="left" maxW={750} marginLeft="auto" marginRight="auto">

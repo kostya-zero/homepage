@@ -19,7 +19,7 @@ function SocialCard(props) {
                 }}>
                 <CardBody>
                     <HStack flex={1}>
-                        <Text fontWeight={700}>{props.social}</Text>
+                        <Text fontWeight={700} fontSize={`sm`}>{props.social}</Text>
                         <Box flex={1} align="right">
                             {props.icon}
                         </Box>

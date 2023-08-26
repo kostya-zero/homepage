@@ -18,27 +18,27 @@ import {
   FaTools,
   FaUserFriends,
 } from 'react-icons/fa';
-import { Navigate, useNavigate } from 'react-router-dom';
-import { ColorModeSwitcher } from '../ColorModeSwitcher';
+import { useRouter } from 'next/router';
+import { ColorModeSwitcher } from '../components/ColorModeSwitcher';
 import Logo from './Logo';
 
 function NavBar() {
-  const navigate = useNavigate();
+  const navigate = useRouter();
 
   function go_home() {
-    navigate('/');
+    navigate.push('/');
   }
 
   function go_projects() {
-    navigate('/projects');
+    navigate.push('/projects');
   }
 
   function go_workspace() {
-    navigate('/workspace');
+    navigate.push('/workspace');
   }
 
   function go_contacts() {
-    navigate('/contacts');
+    navigate.push('/contacts');
   }
 
   function go_source() {

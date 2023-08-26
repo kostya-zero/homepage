@@ -1,12 +1,8 @@
 import { Text, Box, Container, Heading, HStack, Image, SkeletonCircle } from "@chakra-ui/react";
-import { useEffect } from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar"
 
 function Home() {
-    useEffect(() => {
-        document.title = "Konstantin Zero - Home"
-    })
     return (
         <>
         <Container justifyContent="left" maxW={750} marginLeft="auto" marginRight="auto">
