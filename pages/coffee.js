@@ -16,7 +16,7 @@ function GreenTea() {
                     <Heading fontSize="5xl" fontWeight={700} fontFamily="Kalam">418</Heading>
                 </HStack>
                 <Text fontSize="xl">
-                    I'm a teapot
+                    I&apos;m a teapot
                 </Text>
             </Box>
             <Footer/>

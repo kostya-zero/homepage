@@ -42,7 +42,7 @@ function Contacts() {
                     <Heading fontSize="4xl" fontWeight={700}>Chats.</Heading>
                 </HStack>
                 <Text fontSize="lg">
-                    That's where you can contact me for any questions. 
+                    That&apos;s where you can contact me for any questions. 
                     Note that I can not respond for a long time.
                 </Text>
                 <SocialCard url="https://matrix.to/#/@kostya_zer0:debilosempire.org" tooltip="https://matrix.to/#/@kostya_zer0:debilosempire.org" social="Martix [@kostya_zer0:debilosempire.org]" icon={<FaComment/>}/>

@@ -36,7 +36,7 @@ function Workspace() {
                 <Text fontSize="lg">
                     I use Fedora Linux as my main operating system.
                     I switched to it month ago (I was an ArchLinux user for year btw).
-                    I'm using default <b>GNOME</b> with some extenstion.
+                    I&apos;m using default <b>GNOME</b> with some extenstion.
                 </Text>
                 <Skeleton isLoaded>
                     <Image src="desktop.png" borderRadius="5px" boxShadow="md" cursor="pointer" onClick={open_dekstop_img} alt="GNOME with some tweaks." marginTop="10px" 
@@ -53,9 +53,9 @@ function Workspace() {
                 </HStack>
                 <Text fontSize="lg">
                     I use <b>Neovim</b> as code editor. 
-                    It's my endpoint in searching of the best code editor for me.
+                    It&apos;s my endpoint in searching of the best code editor for me.
                     I was using JetBrains software for many years, but when I switched to Linux I decided to change my common workspace.
-                    I love Neovim for it's deep customization.
+                    I love Neovim for it&apos;s deep customization.
                 </Text>
                 <Skeleton isLoaded>
                 <Image src="editor.png" borderRadius="10px" onClick={open_editor_img} cursor="pointer" alt="GNOME with some tweaks." marginTop="10px"
@@ -71,7 +71,7 @@ function Workspace() {
                 </HStack>
                 <Text fontSize="lg">
                     As shell I use <b>fish</b>.
-                    I was using zsh for the first time, but switched to fish because it's works out-of-box.
+                    I was using zsh for the first time, but switched to fish because it&apos;s works out-of-box.
                     By the way, I use Alacritty as terminal emulator.
                 </Text>
                 <Skeleton isLoaded>
