@@ -58,11 +58,12 @@ function Workspace() {
                     I love Neovim for it&apos;s deep customization.
                 </Text>
                 <Skeleton isLoaded>
-                <Image src="editor.png" borderRadius="10px" onClick={open_editor_img} cursor="pointer" alt="GNOME with some tweaks." marginTop="10px"
-                transition="transform .2s"
-                _hover={{
-                    transform: "scale(1.03)",
-                }} title="Click to open image in new tab."/>
+                    <Image src="editor.png" borderRadius="5px" boxShadow="md" cursor="pointer" onClick={open_dekstop_img} alt="My Neovim setup." marginTop="10px" 
+                    transition="all .2s"
+                    _hover={{
+                        transform: "scale(1.03)",
+                        boxShadow: "xl"
+                    }} title="Click to open image in new tab."/>
                 </Skeleton>
             </Box>
             <Box margin="15px" marginTop="35px" >
@@ -75,7 +76,7 @@ function Workspace() {
                     By the way, I use Alacritty as terminal emulator.
                 </Text>
                 <Skeleton isLoaded>
-                <Image src="shell.png" borderRadius="5px" onClick={open_shell_img} cursor="pointer" alt="GNOME with some tweaks." marginTop="10px" 
+                <Image src="shell.png" borderRadius="5px" onClick={open_shell_img} cursor="pointer" alt="Alacritty with Fish Shell." marginTop="10px" 
                 transition="transform .2s"
                 _hover={{
                     transform: "scale(1.03)"
