@@ -7,7 +7,7 @@ export default function Document() {
         <title>Konstantin Zero</title>
       </Head>
       <body>
-        <a rel="me" href="https://md.debilosempire.org/@kostya_zero" display="hidden">Mastodon</a>
+        <a rel="me" href="https://md.debilosempire.org/@kostya_zero" hidden>Mastodon</a>
         <Main />
         <NextScript />
       </body>
