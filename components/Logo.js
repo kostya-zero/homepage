@@ -6,7 +6,7 @@ function Logo() {
     const navigate = useRouter()
     
     function brew_coffee() {
-        navigate("/coffee");
+        navigate.push("/coffee");
     }
 
     return(

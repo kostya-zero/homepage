@@ -28,7 +28,7 @@ const components = {
     baseStyle: (props) => ({
       color: mode("#191919", "#FCFCFC")(props),
       transitionProperty: "all",
-      transitionDuration: ".3s",
+      transitionDuration: ".1s",
       fontWeight: "400",
     }),
     variants: {
