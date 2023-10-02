@@ -1,5 +1,5 @@
 import ProjectCard from "@/components/ProjectCard";
-import { SimpleGrid, Text, Box, Container, Heading, HStack, Badge } from "@chakra-ui/react";
+import { SimpleGrid, Text, Box, Container, Heading, HStack} from "@chakra-ui/react";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 
