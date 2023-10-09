@@ -20,7 +20,7 @@ function Projects() {
               Projects.
             </Heading>
           </HStack>
-          <Text fontSize="lg">List of projects that I am working on.</Text>
+          <Text fontSize="md">List of projects that I am working on.</Text>
         </Box>
         <Box margin="15px" marginTop="10px">
           <SimpleGrid columns={[1, null, 1]} spacing={3}>
