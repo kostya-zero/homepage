@@ -14,7 +14,7 @@ export default function Resup() {
     <>
       <Container
         justifyContent="left"
-        maxW={750}
+        maxW={650}
         marginLeft="auto"
         marginRight="auto"
       >

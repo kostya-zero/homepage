@@ -9,14 +9,14 @@ function Projects() {
     <>
       <Container
         justifyContent="left"
-        maxW={750}
+        maxW={650}
         marginLeft="auto"
         marginRight="auto"
       >
         <NavBar />
         <Box margin="15px" marginTop="20px">
           <HStack flex={1}>
-            <Heading fontSize="6xl" textDecoration="underline" fontWeight={700}>
+            <Heading fontSize="4xl" textDecoration="underline" fontWeight={700}>
               Projects.
             </Heading>
           </HStack>

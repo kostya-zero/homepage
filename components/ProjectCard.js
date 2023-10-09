@@ -5,7 +5,7 @@ import {
   Badge,
   CardBody,
   Text,
-  Image,
+  Img,
   Stack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
@@ -35,7 +35,7 @@ export default function ProjectCard(props) {
           boxShadow: "lg",
         }}
       >
-        <Image marginLeft="5px" marginTop="auto" marginBottom="auto" w="64px" h="64px" marginRight="0" borderRadius="10px" src={props.image} />
+        <Img marginLeft="5px" marginTop="auto" marginBottom="auto" w="64px" h="64px" marginRight="0" borderRadius="10px" src={props.image} />
         <Stack>
           <CardBody>
             <Text fontWeight="bold" fontSize="xl">

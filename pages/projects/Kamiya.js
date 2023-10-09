@@ -14,7 +14,7 @@ export default function Kamiya() {
     <>
       <Container
         justifyContent="left"
-        maxW={750}
+        maxW={650}
         marginLeft="auto"
         marginRight="auto"
       >
@@ -22,7 +22,7 @@ export default function Kamiya() {
         <Box margin="15px" marginTop="20px">
           <HStack flex={1}>
             <IconButton variant="ghost" icon={<FaArrowLeft />} onClick={() => { go_back() }} />
-            <Heading fontSize="5xl">
+            <Heading fontSize="4xl">
               Kamiya
             </Heading>
           </HStack>

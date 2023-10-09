@@ -57,7 +57,7 @@ function NavBar() {
           <Flex>
             <ColorModeSwitcher />
             <Menu>
-              <MenuButton as={IconButton} variant="solid" icon={<FaBars />} />
+              <MenuButton as={IconButton} variant="outline" icon={<FaBars />} />
               <MenuList>
                 <MenuItem icon={<FaHome />} onClick={go_home}>
                   Home
