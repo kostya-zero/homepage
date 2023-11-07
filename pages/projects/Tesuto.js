@@ -20,13 +20,13 @@ export default function Resup() {
       >
         <NavBar />
         <Box margin="15px" marginTop="20px">
-          <HStack flex={1}>
+          <HStack flex={1} marginBottom="5px">
             <IconButton variant="ghost" icon={<FaArrowLeft />} onClick={() => { go_back() }} />
             <Heading fontSize="4xl">
               Tesuto
             </Heading>
           </HStack>
-          <Text marginBottom="15px" fontSize="lg">
+          <Text marginBottom="15px" >
             Tesuto is a minimalist and lightweight tool for testing.
             Tesuto designed to be easy to set up and be as fast as possible.
             Tesuto allows developers to focus on solving deployment problems.

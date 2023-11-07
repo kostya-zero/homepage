@@ -14,10 +14,10 @@ function Projects() {
         marginRight="auto"
       >
         <NavBar />
-        <Box margin="15px" marginTop="20px">
+        <Box margin="15px" marginTop="30px">
           <HStack flex={1}>
-            <Heading fontSize="4xl" textDecoration="underline" fontWeight={700}>
-              Projects.
+            <Heading variant="header">
+              Projects
             </Heading>
           </HStack>
           <Text fontSize="md">List of projects that I am working on.</Text>

@@ -37,8 +37,8 @@ function NavBar() {
     navigate.push('/workspace');
   }
 
-  function go_contacts() {
-    navigate.push('/contacts');
+  function go_socials() {
+    navigate.push('/socials');
   }
 
   function go_source() {
@@ -71,8 +71,8 @@ function NavBar() {
                   Workspace
                 </MenuItem>
 
-                <MenuItem icon={<FaUserFriends />} onClick={go_contacts}>
-                  Contacts
+                <MenuItem icon={<FaUserFriends />} onClick={go_socials}>
+                  Socials
                 </MenuItem>
 
                 <MenuItem icon={<FaGithub />} onClick={go_source}>

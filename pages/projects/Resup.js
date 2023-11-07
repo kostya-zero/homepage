@@ -20,13 +20,13 @@ export default function Resup() {
       >
         <NavBar />
         <Box margin="15px" marginTop="20px">
-          <HStack flex={1}>
+          <HStack flex={1} marginBottom="5px">
             <IconButton variant="ghost" icon={<FaArrowLeft />} onClick={() => { go_back() }} />
             <Heading fontSize="4xl">
               Resup
             </Heading>
           </HStack>
-          <Text marginBottom="15px" fontSize="md">
+          <Text marginBottom="15px" >
             Resup is CLI front-end for realesrgan-ncnn-vulkan image upscaler written in Rust.
             It allows you quickly upscale your images directly in CLI.
           </Text>

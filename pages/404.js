@@ -10,7 +10,7 @@ function NotFound() {
         <Box margin="20px" marginTop="35px" flex={1} justifyContent="center">
           <Heading fontSize="4xl" fontWeight={700} >404</Heading>
           <Text fontSize="md">
-            How did you get there?
+            How did you get there? Use menu to go back.
           </Text>
         </Box>
         <Footer />

@@ -7,19 +7,11 @@ function SocialCard(props) {
 
     return (
         <>
-            <Card marginTop="15px" size="sm" variant="outline" onClick={go_to} title={props.tooltip} transition="all .3s" cursor="pointer" 
-                _hover={{
-                    transform: "scale(1.03)",
-                    boxShadow: "lg",
-                }}
-
-                _active={{
-                    transform: "scale(0.99)"
-                }}>
+            <Card marginTop="15px" size="sm" variant="def-card" onClick={go_to} title={props.tooltip}  cursor="pointer" >
                 <CardBody>
                     <HStack flex={1}>
                         <Text fontWeight={700} fontSize={`sm`}>{props.social}</Text>
-                        <Box flex={1} align="right">
+                        <Box flex={1} align="right" color={ useColorModeValue("#191919","#FFFFFF") }>
                             {props.icon}
                         </Box>
                     </HStack>

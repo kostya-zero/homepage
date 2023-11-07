@@ -20,13 +20,13 @@ export default function Kamiya() {
       >
         <NavBar />
         <Box margin="15px" marginTop="20px">
-          <HStack flex={1}>
+          <HStack flex={1} marginBottom="5px">
             <IconButton variant="ghost" icon={<FaArrowLeft />} onClick={() => { go_back() }} />
             <Heading fontSize="4xl">
               Kamiya
             </Heading>
           </HStack>
-          <Text marginBottom="15px" fontSize="lg">
+          <Text marginBottom="15px" >
             Kamiya is a no-nonsense note taking app that runs in terminal.
             It stores all your notes in database so it makes easier to store your notes.
           </Text>

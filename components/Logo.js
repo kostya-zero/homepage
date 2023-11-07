@@ -11,8 +11,8 @@ function Logo() {
 
     return(
         <>
-            <HStack>
-                <Text fontSize='xl' fontWeight={700}>  Konstantin Zero</Text>
+            <HStack marginTop="10px">
+                <Text fontSize='xl' variant="logo" fontWeight={700}>  Konstantin Zero</Text>
                 <FaCoffee fontSize='xl' onClick={brew_coffee} title="relax, and do what you like"/>
             </HStack>
         </>
