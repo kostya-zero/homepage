@@ -19,7 +19,7 @@ const components = {
       outline: defineStyle({
         backgroundColor: "#FFFFFF",
         borderColor: "#D9D9D9",
-        transition: ".3s all",
+        transition: ".2s all",
         _hover: {
           transform: "scale(1.15)",
           backgroundColor: "#F1F1F1",
@@ -51,7 +51,7 @@ const components = {
           borderWidth: "1px",
           backgroundColor: "#FFFFFF",
           color: "#585858",
-          transition: ".3s all",
+          transition: ".2s all",
           borderColor: "#D9D9D9",
           _hover: {
             transform: "scale(1.03)",
@@ -86,9 +86,9 @@ const components = {
       section: defineStyle({
         _dark: {
           color: "#FFFFFF",
-          transition: ".3 all",
+          transition: ".2 all",
         },
-        transition: ".3 all",
+        transition: ".2 all",
         fontSize: "2xl",
         marginBottom: "0",
         paddingBotton: "5px",
@@ -97,7 +97,7 @@ const components = {
       }),
       header: defineStyle({
         fontSize: "4xl",
-        transition: ".3 all",
+        transition: ".2 all",
         marginBottom: "0",
         fontWeight: "700",
         color: "#191919",
@@ -147,6 +147,7 @@ const theme = extendTheme({
   },
   styles: styles,
   config: {
+    initialColorMode: 'light',
     disableTransitionOnChange: false,
   },
   components: components,
