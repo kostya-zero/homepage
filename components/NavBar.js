@@ -1,8 +1,5 @@
 import {
     Box,
-    Stack,
-    HStack,
-    Text,
     Flex,
     IconButton,
     Menu,
@@ -18,33 +15,11 @@ import {
     FaTools,
     FaUserFriends,
 } from 'react-icons/fa';
-import { useRouter } from 'next/router';
 import { ColorModeSwitcher } from '../components/ColorModeSwitcher';
 import Logo from './Logo';
+import { Link } from '@chakra-ui/next-js';
 
 function NavBar() {
-    const navigate = useRouter();
-
-    function go_home() {
-        navigate.push('/');
-    }
-
-    function go_projects() {
-        navigate.push('/projects');
-    }
-
-    function go_workspace() {
-        navigate.push('/workspace');
-    }
-
-    function go_socials() {
-        navigate.push('/socials');
-    }
-
-    function go_source() {
-        window.open('https://github.com/kostya-zero/homepage', '_blank');
-    }
-
     return (
         <>
             <Box>
@@ -58,24 +33,24 @@ function NavBar() {
                         <ColorModeSwitcher />
                         <Menu>
                             <MenuButton as={IconButton} variant="outline" icon={<FaBars />} />
-                            <MenuList>
-                                <MenuItem icon={<FaHome />} onClick={go_home}>
+                            <MenuList >
+                                <MenuItem icon={<FaHome />} as={Link} href="/" _hover={{ textDecoration: "none" }}>
                                     Home
                                 </MenuItem>
 
-                                <MenuItem icon={<FaBriefcase />} onClick={go_projects}>
+                                <MenuItem icon={<FaBriefcase />} as={Link} href="/projects" _hover={{ textDecoration: "none" }}>
                                     Projects
                                 </MenuItem>
 
-                                <MenuItem icon={<FaTools />} onClick={go_workspace}>
+                                <MenuItem icon={<FaTools />} as={Link} href="/workspace" _hover={{ textDecoration: "none" }}>
                                     Workspace
                                 </MenuItem>
 
-                                <MenuItem icon={<FaUserFriends />} onClick={go_socials}>
+                                <MenuItem icon={<FaUserFriends />} as={Link} href="/socials" _hover={{ textDecoration: "none" }}>
                                     Socials
                                 </MenuItem>
 
-                                <MenuItem icon={<FaGithub />} onClick={go_source}>
+                                <MenuItem icon={<FaGithub />} as={Link} href="https://github.com/kostya-zero/homepage" isExternal _hover={{ textDecoration: "none" }}>
                                     View Source Code
                                 </MenuItem>
                             </MenuList>
