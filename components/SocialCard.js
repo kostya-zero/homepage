@@ -1,20 +1,16 @@
 import { Card, CardBody, HStack, Text, Box, useColorModeValue, Link } from "@chakra-ui/react";
 
 function SocialCard(props) {
-    function go_to() {
-        window.open(props.url, "_blank", 'noopener,noreferrer')
-    }
-
     return (
         <>
             <Card
                 marginTop="15px"
                 size="sm"
                 variant="def-card"
-                onClick={go_to}
                 title={props.tooltip}
                 cursor="pointer"
                 as={Link}
+                isExternal
                 href={props.url}>
                 <CardBody>
                     <HStack flex={1}>

@@ -71,6 +71,7 @@ const components = {
                         transform: "scale(1.03)",
                         backgroundColor: "#F1F1F1",
                         borderColor: "#565656",
+                        textDecoration: "none"
                     },
 
                     _dark: {
