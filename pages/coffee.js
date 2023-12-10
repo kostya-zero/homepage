@@ -1,6 +1,6 @@
 import { Text, Box, Container, Heading, HStack } from "@chakra-ui/react";
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar"
+import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar"
 
 function GreenTea() {
   return (

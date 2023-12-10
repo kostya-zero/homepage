@@ -1,8 +1,8 @@
 import { Text, Box, Container, Heading, HStack } from "@chakra-ui/react";
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar"
+import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar"
 import { FaComment, FaTelegram, FaMailBulk, FaGithub, FaMastodon, FaGitAlt } from "react-icons/fa";
-import SocialCard from "../components/SocialCard";
+import SocialCard from "@/components/SocialCard";
 
 export default function Contacts() {
 
