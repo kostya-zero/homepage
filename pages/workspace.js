@@ -1,4 +1,4 @@
-import { Text, Box, Container, Heading, HStack, Img, Skeleton } from "@chakra-ui/react";
+import { Text, Box, Container, Heading, HStack } from "@chakra-ui/react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar"
 
