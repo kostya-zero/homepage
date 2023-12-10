@@ -1,4 +1,4 @@
-import { Text, Box, Container, Heading, HStack } from "@chakra-ui/react";
+import { Text, Box, Container, Heading, HStack, Badge } from "@chakra-ui/react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar"
 import { FaComment, FaTelegram, FaMailBulk, FaGithub, FaMastodon, FaGitAlt } from "react-icons/fa";
@@ -19,6 +19,7 @@ export default function Contacts() {
                 <Box margin="15px" marginTop="25px" >
                     <HStack flex={1}>
                         <Heading variant="section">Contacts</Heading>
+
                     </HStack>
                     <Text >
                         You can ask me a question or simply talk to me by the ways below.
