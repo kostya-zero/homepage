@@ -99,9 +99,11 @@ const components = {
             section: defineStyle({
                 _dark: {
                     color: "#FFFFFF",
-                    transition: ".2 all",
+                    transitionProperty: "all",
+                    transitionDuration: ".2s",
                 },
-                transition: ".2 all",
+                transitionProperty: "all",
+                transitionDuration: ".2s",
                 fontSize: "2xl",
                 marginBottom: "0",
                 paddingBotton: "5px",
@@ -110,11 +112,16 @@ const components = {
             }),
             header: defineStyle({
                 fontSize: "4xl",
-                transition: ".2 all",
+                transitionProperty: "all",
+                transitionDuration: ".2s",
                 marginBottom: "0",
                 fontWeight: "700",
                 color: "#191919",
-                _dark: { color: "#FFFFFF" },
+                _dark: {
+                    color: "#FFFFFF", 
+                    transitionProperty: "all",
+                    transitionDuration: ".2s",
+                },
             }),
         },
     }),
@@ -157,7 +164,7 @@ const theme = extendTheme({
     },
     styles: styles,
     config: {
-        initialColorMode: 'light',
+        initialColorMode: 'dark',
         disableTransitionOnChange: false,
     },
     components: components,
