@@ -1,4 +1,4 @@
-import { Text, Box, Container, Heading, HStack } from "@chakra-ui/react";
+import { Text, Box, Container, Heading} from "@chakra-ui/react";
 import Footer from "@/components/Footer";
 
 function GreenTea() {
