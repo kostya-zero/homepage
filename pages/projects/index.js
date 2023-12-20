@@ -1,6 +1,5 @@
 import {Text, Box, Container, Heading, HStack, Badge, Link} from "@chakra-ui/react";
 import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
 
 function Projects() {
     return (

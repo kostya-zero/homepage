@@ -1,6 +1,5 @@
 import { Text, Box, Container, Heading, HStack, Badge } from "@chakra-ui/react";
 import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar"
 import { FaComment, FaTelegram, FaMailBulk, FaGithub, FaMastodon, FaGitAlt } from "react-icons/fa";
 import SocialCard from "@/components/SocialCard";
 

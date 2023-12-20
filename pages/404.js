@@ -1,6 +1,5 @@
 import { Text, Box, Container, Heading, Button, HStack } from "@chakra-ui/react";
 import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar"
 
 function NotFound() {
   return (
