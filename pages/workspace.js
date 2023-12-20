@@ -1,4 +1,4 @@
-import { Text, Box, Container, Heading, HStack } from "@chakra-ui/react";
+import { Text, Box, Container, Heading, HStack, ScaleFade } from "@chakra-ui/react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar"
 
@@ -6,7 +6,6 @@ function Workspace() {
   return (
     <>
       <Container justifyContent="left" maxW={650} marginLeft="auto" zIndex="1" marginRight="auto">
-        <NavBar />
         <Box margin="15px" marginTop="30px">
           <HStack flex={1}>
             <Heading variant="header">Workspace</Heading>

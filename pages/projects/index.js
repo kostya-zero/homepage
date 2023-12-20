@@ -11,7 +11,6 @@ function Projects() {
                 marginLeft="auto"
                 marginRight="auto"
             >
-                <NavBar/>
                 <Box margin="15px" marginTop="30px">
                     <HStack flex={1}>
                         <Heading variant="header">

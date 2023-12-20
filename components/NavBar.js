@@ -22,7 +22,7 @@ import { Link } from '@chakra-ui/next-js';
 function NavBar() {
     return (
         <>
-            <Box>
+            <Box maxW="620px" marginLeft={["15px", "15px", "auto"]} marginRight={["15px", "15px", "auto"]}>
                 <Flex
                     h={8}
                     margin="15px"

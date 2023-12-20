@@ -6,7 +6,6 @@ function Home() {
   return (
     <>
       <Container justifyContent="left" maxW={650} marginLeft="auto" marginRight="auto">
-        <NavBar />
         <Box margin="15px" marginTop="30px" >
           <HStack flex={1}>
             <Heading variant="header">Welcome</Heading>
