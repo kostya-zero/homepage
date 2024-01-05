@@ -11,11 +11,11 @@ export default function App({ Component, pageProps, router }) {
         <>
             <style jsx global>
                 {`
-          :root {
-            --font-opensans: ${opensans.style.fontFamily};
-            --font-worksans: ${worksans.style.fontFamily};
-          }
-        `}
+                    :root {
+                        --font-opensans: ${opensans.style.fontFamily};
+                        --font-worksans: ${worksans.style.fontFamily};
+                    }
+                `}
             </style>
             <ChakraProvider theme={theme}>
                 <NavBar/>
