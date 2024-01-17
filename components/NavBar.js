@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import {
     FaBars,
+    FaBook,
     FaBriefcase,
     FaGithub,
     FaHome,
@@ -42,11 +43,19 @@ function NavBar() {
                                     Projects
                                 </MenuItem>
 
+                                <MenuItem icon={<FaBook />} as={Link} href="/blog" _hover={{ textDecoration: "none" }}>
+                                    Blog
+                                </MenuItem>
+
+                                <MenuItem icon={<FaTools />} as={Link} href="/workspace" _hover={{ textDecoration: "none" }}>
+                                    Workspace
+                                </MenuItem>
+
                                 <MenuItem icon={<FaUserFriends />} as={Link} href="/socials" _hover={{ textDecoration: "none" }}>
                                     Socials
                                 </MenuItem>
 
-                                <MenuItem icon={<FaGithub />} as={Link} href="https://github.com/kostya-zero/homepage" isExternal _hover={{ textDecoration: "none" }}>
+                                <MenuItem icon={<FaGithub />} as={Link} href="https://git.kostyazero.com/kostya-zero/homepage" isExternal _hover={{ textDecoration: "none" }}>
                                     View Source Code
                                 </MenuItem>
                             </MenuList>
