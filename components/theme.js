@@ -58,7 +58,7 @@ const components = {
     }),
     Card: defineStyleConfig({
         variants: {
-            "def-card": defineStyle({
+            "def": defineStyle({
                 container: {
                     borderWidth: "1px",
                     backgroundColor: "#FFFFFF",
@@ -83,6 +83,26 @@ const components = {
                         _active: {
                             transform: "scale(0.99)",
                         },
+                    },
+                },
+                body: {
+                    color: "#FFFFFF",
+                    _dark: {
+                        color: "#",
+                    },
+                },
+            }),
+            "nohover": defineStyle({
+                container: {
+                    borderWidth: "1px",
+                    backgroundColor: "#FFFFFF",
+                    color: "#585858",
+                    transition: ".2s all",
+                    borderColor: "#D9D9D9",
+
+                    _dark: {
+                        backgroundColor: "#232323",
+                        borderColor: "#494949",
                     },
                 },
                 body: {
