@@ -1,4 +1,4 @@
-import { Text, Box, Container, Heading, HStack, Badge, Link, Card, CardBody, CardHeader } from "@chakra-ui/react";
+import { Text, Box, Container, Heading, HStack, Badge, Link, Card, CardBody, CardHeader, Spacer } from "@chakra-ui/react";
 import Footer from "@/components/Footer";
 
 function Projects() {
@@ -23,6 +23,7 @@ function Projects() {
                     <CardBody>
                         <HStack>
                             <Heading variant="section">Resup</Heading>
+                            <Spacer/>
                             <Badge as={Link} href="https://github.com/kostya-zero/resup" colorScheme="gray">GitHub</Badge>
                             <Badge as={Link} href="https://git.kostyazero.com/kostya-zero/resup" colorScheme="green">Gitea</Badge>
                         </HStack>
@@ -37,6 +38,7 @@ function Projects() {
                     <CardBody>
                         <HStack flex={1}>
                             <Heading variant="section">Tesuto</Heading>
+                            <Spacer/>
                             <Badge as={Link} href="https://github.com/kostya-zero/tesuto" colorScheme="gray">GitHub</Badge>
                             <Badge as={Link} href="https://git.kostyazero.com/kostya-zero/tesuto" colorScheme="green">Gitea</Badge>
                         </HStack>
