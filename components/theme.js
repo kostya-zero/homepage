@@ -12,6 +12,34 @@ const styles = {
 };
 
 const components = {
+    Menu: defineStyleConfig({
+        baseStyle: defineStyle({
+            item: {
+                bg: "#FFFFFF",
+                color: "#494949",
+                _dark: {
+                    bg: "#2C2C2C",
+                    color: "#E1E1E1",
+                    _hover: {
+                        bg: "#464646"
+                    }
+                },
+                _hover: {
+                    bg: "#F1F1F1"
+                }
+            },
+            list: {
+                bg: "#FFFFFF",
+                color: "#494949",
+                borderColor: "#D9D9D9",
+                _dark: {
+                    bg: "#2C2C2C",
+                    borderColor: "#494949",
+                    color: "#E1E1E1",
+                }
+            }
+        })
+    }),
     Button: defineStyleConfig({
         variants: {
             outline: defineStyle({

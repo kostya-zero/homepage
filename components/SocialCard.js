@@ -6,7 +6,7 @@ function SocialCard(props) {
             <Card
                 marginTop="15px"
                 size="sm"
-                variant="def-card"
+                variant="def"
                 title={props.tooltip}
                 cursor="pointer"
                 as={Link}

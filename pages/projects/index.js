@@ -22,6 +22,22 @@ function Projects() {
                 <Card variant="nohover" margin="15px">
                     <CardBody>
                         <HStack>
+                            <Heading variant="section">Enjo</Heading>
+                            <Badge colorScheme="gray">WIP</Badge>
+                            <Spacer/>
+                            <Badge as={Link} href="https://github.com/kostya-zero/enjo" colorScheme="gray">GitHub</Badge>
+                            <Badge as={Link} href="https://git.kostyazero.com/kostya-zero/enjo" colorScheme="green">Gitea</Badge>
+                        </HStack>
+                        <Text>
+                            Workspace management tool that aims to help developers manage their projects a little easier.
+                            Currently under development.
+                        </Text>
+                    </CardBody>
+                </Card>
+
+                <Card variant="nohover" margin="15px">
+                    <CardBody>
+                        <HStack>
                             <Heading variant="section">Resup</Heading>
                             <Spacer/>
                             <Badge as={Link} href="https://github.com/kostya-zero/resup" colorScheme="gray">GitHub</Badge>
