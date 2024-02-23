@@ -5,10 +5,10 @@ function NotFound() {
   return (
     <>
       <Container justifyContent="left" maxW={650} marginLeft="auto" marginRight="auto">
-        <Box margin="20px" marginTop="35px" flex={1} justifyContent="center">
-          <Heading fontSize="4xl" fontWeight={700} >404</Heading>
-          <Text fontSize="md">
-            How did you get there? Use menu to go back.
+        <Box margin="20px" marginTop="35px" flex={1} marginBottom="30px">
+          <Heading fontSize="6xl" fontWeight={700} w="100%" textAlign="center">404</Heading>
+          <Text fontSize="md" textAlign="center" fontStyle="italic"> 
+            You weren't supposed to be here...
           </Text>
         </Box>
         <Footer />
