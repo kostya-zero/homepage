@@ -23,8 +23,7 @@ export default function Contacts() {
                         You can ask me a question or simply talk to me by the ways below.
                     </Text>
                     <SocialCard url="mailto:zero@kostyazero.com" tooltip="My email address." social_name="Email" social_detail="zero@kostyazero.com" icon={<FaMailBulk />} />
-                    <SocialCard url="https://matrix.to/#/@zero:kostyazero.com" tooltip="https://matrix.to/#/@zero:kostyazero.com" social_name="Martix" social_detail="@zero:kostyazero.com" icon={<FaComment />} />
-                    <SocialCard url="https://t.me/@kostya_zer0" tooltip="https://t.me/@kostya_zer0" social_name="Telegram" social_detail="@kostya_zer0" icon={<FaTelegram />} />
+                    <SocialCard url="https://t.me/@kostya_zero" tooltip="https://t.me/@kostya_zero" social_name="Telegram" social_detail="@kostya_zero" icon={<FaTelegram />} />
                 </Box>
                 <Box margin="15px" marginTop="20px" >
                     <HStack flex={1}>
