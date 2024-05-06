@@ -14,14 +14,14 @@
     "@chakra-ui/react": "^2.8.2",
     "@chakra-ui/theme-tools": "^2.1.2",
     "@chakra-ui/transition": "^2.1.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "eslint": "8.48.0",
     "eslint-config-next": "latest",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^10.18.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.12.0"
   }
 }

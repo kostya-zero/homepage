@@ -20,6 +20,7 @@ function Projects() {
                 </Box>
 
                 <Card variant="nohover" margin="15px">
+
                     <CardBody>
                         <HStack>
                             <Heading variant="section">Enjo</Heading>

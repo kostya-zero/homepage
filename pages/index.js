@@ -24,6 +24,7 @@ function Home() {
           <HStack flex={1}>
             <Heading variant="section">About me</Heading>
           </HStack>
+
           <Text >
             Hello! My name is <b>Kostya</b>.
             I&apos;m a 17 years old high school student, system administrator and indie developer.
