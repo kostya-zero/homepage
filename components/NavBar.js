@@ -47,10 +47,6 @@ function NavBar() {
                                     Blog
                                 </MenuItem>
 
-                                <MenuItem icon={<FaTools />} as={Link} href="/workspace" _hover={{ textDecoration: "none" }}>
-                                    Workspace
-                                </MenuItem>
-
                                 <MenuItem icon={<FaUserFriends />} as={Link} href="/socials" _hover={{ textDecoration: "none" }}>
                                     Socials
                                 </MenuItem>
