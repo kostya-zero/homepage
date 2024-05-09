@@ -4,6 +4,7 @@ import {
     IconButton,
     Menu,
     MenuButton,
+    MenuDivider,
     MenuItem,
     MenuList,
 } from '@chakra-ui/react';
@@ -16,6 +17,8 @@ import {
     FaTools,
     FaUserFriends,
 } from 'react-icons/fa';
+
+import { TbAntennaBars5 } from "react-icons/tb";
 import { ColorModeSwitcher } from '../components/ColorModeSwitcher';
 import Logo from './Logo';
 import { Link } from '@chakra-ui/next-js';
@@ -51,8 +54,14 @@ function NavBar() {
                                     Socials
                                 </MenuItem>
 
+                                <MenuDivider/>
+
                                 <MenuItem icon={<FaGithub />} as={Link} href="https://git.kostyazero.com/kostya-zero/homepage" isExternal _hover={{ textDecoration: "none" }}>
                                     View Source Code
+                                </MenuItem>
+
+                                <MenuItem icon={<TbAntennaBars5 />} as={Link} href="https://status.kostyazero.com" isExternal _hover={{ textDecoration: "none" }}>
+                                    Status Page
                                 </MenuItem>
                             </MenuList>
                         </Menu>
