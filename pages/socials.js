@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { FaComment, FaTelegram, FaMailBulk, FaGithub, FaMastodon, FaGitAlt } from "react-icons/fa";
 import SocialCard from "@/components/SocialCard";
 
-export default function Contacts() {
+export default function Socials() {
 
     return (
         <>
