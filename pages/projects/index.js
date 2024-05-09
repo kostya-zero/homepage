@@ -10,7 +10,7 @@ function Projects() {
                 marginLeft="auto"
                 marginRight="auto"
             >
-                <Box margin="15px" marginTop="30px">
+                <Box margin="15px" marginTop="20px">
                     <HStack flex={1}>
                         <Heading variant="header">
                             Projects
@@ -24,14 +24,14 @@ function Projects() {
                     <CardBody>
                         <HStack>
                             <Heading variant="section">Enjo</Heading>
-                            <Badge colorScheme="gray">WIP</Badge>
                             <Spacer/>
                             <Badge as={Link} href="https://github.com/kostya-zero/enjo" colorScheme="gray">GitHub</Badge>
                             <Badge as={Link} href="https://git.kostyazero.com/kostya-zero/enjo" colorScheme="green">Gitea</Badge>
                         </HStack>
                         <Text>
-                            Workspace management tool that aims to help developers manage their projects a little easier.
-                            Currently under development.
+                            A project management tool that allows a user to easily manager their projects.
+                            Enjo also can open editor/shell in selected project. 
+                            Will be suitable for users that use terminal frequently.
                         </Text>
                     </CardBody>
                 </Card>
@@ -45,8 +45,7 @@ function Projects() {
                             <Badge as={Link} href="https://git.kostyazero.com/kostya-zero/resup" colorScheme="green">Gitea</Badge>
                         </HStack>
                         <Text>
-                            Resup is CLI front-end for realesrgan-ncnn-vulkan image upscaler written in Rust.
-                            It allows you quickly upscale your images directly in CLI.
+                        A cross-platform terminal fronted for <code>realesrgan-ncnn-vulkan</code> image upscaler that is easy to configure.
                         </Text>
                     </CardBody>
                 </Card>
@@ -60,9 +59,8 @@ function Projects() {
                             <Badge as={Link} href="https://git.kostyazero.com/kostya-zero/tesuto" colorScheme="green">Gitea</Badge>
                         </HStack>
                         <Text>
-                            Tesuto is a minimalist and lightweight tool for testing.
-                            Tesuto designed to be easy to set up and be as fast as possible.
-                            Tesuto allows developers to focus on solving deployment problems.
+                            Tesuto is a lightweight automation tool focused on speed and UX.
+                            User can write a configuration file using an intuitive layout and YAML syntax.
                         </Text>
                     </CardBody>
                 </Card>
