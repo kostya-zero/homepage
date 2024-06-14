@@ -2,6 +2,7 @@ import { Text, Box, Heading, HStack } from "@chakra-ui/react";
 import {
   FaTelegram,
   FaMailBulk,
+  FaDiscord,
 } from "react-icons/fa";
 import SocialCard from "@/components/SocialCard";
 
@@ -32,11 +33,11 @@ export default function Socials() {
           icon={<FaTelegram />}
         />
         <SocialCard
-          url="https://t.me/@kostya_zero"
-          tooltip="https://t.me/@kostya_zero"
-          social_name="Telegram"
-          social_detail="@kostya_zero"
-          icon={<FaTelegram />}
+          url="https://discord.com/users/414264955617935371"
+          tooltip="https://discord.com/users/414264955617935371"
+          social_name="Discord"
+          social_detail="kostya_zero"
+          icon={<FaDiscord />}
         />
       </Box>
     </>

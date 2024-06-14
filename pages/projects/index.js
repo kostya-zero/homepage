@@ -32,13 +32,6 @@ function Projects() {
             >
               GitHub
             </Badge>
-            <Badge
-              as={Link}
-              href="https://git.kostyazero.com/kostya-zero/enjo"
-              colorScheme="green"
-            >
-              Gitea
-            </Badge>
           </HStack>
           <Text>
             A project management tool that allows a user to easily manager their
@@ -60,13 +53,6 @@ function Projects() {
             >
               GitHub
             </Badge>
-            <Badge
-              as={Link}
-              href="https://git.kostyazero.com/kostya-zero/resup"
-              colorScheme="green"
-            >
-              Gitea
-            </Badge>
           </HStack>
           <Text>
             A cross-platform terminal fronted for{" "}
@@ -87,13 +73,6 @@ function Projects() {
               colorScheme="gray"
             >
               GitHub
-            </Badge>
-            <Badge
-              as={Link}
-              href="https://git.kostyazero.com/kostya-zero/tesuto"
-              colorScheme="green"
-            >
-              Gitea
             </Badge>
           </HStack>
           <Text>

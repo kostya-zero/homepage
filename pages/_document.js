@@ -5,10 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <title>Konstantin Zero</title>
-
-
       </Head>
-
       <body>
         <Main />
         <NextScript />

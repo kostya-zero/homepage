@@ -31,13 +31,11 @@ function Home() {
         <HStack flex={1}>
           <Heading variant="section">About me</Heading>
         </HStack>
-
         <Text>
-          Hello! My name is <b>Kostya</b>. I&apos;m a 17 years old high school
-          student, system administrator and indie developer. I use Rust as my
-          main programming language to build software and Python for scripts and
-          small programs. I work alone and deal with design, concepts and code
-          by myself.
+          Hello! My name is <b>Kostya</b>. 
+          I am 17 years old and a high school student, system administrator, and independent developer. 
+          I use Rust as my primary programming language to build software and Python for scripts and automation tasks. 
+          I work independently, handling design, concept development, and coding by myself.
         </Text>
       </Box>
       <Box margin="15px" marginTop="20px">
