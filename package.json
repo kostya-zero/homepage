@@ -16,6 +16,8 @@
     "@chakra-ui/transition": "^2.1.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@octokit/core": "^6.1.2",
+    "date-fns": "^3.6.0",
     "eslint": "8.48.0",
     "eslint-config-next": "latest",
     "framer-motion": "^10.18.0",

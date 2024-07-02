@@ -10,7 +10,7 @@ import {
 function Home() {
   return (
     <>
-      <Box margin="15px" marginTop="30px">
+      <Box margin="15px" marginTop="20px">
         <HStack flex={1}>
           <Heading variant="header">Welcome</Heading>
           <Box flex={1} align="right">
@@ -32,10 +32,11 @@ function Home() {
           <Heading variant="section">About me</Heading>
         </HStack>
         <Text>
-          Hello! My name is <b>Kostya</b>. 
-          I am 17 years old and a high school student, system administrator, and independent developer. 
-          I use Rust as my primary programming language to build software and Python for scripts and automation tasks. 
-          I work independently, handling design, concept development, and coding by myself.
+          Hello! My name is <b>Kostya</b>. I am 18 years old and a high school
+          student, system administrator, and indie developer. I use Rust as my
+          primary programming language to build software and Python for scripts
+          and automation tasks. I work alone, handling design, concepts, and
+          coding by myself.
         </Text>
       </Box>
       <Box margin="15px" marginTop="20px">
@@ -44,9 +45,8 @@ function Home() {
         </HStack>
         <Text>
           I am working on my website at this moment by trying to use different
-          design concepts, language etc. This is not a final variant, so you can
-          consider this website as{" "}
-          <i>under construction but in production at the same time</i>.
+          design concepts, language etc. This is not a final version, so you can
+          consider this website as <i>early access</i>.
         </Text>
       </Box>
     </>

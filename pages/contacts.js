@@ -1,15 +1,11 @@
 import { Text, Box, Heading, HStack } from "@chakra-ui/react";
-import {
-  FaTelegram,
-  FaMailBulk,
-  FaDiscord,
-} from "react-icons/fa";
+import { FaTelegram, FaMailBulk, FaDiscord } from "react-icons/fa";
 import SocialCard from "@/components/SocialCard";
 
 export default function Socials() {
   return (
     <>
-      <Box margin="15px" marginTop="30px">
+      <Box margin="15px" marginTop="20px">
         <HStack flex={1}>
           <Heading variant="header">Contacts</Heading>
         </HStack>

@@ -79,7 +79,7 @@ function NavBar() {
                 <MenuItem
                   icon={<FaGithub />}
                   as={Link}
-                  href="https://git.kostyazero.com/kostya-zero/homepage"
+                  href="https://github.com/kostya-zero/homepage"
                   isExternal
                   _hover={{ textDecoration: "none" }}
                 >
