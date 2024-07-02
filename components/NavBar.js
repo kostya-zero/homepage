@@ -14,11 +14,9 @@ import {
   FaBriefcase,
   FaGithub,
   FaHome,
-  FaTools,
   FaUserFriends,
 } from "react-icons/fa";
 
-import { TbAntennaBars5 } from "react-icons/tb";
 import { ColorModeSwitcher } from "../components/ColorModeSwitcher";
 import Logo from "./Logo";
 import { Link } from "@chakra-ui/next-js";
