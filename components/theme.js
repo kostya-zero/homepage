@@ -115,9 +115,9 @@ const components = {
           },
         },
         body: {
-          color: "#FFFFFF",
+          color: "#585858",
           _dark: {
-            color: "#",
+            color: "#E1E1E1",
           },
         },
       }),
