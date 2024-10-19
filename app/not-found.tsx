@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "Page not found!",
 };
 
-export default function NotFound() {
+export default async function NotFound() {
   return (
     <>
       <p className="text-7xl font-bold font-josefin text-center leading-[1.0] mt-7 text-neutral-50">

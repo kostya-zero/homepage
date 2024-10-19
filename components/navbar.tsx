@@ -1,24 +1,7 @@
-import {
-  DropdownMenu,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "./ui/button";
-import {
-  FaBars,
-  FaBook,
-  FaBriefcase,
-  FaCoffee,
-  FaGithub,
-  FaHome,
-  FaUserFriends,
-} from "react-icons/fa";
 import Link from "next/link";
 import { Icon } from "./icon";
 
-export default function NavBar() {
+export default async function NavBar() {
   return (
     <>
       <header className="flex items-center justify-between mt-[16px] m-[16px]">
