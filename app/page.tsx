@@ -1,3 +1,5 @@
+import { Hero } from "@/components/hero";
+import { SectionTitle } from "@/components/sectiontitle";
 import { Metadata } from "next";
 import Link from "next/link";
 import { FC } from "react";
@@ -60,13 +62,6 @@ const contacts: Contact[] = [
   },
 ];
 
-// Components
-const Hero: FC = () => (
-  <p className="text-4xl mt-[45px] mb-[25px] mx-[15px] font-bold text-neutral-50 font-josefin leading-[1.1] w-[80%] bg-clip-text text-transparent bg-gradient-to-r from-[#FFFFFF] to-[#BBBBBB]">
-    An indie developer and a system administrator.
-  </p>
-);
-
 const Bio: FC = () => (
   <div className="mx-[15px] my-[25px] flex flex-col gap-5">
     <p className="text-neutral-300">
@@ -83,16 +78,6 @@ const Bio: FC = () => (
       always looking for new ways to improve my skills.
     </p>
   </div>
-);
-
-interface SectionTitleProps {
-  title: string;
-}
-
-const SectionTitle: FC<SectionTitleProps> = ({ title }) => (
-  <h2 className="text-2xl font-semibold font-josefin leading-[1.2] text-neutral-50 mb-4">
-    {title}
-  </h2>
 );
 
 interface ProjectCardProps {
@@ -146,18 +131,18 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero>An indie developer and a system administrator</Hero>
       <Bio />
 
       <div className="mx-[15px] my-[25px]">
-        <SectionTitle title="Projects" />
+        <SectionTitle>Projects</SectionTitle>
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} icon={project.icon} />
         ))}
       </div>
 
       <div className="mx-[15px] my-[25px]">
-        <SectionTitle title="Contacts" />
+        <SectionTitle>Contacts</SectionTitle>
         <div className="flex flex-col gap-4 items-center mb-4 text-neutral-400">
           {contacts.map((contact) => (
             <ContactLink

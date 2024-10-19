@@ -18,6 +18,12 @@ export default async function NavBar() {
               <p>Home</p>
             </Link>
             <Link
+              href="/guestbook"
+              className="hover:text-neutral-50 transition duration-200"
+            >
+              <p>Guestbook</p>
+            </Link>
+            <Link
               href="https://github.com/kostya-zero"
               className="hover:text-neutral-50 transition duration-200"
             >
