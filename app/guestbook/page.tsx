@@ -41,6 +41,7 @@ export default async function Guestbook() {
       data: {
         content: formData.get("message")?.toString() as string,
         username: session?.user?.name as string,
+        email: session?.user?.email as string,
         postedAt: new Date(),
       },
     });
