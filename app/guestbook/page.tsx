@@ -10,7 +10,12 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 import AuthButton from "@/components/authbutton";
 import SignOutButton from "@/components/signoutbutton";
-import { useToast } from "@/hooks/use-toast";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Konstatin Zero",
+  description: "My own homepage website.",
+};
 
 interface GuestbookMessage {
   message: string;
