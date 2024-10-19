@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
-const { fontFamily } = require("tailwindcss/defaultTheme")
+import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -35,8 +35,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        opensans: ["var(--font-open)", ...fontFamily.sans],
-        worksans: ["var(--font-work)", ...fontFamily.sans]
+        josefin: ["var(--font-josefin)", ...fontFamily.sans],
+        inter: ["var(--font-inter)", ...fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -95,6 +95,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
