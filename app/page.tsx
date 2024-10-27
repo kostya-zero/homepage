@@ -2,7 +2,7 @@ import { Hero } from "@/components/hero";
 import { SectionTitle } from "@/components/sectiontitle";
 import { Metadata } from "next";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, type JSX } from "react";
 import { FaGithub, FaTelegram } from "react-icons/fa6";
 import { FiArrowUpRight, FiPackage } from "react-icons/fi";
 import { IoPlayForward } from "react-icons/io5";
