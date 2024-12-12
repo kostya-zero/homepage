@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FC, type JSX } from "react";
 import { FaGithub, FaTelegram } from "react-icons/fa6";
 import { FiArrowUpRight, FiPackage } from "react-icons/fi";
-import { IoPlayForward } from "react-icons/io5";
+import { IoImage, IoPlayForward } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 
 interface Project {
@@ -39,24 +39,31 @@ const projects: Project[] = [
     icon: <IoPlayForward className="m-auto h-full text-2xl" />,
     url: "https://github.com/kostya-zero/tesuto",
   },
+  {
+    id: "resup",
+    name: "Resup",
+    description: "A terminal frontend for Real-ESRGAN.",
+    icon: <IoImage className="m-auto h-full text-2xl" />,
+    url: "https://github.com/kostya-zero/resup",
+  },
 ];
 
 const contacts: Contact[] = [
   {
     id: "email",
-    name: "Email",
+    name: "zero@kostyazero.com",
     icon: <MdEmail className="w-6 h-6" />,
     url: "mailto:zero@kostyazero.com",
   },
   {
     id: "github",
-    name: "GitHub",
+    name: "kostya-zero",
     icon: <FaGithub className="w-6 h-6" />,
     url: "https://github.com/kostya-zero",
   },
   {
     id: "telegram",
-    name: "Telegram",
+    name: "@kostya_zero",
     icon: <FaTelegram className="w-6 h-6" />,
     url: "https://t.me/kostya_zero",
   },
