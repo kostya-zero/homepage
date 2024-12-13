@@ -148,7 +148,7 @@ export default function Home() {
 
       <div className="mx-[15px] flex flex-col my-[25px]">
         <SectionTitle>Projects</SectionTitle>
-        <div className="grid gap-4 grid-cols-2">
+        <div className="grid gap-4 grid-cols-1 lg:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
