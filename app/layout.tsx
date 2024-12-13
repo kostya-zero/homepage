@@ -6,6 +6,7 @@ import SessionProvider from "@/components/sessionwrapper";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 import { Toaster } from "@/components/ui/toaster";
+import { SnowfallEffect } from "@/components/snowfall";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const josefinsans = Josefin_Sans({
@@ -20,19 +21,19 @@ export default async function RootLayout({
 }>) {
   const session = await getServerSession(authOptions);
   return (
-    <html lang="en" className="">
-      <body
-        className={`${inter.variable} ${josefinsans.variable} antialiased transition-all duration-200 ease-in-out font-inter bg-neutral-950 text-netrual-50 dark"`}
-      >
+    <html lang="en" className={`${inter.variable} ${josefinsans.variable}`}>
+      <body className="min-h-[98svh] bg-[#101010] max-w-[620px] mx-auto font-sans antialiased">
         <SessionProvider session={session}>
-          {/* <div className="w-full bg-neutral-300 h-[2px]"></div> */}
-          <main className="max-w-[620px] dark sm:mx-auto">
-            <NavBar />
+        <SnowfallEffect />
+          <NavBar />
+          
+          <main className=" dark sm:mx-auto">
             {children}
-            <Footer />
+            
           </main>
+          <Footer />
+          <Toaster />
         </SessionProvider>
-        <Toaster />
       </body>
     </html>
   );
