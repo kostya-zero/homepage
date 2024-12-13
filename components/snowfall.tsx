@@ -9,8 +9,8 @@ export const SnowfallEffect = () => {
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 50 }}>
       <Snowfall 
-        color="#fff"
-        snowflakeCount={200}
+        color="#888888"
+        snowflakeCount={250}
         radius={[0.3, 1.5]}
         style={{
           position: 'fixed',

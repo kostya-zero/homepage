@@ -7,6 +7,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 import { Toaster } from "@/components/ui/toaster";
 import { SnowfallEffect } from "@/components/snowfall";
+import { ChristmasLights } from "@/components/christmas-lights";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const josefinsans = Josefin_Sans({
@@ -22,14 +23,13 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   return (
     <html lang="en" className={`${inter.variable} ${josefinsans.variable}`}>
-      <body className="min-h-[98svh] bg-[#101010] max-w-[620px] mx-auto font-sans antialiased">
+      <body className="min-h-[85svh] bg-[#101010] max-w-[620px] mx-auto font-sans antialiased">
         <SessionProvider session={session}>
-        <SnowfallEffect />
+          <ChristmasLights />
+          <SnowfallEffect />
           <NavBar />
-          
-          <main className=" dark sm:mx-auto">
+          <main className="dark sm:mx-auto">
             {children}
-            
           </main>
           <Footer />
           <Toaster />

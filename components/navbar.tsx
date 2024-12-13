@@ -4,7 +4,7 @@ import { Icon } from "./icon";
 export default async function NavBar() {
   return (
     <>
-      <header className="flex items-center justify-between mt-[16px] w- m-[16px]">
+      <header className="flex items-center justify-between mt-[32px] m-[16px]">
         <Link href="/">
           <Icon />
         </Link>

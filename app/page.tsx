@@ -3,7 +3,7 @@ import { SectionTitle } from "@/components/sectiontitle";
 import { Metadata } from "next";
 import Link from "next/link";
 import { FC, type JSX } from "react";
-import { FaGithub, FaTelegram } from "react-icons/fa6";
+import { FaGithub, FaRadiation, FaTelegram } from "react-icons/fa6";
 import { FiArrowUpRight, FiPackage } from "react-icons/fi";
 import { IoImage, IoPlayForward } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
@@ -29,21 +29,28 @@ const projects: Project[] = [
     id: "enjo",
     name: "Enjo",
     description: "Yet another projects manager.",
-    icon: <FiPackage className="m-auto h-full text-2xl" />,
+    icon: <FiPackage className="h-full w-10 mb-4 text-neutral-50" />,
     url: "https://github.com/kostya-zero/enjo",
   },
   {
     id: "tesuto",
     name: "Tesuto",
     description: "Lightweight automation tool.",
-    icon: <IoPlayForward className="m-auto h-full text-2xl" />,
+    icon: <IoPlayForward className="h-full w-10 mb-4 text-neutral-50" />,
     url: "https://github.com/kostya-zero/tesuto",
   },
   {
     id: "resup",
     name: "Resup",
-    description: "A terminal frontend for Real-ESRGAN.",
-    icon: <IoImage className="m-auto h-full text-2xl" />,
+    description: "A CLI frontend for Real-ESRGAN.",
+    icon: <IoImage className="h-full w-10 mb-4 text-neutral-50" />,
+    url: "https://github.com/kostya-zero/resup",
+  },
+  {
+    id: "anomaly",
+    name: "AnomalyLauncher",
+    description: "Launcher for Stalker Anomaly.",
+    icon: <FaRadiation className="h-full w-10 mb-4 text-neutral-50" />,
     url: "https://github.com/kostya-zero/resup",
   },
 ];
@@ -95,15 +102,13 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = ({ project, icon }) => {
   return (
     <Link href={project.url}>
-      <div className="flex flex-row gap-6 items-center mb-4 transition duration-200 hover:bg-neutral-900 p-2 rounded-xl cursor-pointer">
-        <div className="w-16 h-16 bg-neutral-800 text-neutral-50 rounded-full">
-          {icon}
-        </div>
+      <div className="flex flex-col items-start transition bg-neutral-900 border border-neutral-700 hover:border-neutral-500 p-4 h-full duration-200 hover:bg-neutral-800 rounded-xl cursor-pointer">
+        {icon}
         <div className="flex flex-col items-start">
-          <p className="text-neutral-50 font-bold font-worksans text-lg">
+          <p className="text-neutral-100 font-bold font-worksans text-2xl">
             {project.name}
           </p>
-          <p className="text-neutral-300">{project.description}</p>
+          <p className="text-neutral-300 text-md">{project.description}</p>
         </div>
       </div>
     </Link>
@@ -141,11 +146,17 @@ export default function Home() {
       <Hero>An indie developer and a system administrator</Hero>
       <Bio />
 
-      <div className="mx-[15px] my-[25px]">
+      <div className="mx-[15px] flex flex-col my-[25px]">
         <SectionTitle>Projects</SectionTitle>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} icon={project.icon} />
-        ))}
+        <div className="grid gap-4 grid-cols-2">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              icon={project.icon}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="mx-[15px] my-[25px]">
