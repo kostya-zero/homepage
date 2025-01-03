@@ -88,13 +88,16 @@ export default async function Wallpapers() {
         </Text>
       </SectionWrapper>
       <SectionWrapper>
-        <div className="w-full mt-6 mb-6 grid grid-cols-2 gap-10">
+        <div className="w-full mt-6 mb-6 grid grid-cols-1 md:grid-cols-2 gap-10">
           {wallpapers.map((wallpaper, index) => (
-            <div key={index} className="flex flex-col items-center justify-between">
+            <div
+              key={index}
+              className="flex flex-col items-center justify-between"
+            >
               <Link
                 href={wallpaper.imageUrl}
                 target="_blank"
-                className="h-[160px] w-full"
+                className="h-[220px] w-full md:h-[160px]"
               >
                 <Image
                   key={wallpaper.name}
@@ -102,7 +105,7 @@ export default async function Wallpapers() {
                   alt={wallpaper.name}
                   width={500}
                   height={200}
-                  className="w-full object-cover h-[160px] ease-in-out rounded-lg transition duration-300 hover:scale-105 cursor-pointer hover:shadow-xl"
+                  className="w-full object-cover h-[220px] md:h-[160px] ease-in-out rounded-lg transition duration-300 hover:scale-105 cursor-pointer hover:shadow-xl"
                 />
               </Link>
               <Link href={wallpaper.imageSourceUrl} target="_blank">
