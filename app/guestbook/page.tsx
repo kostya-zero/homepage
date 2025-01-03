@@ -1,5 +1,5 @@
-import { Hero } from "@/components/hero";
-import { SectionTitle } from "@/components/sectiontitle";
+import { Hero } from "@/components/blocks/hero";
+import { SectionTitle } from "@/components/blocks/sectiontitle";
 import { Button } from "@/components/ui/button";
 import { formatDistanceToNow } from "date-fns";
 import { enUS } from "date-fns/locale";
@@ -23,9 +23,17 @@ interface GuestbookMessage {
   postedAt: Date;
 }
 
+type GuestbookDBEntry = {
+  id: number;
+  email: string;
+  content: string;
+  postedAt: Date;
+  username: string;
+}
+
 export default async function Guestbook() {
   const session = await getServerSession(authOptions);
-  const messages = await prisma.guests.findMany({
+  const messages: Array<GuestbookDBEntry> = await prisma.guests.findMany({
     orderBy: {
       postedAt: "desc",
     },
@@ -42,7 +50,7 @@ export default async function Guestbook() {
     ) {
       return;
     }
-    const messageSent = await prisma.guests.create({
+    await prisma.guests.create({
       data: {
         content: formData.get("message")?.toString() as string,
         username: session?.user?.name as string,
@@ -101,8 +109,8 @@ async function GuestbookEntry({
   postedAt,
 }: GuestbookMessage) {
   return (
-    <div className="flex flex-col my-3 w-full bg-neutral-900 p-2 rounded-lg">
-      <p className="text-neutral-300 font-josefin">
+    <div className="flex flex-col my-3 w-full bg-neutral-950 border border-neutral-800 p-4 rounded-lg">
+      <p className="text-neutral-300 font-funnel">
         {username} -{" "}
         {formatDistanceToNow(postedAt, { addSuffix: true, locale: enUS })}
       </p>

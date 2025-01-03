@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "./icon";
+import HoverText from "./blocks/hovertext";
 
 export default async function NavBar() {
   return (
@@ -10,24 +11,18 @@ export default async function NavBar() {
         </Link>
 
         <div className="flex items-center">
-          <div className="text-neutral-300 flex flex-row items-center gap-5 transition duration-200">
-            <Link
-              href="/"
-              className="hover:text-neutral-50 transition duration-200"
-            >
-              <p>Home</p>
-            </Link>
+          <div className="text-neutral-400 flex flex-row items-center gap-5 transition duration-200">
             <Link
               href="/guestbook"
               className="hover:text-neutral-50 transition duration-200"
             >
-              <p>Guestbook</p>
+              <HoverText>Guestbook</HoverText>
             </Link>
             <Link
-              href="https://github.com/kostya-zero"
+              href="/wallpapers"
               className="hover:text-neutral-50 transition duration-200"
             >
-              <p>GitHub</p>
+              <HoverText>Wallpapers</HoverText>
             </Link>
           </div>
         </div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default async function NotFound() {
   return (
     <>
-      <p className="text-7xl font-bold font-josefin text-center leading-[1.0] mt-7 text-neutral-50">
+      <p className="text-7xl font-bold font-funnel text-center leading-[1.0] mt-7 text-neutral-50">
         404
       </p>
       <p className="text-center italic mb-7 text-neutral-300">

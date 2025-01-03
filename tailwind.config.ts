@@ -35,7 +35,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        josefin: ["var(--font-josefin)", ...fontFamily.sans],
+        funnel: ["var(--font-funnel)", ...fontFamily.sans],
         inter: ["var(--font-inter)", ...fontFamily.sans],
       },
       colors: {

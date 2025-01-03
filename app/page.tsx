@@ -1,12 +1,13 @@
-import { Hero } from "@/components/hero";
-import { SectionTitle } from "@/components/sectiontitle";
+import { Hero } from "@/components/blocks/hero";
+import { SectionTitle } from "@/components/blocks/sectiontitle";
 import { Metadata } from "next";
 import Link from "next/link";
 import { FC, type JSX } from "react";
-import { FaGithub, FaRadiation, FaTelegram } from "react-icons/fa6";
-import { FiArrowUpRight, FiPackage } from "react-icons/fi";
-import { IoImage, IoPlayForward } from "react-icons/io5";
+import { FaGithub, FaRadiation, FaTelegram, FaToolbox } from "react-icons/fa6";
+import { FiArrowUpRight } from "react-icons/fi";
+import { IoPlayForward } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
+import { HiMiniRectangleStack } from "react-icons/hi2";
 
 interface Project {
   id: string;
@@ -21,6 +22,7 @@ interface Contact {
   name: string;
   icon: JSX.Element;
   url: string;
+  wip?: boolean;
 }
 
 // Content Data
@@ -29,7 +31,7 @@ const projects: Project[] = [
     id: "enjo",
     name: "Enjo",
     description: "Yet another projects manager.",
-    icon: <FiPackage className="h-full w-10 mb-4 text-neutral-50" />,
+    icon: <HiMiniRectangleStack className="h-full w-10 mb-4 text-neutral-50" />,
     url: "https://github.com/kostya-zero/enjo",
   },
   {
@@ -40,18 +42,18 @@ const projects: Project[] = [
     url: "https://github.com/kostya-zero/tesuto",
   },
   {
-    id: "resup",
-    name: "Resup",
-    description: "A CLI frontend for Real-ESRGAN.",
-    icon: <IoImage className="h-full w-10 mb-4 text-neutral-50" />,
-    url: "https://github.com/kostya-zero/resup",
+    id: "pipe",
+    name: "Pipe",
+    description: "A build system for Python",
+    icon: <FaToolbox className="h-full w-10 mb-4 text-neutral-50" />,
+    url: "https://github.com/kostya-zero/pipe",
   },
   {
     id: "anomaly",
     name: "AnomalyLauncher",
     description: "Launcher for Stalker Anomaly.",
     icon: <FaRadiation className="h-full w-10 mb-4 text-neutral-50" />,
-    url: "https://github.com/kostya-zero/resup",
+    url: "https://github.com/kostya-zero/AnomalyLauncher",
   },
 ];
 
