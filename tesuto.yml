@@ -1,0 +1,20 @@
+name: Homepage
+require: 
+  - pnpm
+  - git
+  - pm2
+jobs:
+  prepare:
+  - name: Stop Homepage
+    run: pm2 stop homepage
+    quite: true
+  update:
+  - name: Pull Changes
+    run: git pull
+  - name: Install Dependencies
+    run: pnpm install
+  - name: Build
+    run: pnpm build
+  restore:
+  - name: Start Homepage
+    run: pm2 start homepage
