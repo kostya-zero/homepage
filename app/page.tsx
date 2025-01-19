@@ -104,7 +104,7 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = ({ project, icon }) => {
   return (
     <Link href={project.url}>
-      <div className="flex flex-col items-start transition bg-neutral-900 border border-neutral-700 hover:border-neutral-500 p-4 h-full duration-200 hover:bg-neutral-800 rounded-xl cursor-pointer">
+      <div className="flex flex-col items-start transition bg-neutral-900 border border-neutral-700 hover:border-neutral-500 p-4 h-full duration-200 hover:bg-neutral-800 rounded-lg cursor-pointer">
         {icon}
         <div className="flex flex-col items-start">
           <p className="text-neutral-100 font-bold font-worksans text-2xl">

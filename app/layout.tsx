@@ -6,8 +6,6 @@ import SessionProvider from "@/components/sessionwrapper";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 import { Toaster } from "@/components/ui/toaster";
-import { SnowfallEffect } from "@/components/snowfall";
-import { ChristmasLights } from "@/components/christmas-lights";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const funnel_display = Funnel_Display({
@@ -25,8 +23,8 @@ export default async function RootLayout({
     <html lang="en" className={`${inter.variable} ${funnel_display.variable}`}>
       <body className="min-h-[85svh] bg-[#101010] max-w-[620px] mx-auto font-inter antialiased">
         <SessionProvider session={session}>
-          <ChristmasLights />
-          <SnowfallEffect />
+          {/* <ChristmasLights /> */}
+          {/* <SnowfallEffect /> */}
           <NavBar />
           <main className="dark sm:mx-auto my-2">
             {children}
