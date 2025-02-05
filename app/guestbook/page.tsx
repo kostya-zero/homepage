@@ -13,8 +13,8 @@ import SignOutButton from "@/components/signoutbutton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Konstatin Zero",
-  description: "My own homepage website.",
+  title: "Guestbook",
+  description: "Guestbook for visitors.",
 };
 
 interface GuestbookMessage {
@@ -29,7 +29,7 @@ type GuestbookDBEntry = {
   content: string;
   postedAt: Date;
   username: string;
-}
+};
 
 export default async function Guestbook() {
   const session = await getServerSession(authOptions);
@@ -62,9 +62,9 @@ export default async function Guestbook() {
   }
 
   return (
-    <>
+    <main className="flex flex-col gap-4 mx-4">
       <Hero>Guestbook</Hero>
-      <div className="mx-[15px] my-[25px]">
+      <div className="">
         <p className="text-neutral-300 ">
           This is a guest book as you can see. You can leave your message here
           if you wish. Authorization with GitHub is required.
@@ -87,7 +87,7 @@ export default async function Guestbook() {
           </>
         )}
       </div>
-      <div className="mx-[15px] my-[25px]">
+      <div className="">
         <SectionTitle>Messages</SectionTitle>
 
         {messages.map((message) => (
@@ -99,7 +99,7 @@ export default async function Guestbook() {
           />
         ))}
       </div>
-    </>
+    </main>
   );
 }
 

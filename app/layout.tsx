@@ -6,12 +6,21 @@ import SessionProvider from "@/components/sessionwrapper";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 import { Toaster } from "@/components/ui/toaster";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const funnel_display = Funnel_Display({
   subsets: ["latin"],
   variable: "--font-funnel",
 });
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Konstatin Zero",
+    template: "%s // Konstatin Zero",
+  },
+  description: "My own homepage website.",
+};
 
 export default async function RootLayout({
   children,
@@ -23,12 +32,8 @@ export default async function RootLayout({
     <html lang="en" className={`${inter.variable} ${funnel_display.variable}`}>
       <body className="min-h-[85svh] bg-[#101010] max-w-[620px] mx-auto font-inter antialiased">
         <SessionProvider session={session}>
-          {/* <ChristmasLights /> */}
-          {/* <SnowfallEffect /> */}
           <NavBar />
-          <main className="dark sm:mx-auto my-2">
-            {children}
-          </main>
+          <main className="dark sm:mx-auto mb-2">{children}</main>
           <Footer />
           <Toaster />
         </SessionProvider>

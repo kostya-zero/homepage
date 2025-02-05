@@ -9,7 +9,13 @@ export const Icon = ({ ...props }: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <g clip-path="url(#clip0_27_25)">
+    <defs>
+      <clipPath id="clip0_27_25">
+        <rect width="256" height="256" fill="white" />
+      </clipPath>
+    </defs>
+    {/* Ensure you use clipPath in camelCase when referencing it */}
+    <g clipPath="url(#clip0_27_25)">
       <rect
         x="-105"
         y="255.652"
@@ -35,10 +41,5 @@ export const Icon = ({ ...props }: SVGProps<SVGSVGElement>) => (
         fill="white"
       />
     </g>
-    <defs>
-      <clipPath id="clip0_27_25">
-        <rect width="256" height="256" fill="white" />
-      </clipPath>
-    </defs>
   </svg>
 );
