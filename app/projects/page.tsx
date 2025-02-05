@@ -1,18 +1,13 @@
-"use client";
-
 import { Hero } from "@/components/blocks/hero";
 import { JSX } from "react";
-import { Octokit } from "@octokit/rest";
-import { FaRadiation, FaStar, FaToolbox } from "react-icons/fa6";
+import { FaRadiation, FaToolbox } from "react-icons/fa6";
 import { HiMiniRectangleStack } from "react-icons/hi2";
 import { IoPlayForward } from "react-icons/io5";
-import { formatDistanceToNow } from "date-fns";
+import ProjectCard from "@/components/projectcard";
 
 // export const revalidate = 100;
 
-const github = new Octokit({});
-
-interface Project {
+export interface Project {
   id: string;
   name: string;
   description: string;
@@ -51,7 +46,7 @@ const projects: Project[] = [
   },
 ];
 
-export default function Blog() {
+export default async function Projects() {
   return (
     <main className="flex flex-col gap-4 mx-4">
       <Hero>Projects</Hero>
@@ -68,48 +63,3 @@ export default function Blog() {
   );
 }
 
-async function ProjectCard({ project }: { project: Project }) {
-  const repo = await github.repos
-    .get({
-      owner: "kostya-zero",
-      repo: project.id,
-    })
-    .then((res) => res)
-    .catch(() => null);
-
-  // if (repo === null) {
-  //   return (
-  //     <figure className="w-full flex flex-col p-4 gap-2 bg-neutral-950 border border-neutral-800 rounded-lg ">
-  //       <p>Failed to fetch project {project.name}</p>
-  //     </figure>
-  //   );
-  // }
-
-  const stars = repo?.data.stargazers_count || null;
-
-  return (
-    <figure className="w-full flex flex-col p-4 gap-2 bg-neutral-950 border border-neutral-800 rounded-lg cursor-pointer transition duration-200 hover:border-neutral-700 hover:bg-neutral-900">
-      <div className="flex flex-row justify-between items-center w-full">
-        <p className="text-lg text-white font-bold font-funnel">
-          {project.name}
-        </p>
-        <div className="flex flex-row gap-2 text-neutral-50 items-center">
-          <FaStar />
-          {stars ? stars : "Unknown"}
-        </div>
-      </div>
-      <p>{project.description}</p>
-      <div className="flex flex-row justify-between items-center w-full text-neutral-600">
-        <p>
-          Updated{" "}
-          {repo
-            ? formatDistanceToNow(new Date(repo?.data.updated_at), {
-                addSuffix: true,
-              })
-            : "recently"}
-        </p>
-        <p>Written in {repo?.data.language}</p>
-      </div>
-    </figure>
-  );
-}
