@@ -17,7 +17,7 @@ const funnel_display = Funnel_Display({
 export const metadata: Metadata = {
   title: {
     absolute: "Konstatin Zero",
-    template: "%s // Konstatin Zero",
+    template: "%s - Konstatin Zero",
   },
   description: "My own homepage website.",
 };

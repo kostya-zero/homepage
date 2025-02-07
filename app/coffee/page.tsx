@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Konstatin Zero",
+  title: "Teapot",
   description: "I'm a teapot!",
 };
 

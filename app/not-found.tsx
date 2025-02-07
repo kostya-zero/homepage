@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Konstatin Zero",
-  description: "Page not found!",
+  title: "Page not Found",
+  description: "This is a wrong page.",
 };
 
 export default async function NotFound() {

@@ -4,8 +4,12 @@ import { FaRadiation, FaToolbox } from "react-icons/fa6";
 import { HiMiniRectangleStack } from "react-icons/hi2";
 import { IoPlayForward } from "react-icons/io5";
 import ProjectCard from "@/components/projectcard";
+import { Metadata } from "next";
 
-// export const revalidate = 100;
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "List of my projects.",
+};
 
 export interface Project {
   id: string;
