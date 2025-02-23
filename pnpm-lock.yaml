@@ -11,9 +11,18 @@ importers:
       '@notionhq/client':
         specifier: ^2.2.15
         version: 2.2.15
+      '@octokit/endpoint':
+        specifier: '>=10.1.3'
+        version: 10.1.3
       '@octokit/plugin-paginate-rest':
         specifier: '>=11.4.1'
         version: 11.4.2(@octokit/core@6.1.3)
+      '@octokit/request':
+        specifier: '>=9.2.1'
+        version: 9.2.2
+      '@octokit/request-error':
+        specifier: '>=6.1.7'
+        version: 6.1.7
       '@octokit/rest':
         specifier: ^21.1.0
         version: 21.1.0
@@ -427,8 +436,8 @@ packages:
     resolution: {integrity: sha512-z+j7DixNnfpdToYsOutStDgeRzJSMnbj8T1C/oQjB6Aa+kRfNjs/Fn7W6c8bmlt6mfy3FkgeKBRnDjxQow5dow==}
     engines: {node: '>= 18'}
 
-  '@octokit/endpoint@10.1.2':
-    resolution: {integrity: sha512-XybpFv9Ms4hX5OCHMZqyODYqGTZ3H6K6Vva+M9LR7ib/xr1y1ZnlChYv9H680y77Vd/i/k+thXApeRASBQkzhA==}
+  '@octokit/endpoint@10.1.3':
+    resolution: {integrity: sha512-nBRBMpKPhQUxCsQQeW+rCJ/OPSMcj3g0nfHn01zGYZXuNDvvXudF/TYY6APj5THlurerpFN4a/dQAIAaM6BYhA==}
     engines: {node: '>= 18'}
 
   '@octokit/graphql@8.1.2':
@@ -489,12 +498,12 @@ packages:
     peerDependencies:
       '@octokit/core': ^6.1.3
 
-  '@octokit/request-error@6.1.6':
-    resolution: {integrity: sha512-pqnVKYo/at0NuOjinrgcQYpEbv4snvP3bKMRqHaD9kIsk9u1LCpb2smHZi8/qJfgeNqLo5hNW4Z7FezNdEo0xg==}
+  '@octokit/request-error@6.1.7':
+    resolution: {integrity: sha512-69NIppAwaauwZv6aOzb+VVLwt+0havz9GT5YplkeJv7fG7a40qpLt/yZKyiDxAhgz0EtgNdNcb96Z0u+Zyuy2g==}
     engines: {node: '>= 18'}
 
-  '@octokit/request@9.1.4':
-    resolution: {integrity: sha512-tMbOwGm6wDII6vygP3wUVqFTw3Aoo0FnVQyhihh8vVq12uO3P+vQZeo2CKMpWtPSogpACD0yyZAlVlQnjW71DA==}
+  '@octokit/request@9.2.2':
+    resolution: {integrity: sha512-dZl0ZHx6gOQGcffgm1/Sf6JfEpmh34v3Af2Uci02vzUYz6qEN6zepoRtmybWXIGXFIK8K9ylE3b+duCWqhArtg==}
     engines: {node: '>= 18'}
 
   '@octokit/rest@21.1.0':
@@ -2680,8 +2689,8 @@ snapshots:
     dependencies:
       '@octokit/auth-oauth-app': 8.1.2
       '@octokit/auth-oauth-user': 5.1.2
-      '@octokit/request': 9.1.4
-      '@octokit/request-error': 6.1.6
+      '@octokit/request': 9.2.2
+      '@octokit/request-error': 6.1.7
       '@octokit/types': 13.7.0
       toad-cache: 3.7.0
       universal-github-app-jwt: 2.2.0
@@ -2691,14 +2700,14 @@ snapshots:
     dependencies:
       '@octokit/auth-oauth-device': 7.1.2
       '@octokit/auth-oauth-user': 5.1.2
-      '@octokit/request': 9.1.4
+      '@octokit/request': 9.2.2
       '@octokit/types': 13.7.0
       universal-user-agent: 7.0.2
 
   '@octokit/auth-oauth-device@7.1.2':
     dependencies:
       '@octokit/oauth-methods': 5.1.3
-      '@octokit/request': 9.1.4
+      '@octokit/request': 9.2.2
       '@octokit/types': 13.7.0
       universal-user-agent: 7.0.2
 
@@ -2706,7 +2715,7 @@ snapshots:
     dependencies:
       '@octokit/auth-oauth-device': 7.1.2
       '@octokit/oauth-methods': 5.1.3
-      '@octokit/request': 9.1.4
+      '@octokit/request': 9.2.2
       '@octokit/types': 13.7.0
       universal-user-agent: 7.0.2
 
@@ -2714,27 +2723,27 @@ snapshots:
 
   '@octokit/auth-unauthenticated@6.1.1':
     dependencies:
-      '@octokit/request-error': 6.1.6
+      '@octokit/request-error': 6.1.7
       '@octokit/types': 13.7.0
 
   '@octokit/core@6.1.3':
     dependencies:
       '@octokit/auth-token': 5.1.1
       '@octokit/graphql': 8.1.2
-      '@octokit/request': 9.1.4
-      '@octokit/request-error': 6.1.6
+      '@octokit/request': 9.2.2
+      '@octokit/request-error': 6.1.7
       '@octokit/types': 13.7.0
       before-after-hook: 3.0.2
       universal-user-agent: 7.0.2
 
-  '@octokit/endpoint@10.1.2':
+  '@octokit/endpoint@10.1.3':
     dependencies:
       '@octokit/types': 13.7.0
       universal-user-agent: 7.0.2
 
   '@octokit/graphql@8.1.2':
     dependencies:
-      '@octokit/request': 9.1.4
+      '@octokit/request': 9.2.2
       '@octokit/types': 13.7.0
       universal-user-agent: 7.0.2
 
@@ -2754,8 +2763,8 @@ snapshots:
   '@octokit/oauth-methods@5.1.3':
     dependencies:
       '@octokit/oauth-authorization-url': 7.1.1
-      '@octokit/request': 9.1.4
-      '@octokit/request-error': 6.1.6
+      '@octokit/request': 9.2.2
+      '@octokit/request-error': 6.1.7
       '@octokit/types': 13.7.0
 
   '@octokit/openapi-types@23.0.1': {}
@@ -2783,7 +2792,7 @@ snapshots:
   '@octokit/plugin-retry@7.1.3(@octokit/core@6.1.3)':
     dependencies:
       '@octokit/core': 6.1.3
-      '@octokit/request-error': 6.1.6
+      '@octokit/request-error': 6.1.7
       '@octokit/types': 13.7.0
       bottleneck: 2.19.5
 
@@ -2793,14 +2802,14 @@ snapshots:
       '@octokit/types': 13.7.0
       bottleneck: 2.19.5
 
-  '@octokit/request-error@6.1.6':
+  '@octokit/request-error@6.1.7':
     dependencies:
       '@octokit/types': 13.7.0
 
-  '@octokit/request@9.1.4':
+  '@octokit/request@9.2.2':
     dependencies:
-      '@octokit/endpoint': 10.1.2
-      '@octokit/request-error': 6.1.6
+      '@octokit/endpoint': 10.1.3
+      '@octokit/request-error': 6.1.7
       '@octokit/types': 13.7.0
       fast-content-type-parse: 2.0.0
       universal-user-agent: 7.0.2
@@ -2821,7 +2830,7 @@ snapshots:
   '@octokit/webhooks@13.4.2':
     dependencies:
       '@octokit/openapi-webhooks-types': 8.5.1
-      '@octokit/request-error': 6.1.6
+      '@octokit/request-error': 6.1.7
       '@octokit/webhooks-methods': 5.1.0
 
   '@panva/hkdf@1.2.1': {}
@@ -4355,7 +4364,7 @@ snapshots:
       '@octokit/plugin-rest-endpoint-methods': 13.3.0(@octokit/core@6.1.3)
       '@octokit/plugin-retry': 7.1.3(@octokit/core@6.1.3)
       '@octokit/plugin-throttling': 9.4.0(@octokit/core@6.1.3)
-      '@octokit/request-error': 6.1.6
+      '@octokit/request-error': 6.1.7
       '@octokit/types': 13.7.0
 
   oidc-token-hash@5.0.3: {}
