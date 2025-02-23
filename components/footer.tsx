@@ -4,7 +4,7 @@ import HoverText from "./blocks/hovertext";
 export default function Footer() {
   return (
     <footer className="flex flex-col md:flex-row justify-between items-center mb-[45px] p-4 text-sm">
-      <p className=" text-neutral-500">© Konstantin Zhigaylo 2024.</p>
+      <p className=" text-neutral-500">© 2025 Konstantin Zhigaylo</p>
       <div className="flex text-neutral-500 items-center">
         <p>The source code is available on</p>
         <Link
