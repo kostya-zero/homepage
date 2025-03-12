@@ -23,12 +23,12 @@ export default function ProjectCard({ project }: { project: Project }) {
         setLastUpdated(new Date(response.data.updated_at));
         setLanguage(response.data.language!);
       });
-  }, []);
+  });
 
   return (
-    <figure className="w-full flex flex-col p-4 gap-2 bg-neutral-950 border border-neutral-800 rounded-lg cursor-pointer transition duration-200 hover:border-neutral-700 hover:bg-neutral-900">
+    <figure className="w-full flex flex-col p-4 gap-2 bg-neutral-950 border border-neutral-800 rounded-lg cursor-pointer transition duration-200 hover:border-neutral-600 hover:bg-neutral-800">
       <div className="flex flex-row justify-between items-center w-full">
-        <p className="text-lg text-white font-bold font-funnel">
+        <p className="text-xl text-white font-bold font-funnel">
           {project.name}
         </p>
         <div className="flex flex-row gap-2 text-neutral-50 items-center">

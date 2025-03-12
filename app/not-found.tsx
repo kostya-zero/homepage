@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "This is a wrong page.",
 };
 
-export default async function NotFound() {
+export default function NotFound() {
   return (
     <>
       <p className="text-7xl font-bold font-funnel text-center leading-[1.0] mt-7 text-neutral-50">

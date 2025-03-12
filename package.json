@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.15",
     "@octokit/rest": "^21.1.0",
     "@octokit/plugin-paginate-rest": ">=11.4.1",
     "@octokit/request": ">=9.2.1",

@@ -1,4 +1,4 @@
-import { Hero } from "@/components/blocks/hero";
+import Hero from "@/components/blocks/hero";
 import { SectionTitle } from "@/components/blocks/sectiontitle";
 import { Button } from "@/components/ui/button";
 import { formatDistanceToNow } from "date-fns";

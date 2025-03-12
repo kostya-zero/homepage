@@ -1,10 +1,12 @@
-import { Hero } from "@/components/blocks/hero";
+import Hero from "@/components/blocks/hero";
 import { JSX } from "react";
 import { FaRadiation, FaToolbox } from "react-icons/fa6";
 import { HiMiniRectangleStack } from "react-icons/hi2";
 import { IoPlayForward } from "react-icons/io5";
 import ProjectCard from "@/components/projectcard";
 import { Metadata } from "next";
+import Text from "@/components/blocks/text";
+import MainContent from "@/components/blocks/maincontent";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -52,18 +54,17 @@ const projects: Project[] = [
 
 export default async function Projects() {
   return (
-    <main className="flex flex-col gap-4 mx-4">
+    <MainContent>
       <Hero>Projects</Hero>
-      <p className="text-neutral-300 ">
-        This is my projects that I am working with right now. You can click on a
-        project&apos;s card to go to it&apos;s GitHub page.{" "}
-      </p>
+      <Text>
+        This is a list of my projects that I am currently working on. You can click on a
+        project&apos;s card to go to its GitHub page.{" "}
+      </Text>
       <div className="flex flex-col gap-4 items-center mb-4 text-neutral-400 w-full">
-        {projects.map((project, index) => (
-          <ProjectCard project={project} key={index} />
+        {projects.map((project) => (
+          <ProjectCard project={project} key={project.id} />
         ))}
       </div>
-    </main>
+    </MainContent>
   );
 }
-
