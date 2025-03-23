@@ -6,6 +6,7 @@ import Text from "@/components/blocks/text";
 import { Contact } from "@/lib/types/contact.types";
 import { FaTelegram } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import BlurOutAnimation from "@/components/bluroutanimation";
 
 const contacts: Contact[] = [
   {
@@ -27,25 +28,39 @@ const contacts: Contact[] = [
 export default function Home() {
   return (
     <MainContent>
-      <Hero>Welcome</Hero>
-      <Text>
-        I am <Bold>Konstantin Zhigaylo</Bold> or <Bold>Kostya</Bold> for short.
-      </Text>
-      <Text>
-        I am a Rust developer, but I also use Next JS and TypeScript for
-        front-end development (like this web page). My journey in programming
-        began with C#, which I used to make GUIs for Windows using WinForms.
-        Most of the projects are forbidden anyway.
-      </Text>
-
-      <Text>
-        Feel free to reach out to me through any of the contacts below:
-      </Text>
-      <div className="flex flex-col gap-4 items-center mb-4 text-neutral-400">
-        {contacts.map((contact) => (
-          <ContactLink key={contact.id} contact={contact} icon={contact.icon} />
-        ))}
-      </div>
+      <BlurOutAnimation>
+        <Hero>Welcome</Hero>
+      </BlurOutAnimation>
+      <BlurOutAnimation index={1}>
+        <Text>
+          I am <Bold>Konstantin Zhigaylo</Bold> or <Bold>Kostya</Bold> for
+          short.
+        </Text>
+      </BlurOutAnimation>
+      <BlurOutAnimation index={2}>
+        <Text>
+          I am a Rust developer, but I also use Next JS and TypeScript for
+          front-end development (like this web page). My journey in programming
+          began with C#, which I used to make GUIs for Windows using WinForms.
+          Most of the projects are forbidden anyway.
+        </Text>
+      </BlurOutAnimation>
+      <BlurOutAnimation index={3}>
+        <Text>
+          Feel free to reach out to me through any of the contacts below:
+        </Text>
+      </BlurOutAnimation>
+      <BlurOutAnimation index={4}>
+        <div className="flex flex-col gap-4 items-center mb-4 text-neutral-400">
+          {contacts.map((contact) => (
+            <ContactLink
+              key={contact.id}
+              contact={contact}
+              icon={contact.icon}
+            />
+          ))}
+        </div>
+      </BlurOutAnimation>
     </MainContent>
   );
 }

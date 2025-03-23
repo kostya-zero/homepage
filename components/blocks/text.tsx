@@ -1,7 +1,3 @@
-export default async function Text({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Text({ children }: { children: React.ReactNode }) {
   return <p className="font-inter text-neutral-300">{children}</p>;
 }

@@ -11,6 +11,8 @@ import { authOptions } from "@/lib/authOptions";
 import AuthButton from "@/components/authbutton";
 import SignOutButton from "@/components/signoutbutton";
 import { Metadata } from "next";
+import MainContent from "@/components/blocks/maincontent";
+import BlurOutAnimation from "@/components/bluroutanimation";
 
 export const metadata: Metadata = {
   title: "Guestbook",
@@ -33,6 +35,13 @@ type GuestbookDBEntry = {
 
 export default async function Guestbook() {
   const session = await getServerSession(authOptions);
+  // For testing purposes
+  // const session = {
+  //   user: {
+  //     name: "Konstantin",
+  //     email: "zero@kostyazero.com",
+  //   },
+  // };
   const messages: Array<GuestbookDBEntry> = await prisma.guests.findMany({
     orderBy: {
       postedAt: "desc",
@@ -62,44 +71,54 @@ export default async function Guestbook() {
   }
 
   return (
-    <main className="flex flex-col gap-4 mx-4">
-      <Hero>Guestbook</Hero>
-      <div className="">
-        <p className="text-neutral-300 ">
-          This is a guest book as you can see. You can leave your message here
-          if you wish. Authorization with GitHub is required.
-        </p>
+    <MainContent>
+      <BlurOutAnimation index={0}>
+        <Hero>Guestbook</Hero>
+      </BlurOutAnimation>
 
-        {!session ? (
-          <AuthButton />
-        ) : (
-          <>
-            <form action={submitAction} className="mt-4 flex gap-2">
-              <Input
-                placeholder="Your message here..."
-                name="message"
-                className="w-full text-neutral-50"
-              />
-              <Button type="submit">Post</Button>
-            </form>
+      <div>
+        <BlurOutAnimation index={1}>
+          <p className="text-neutral-300 ">
+            This is a guest book as you can see. You can leave your message here
+            if you wish. Authorization with GitHub is required.
+          </p>
+        </BlurOutAnimation>
 
-            <SignOutButton />
-          </>
-        )}
+        <BlurOutAnimation index={2}>
+          {!session ? (
+            <AuthButton />
+          ) : (
+            <>
+              <form action={submitAction} className="mt-4 flex gap-2">
+                <Input
+                  placeholder="Your message here..."
+                  name="message"
+                  className="w-full text-neutral-50"
+                />
+                <Button type="submit">Post</Button>
+              </form>
+
+              <SignOutButton />
+            </>
+          )}
+        </BlurOutAnimation>
       </div>
-      <div className="">
-        <SectionTitle>Messages</SectionTitle>
+      <div>
+        <BlurOutAnimation index={3}>
+          <SectionTitle>Messages</SectionTitle>
+        </BlurOutAnimation>
 
-        {messages.map((message) => (
-          <GuestbookEntry
-            key={message.id}
-            message={message.content}
-            username={message.username}
-            postedAt={message.postedAt}
-          />
+        {messages.map((message, index) => (
+          <BlurOutAnimation index={index + 3} key={message.id}>
+            <GuestbookEntry
+              message={message.content}
+              username={message.username}
+              postedAt={message.postedAt}
+            />
+          </BlurOutAnimation>
         ))}
       </div>
-    </main>
+    </MainContent>
   );
 }
 

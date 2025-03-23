@@ -7,6 +7,7 @@ import ProjectCard from "@/components/projectcard";
 import { Metadata } from "next";
 import Text from "@/components/blocks/text";
 import MainContent from "@/components/blocks/maincontent";
+import BlurOutAnimation from "@/components/bluroutanimation";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -55,14 +56,25 @@ const projects: Project[] = [
 export default async function Projects() {
   return (
     <MainContent>
-      <Hero>Projects</Hero>
-      <Text>
-        This is a list of my projects that I am currently working on. You can click on a
-        project&apos;s card to go to its GitHub page.{" "}
-      </Text>
+      <BlurOutAnimation>
+        <Hero>Projects</Hero>
+      </BlurOutAnimation>
+      <BlurOutAnimation index={1}>
+        <Text>
+          This is a list of my projects that I am currently working on. You can
+          click on a project&apos;s card to go to its GitHub page.{" "}
+        </Text>
+      </BlurOutAnimation>
+
       <div className="flex flex-col gap-4 items-center mb-4 text-neutral-400 w-full">
-        {projects.map((project) => (
-          <ProjectCard project={project} key={project.id} />
+        {projects.map((project, index) => (
+          <BlurOutAnimation
+            index={index + 2}
+            className="w-full"
+            key={project.id}
+          >
+            <ProjectCard project={project} key={project.id} />
+          </BlurOutAnimation>
         ))}
       </div>
     </MainContent>
