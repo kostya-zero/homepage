@@ -128,7 +128,7 @@ async function GuestbookEntry({
   postedAt,
 }: GuestbookMessage) {
   return (
-    <div className="flex flex-col my-3 w-full bg-neutral-950 border border-neutral-800 p-4 rounded-lg">
+    <div className="flex flex-col my-3 w-full bg-neutral-900 border border-neutral-800 p-4 rounded-lg">
       <p className="text-neutral-300 font-funnel">
         {username} -{" "}
         {formatDistanceToNow(postedAt, { addSuffix: true, locale: enUS })}
