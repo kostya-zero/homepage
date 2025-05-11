@@ -13,6 +13,7 @@ import SignOutButton from "@/components/signoutbutton";
 import { Metadata } from "next";
 import MainContent from "@/components/blocks/maincontent";
 import BlurOutAnimation from "@/components/bluroutanimation";
+import Text from "@/components/blocks/text";
 
 export const metadata: Metadata = {
   title: "Guestbook",
@@ -78,10 +79,10 @@ export default async function Guestbook() {
 
       <div>
         <BlurOutAnimation index={1}>
-          <p className="text-neutral-300 ">
+          <Text>
             This is a guest book as you can see. You can leave your message here
             if you wish. Authorization with GitHub is required.
-          </p>
+          </Text>
         </BlurOutAnimation>
 
         <BlurOutAnimation index={2}>
@@ -129,11 +130,11 @@ async function GuestbookEntry({
 }: GuestbookMessage) {
   return (
     <div className="flex flex-col my-3 w-full bg-neutral-900 border border-neutral-800 p-4 rounded-lg">
-      <p className="text-neutral-300 font-funnel">
+      <p className="text-neutral-400 font-semibold font-funnel">
         {username} -{" "}
         {formatDistanceToNow(postedAt, { addSuffix: true, locale: enUS })}
       </p>
-      <p className="text-neutral-50">{message}</p>
+      <p className="text-neutral-50 font-geist font-light">{message}</p>
     </div>
   );
 }

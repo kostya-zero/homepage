@@ -15,7 +15,7 @@ export default function NavBar() {
       </Link>
 
       <div className="flex items-center">
-        <div className="text-neutral-400 flex flex-row items-center gap-5 transition duration-200">
+        <div className="text-neutral-500 flex flex-row items-center gap-5 transition duration-200">
           <Link
             href="/guestbook"
             className={`hover:text-neutral-50 transition duration-200 ${

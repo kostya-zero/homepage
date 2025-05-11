@@ -39,10 +39,12 @@ export default function Home() {
       </BlurOutAnimation>
       <BlurOutAnimation index={2}>
         <Text>
-          I am a Rust developer, but I also use Next JS and TypeScript for
-          front-end development (like this web page). My journey in programming
-          began with C#, which I used to make GUIs for Windows using WinForms.
-          Most of the projects are forbidden anyway.
+          I am primarily a <Bold>Rust developer</Bold>, with experience in
+          building front-end applications using <Bold>Next.js</Bold> and{" "}
+          <Bold>TypeScript</Bold>, as demonstrated by this website. My
+          programming journey started with <Bold>C#</Bold> and creating Windows
+          GUIs using <Bold>WinForms</Bold>. I am focused on building CLI
+          applications using <Bold>Rust</Bold>.
         </Text>
       </BlurOutAnimation>
       <BlurOutAnimation index={3}>
