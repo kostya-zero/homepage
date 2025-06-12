@@ -1,8 +1,4 @@
 import Hero from "@/components/blocks/hero";
-import { JSX } from "react";
-import { FaRadiation, FaToolbox } from "react-icons/fa6";
-import { HiMiniRectangleStack } from "react-icons/hi2";
-import { IoPlayForward } from "react-icons/io5";
 import ProjectCard from "@/components/projectcard";
 import { Metadata } from "next";
 import Text from "@/components/blocks/text";
@@ -18,7 +14,6 @@ export interface Project {
   id: string;
   name: string;
   description: string;
-  icon: JSX.Element;
   url: string;
 }
 
@@ -27,28 +22,24 @@ const projects: Project[] = [
     id: "enjo",
     name: "Enjo",
     description: "Yet another projects manager.",
-    icon: <HiMiniRectangleStack className="h-full w-10 mb-4 text-neutral-50" />,
     url: "https://github.com/kostya-zero/enjo",
   },
   {
-    id: "tesuto",
-    name: "Tesuto",
-    description: "Lightweight automation tool.",
-    icon: <IoPlayForward className="h-full w-10 mb-4 text-neutral-50" />,
-    url: "https://github.com/kostya-zero/tesuto",
+    id: "wsm",
+    name: "WSM",
+    description: "Windows Services Manager in CLI",
+    url: "https://github.com/kostya-zero/wsm",
   },
   {
-    id: "pipe",
-    name: "Pipe",
-    description: "A build system for Python",
-    icon: <FaToolbox className="h-full w-10 mb-4 text-neutral-50" />,
-    url: "https://github.com/kostya-zero/pipe",
+    id: "velocity",
+    name: "Velocity",
+    description: "A pure PowerShell prompt. ",
+    url: "https://github.com/kostya-zero/velocity",
   },
   {
     id: "AnomalyLauncher",
     name: "AnomalyLauncher",
     description: "Launcher for Stalker Anomaly.",
-    icon: <FaRadiation className="h-full w-10 mb-4 text-neutral-50" />,
     url: "https://github.com/kostya-zero/AnomalyLauncher",
   },
 ];
@@ -62,11 +53,11 @@ export default async function Projects() {
       <BlurOutAnimation index={1}>
         <Text>
           This is a list of my projects that I am currently working on. You can
-          click on a project&apos;s card to go to its GitHub page.{" "}
+          click on a project&apos;s card to go to its GitHub repository.
         </Text>
       </BlurOutAnimation>
 
-      <div className="flex flex-col gap-4 items-center mb-4 text-neutral-400 w-full">
+      <div className="flex-col gap-4 grid grid-cols-1 lg:grid-cols-2 items-center mb-4 text-neutral-400 w-full">
         {projects.map((project, index) => (
           <BlurOutAnimation
             index={index + 2}

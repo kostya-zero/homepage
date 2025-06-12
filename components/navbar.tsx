@@ -17,6 +17,14 @@ export default function NavBar() {
       <div className="flex items-center">
         <div className="text-neutral-500 flex flex-row items-center gap-5 transition duration-200">
           <Link
+            href="/"
+            className={`hover:text-neutral-50 transition duration-200 ${
+              pathname === "/" ? "text-neutral-50" : ""
+            }`}
+          >
+            <HoverText>Home</HoverText>
+          </Link>
+          <Link
             href="/guestbook"
             className={`hover:text-neutral-50 transition duration-200 ${
               pathname === "/guestbook" ? "text-neutral-50" : ""
