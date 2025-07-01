@@ -25,10 +25,10 @@ const projects: Project[] = [
     url: "https://github.com/kostya-zero/enjo",
   },
   {
-    id: "wsm",
-    name: "WSM",
-    description: "Windows Services Manager in CLI",
-    url: "https://github.com/kostya-zero/wsm",
+    id: "viz",
+    name: "Viz",
+    description: "Visualize structured data formats in a more pretty way. ",
+    url: "https://github.com/kostya-zero/viz",
   },
   {
     id: "velocity",
