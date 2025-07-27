@@ -25,10 +25,10 @@ const projects: Project[] = [
     url: "https://github.com/kostya-zero/enjo",
   },
   {
-    id: "viz",
-    name: "Viz",
+    id: "vizo",
+    name: "Vizo",
     description: "Visualizer for structured data formats.",
-    url: "https://github.com/kostya-zero/viz",
+    url: "https://github.com/kostya-zero/vizo",
   },
   {
     id: "velocity",
