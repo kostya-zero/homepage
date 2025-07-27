@@ -130,11 +130,13 @@ async function GuestbookEntry({
 }: GuestbookMessage) {
   return (
     <div className="flex flex-col my-3 w-full bg-neutral-900 border border-neutral-800 p-4 rounded-lg">
-      <p className="text-neutral-400 font-semibold font-funnel">
-        {username} -{" "}
-        {formatDistanceToNow(postedAt, { addSuffix: true, locale: enUS })}
+      <p className="text-neutral-400">
+        {username}
+        <span className="text-neutral-500 ml-1.5 font-light">
+          {formatDistanceToNow(postedAt, { addSuffix: true, locale: enUS })}
+        </span>
       </p>
-      <p className="text-neutral-50 font-geist font-light">{message}</p>
+      <p className="text-neutral-50 font-geist font-medium">{message}</p>
     </div>
   );
 }
