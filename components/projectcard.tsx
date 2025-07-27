@@ -3,6 +3,7 @@
 import { Project } from "@/app/projects/page";
 import { Octokit } from "@octokit/rest";
 import { formatDistanceToNow } from "date-fns";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa6";
 
@@ -24,7 +25,10 @@ export default function ProjectCard({ project }: { project: Project }) {
   }, []);
 
   return (
-    <figure className="w-full flex flex-col p-4 gap-2 bg-neutral-900 border border-neutral-800  rounded-lg cursor-pointer transition duration-200 hover:border-neutral-500 hover:bg-neutral-800">
+    <Link
+      href={project.url}
+      className="select-none w-full flex flex-col p-4 gap-2 bg-neutral-900 border border-neutral-800  rounded-lg cursor-pointer transition duration-200 hover:border-neutral-500 hover:bg-neutral-800"
+    >
       <div className="flex flex-row justify-between items-center w-full">
         <p className="text-lg text-white font-bold font-funnel">
           {project.name}
@@ -41,6 +45,6 @@ export default function ProjectCard({ project }: { project: Project }) {
           addSuffix: true,
         })}
       </p>
-    </figure>
+    </Link>
   );
 }

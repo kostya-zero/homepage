@@ -21,13 +21,13 @@ const projects: Project[] = [
   {
     id: "enjo",
     name: "Enjo",
-    description: "Yet another projects manager.",
+    description: "Yet another manager for your projects",
     url: "https://github.com/kostya-zero/enjo",
   },
   {
     id: "viz",
     name: "Viz",
-    description: "Visualize structured data formats in a more pretty way. ",
+    description: "Visualizer for structured data formats.",
     url: "https://github.com/kostya-zero/viz",
   },
   {
