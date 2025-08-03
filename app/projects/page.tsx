@@ -57,7 +57,7 @@ export default async function Projects() {
                 </Text>
             </BlurOutAnimation>
 
-            <div className="flex-col gap-4 grid grid-cols-1 lg:grid-cols-2 items-center mb-4 text-neutral-400 w-full">
+            <div className="flex-col gap-4 flex items-center mb-4 text-neutral-400 w-full">
                 {projects.map((project, index) => (
                     <BlurOutAnimation index={index + 2} className="w-full" key={project.id}>
                         <ProjectCard project={project} key={project.id} />
