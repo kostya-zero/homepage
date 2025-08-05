@@ -48,6 +48,10 @@
   },
   "trustedDependencies": [
     "@tailwindcss/oxide",
+    "sharp",
+    "@prisma/engines",
+    "@prisma/client",
+    "prisma",
     "unrs-resolver",
   ],
   "packages": {
