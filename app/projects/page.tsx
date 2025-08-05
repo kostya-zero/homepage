@@ -15,6 +15,7 @@ export interface Project {
     name: string;
     description: string;
     url: string;
+    lang: string;
 }
 
 const projects: Project[] = [
@@ -23,24 +24,42 @@ const projects: Project[] = [
         name: "Enjo",
         description: "Yet another manager for your projects",
         url: "https://github.com/kostya-zero/enjo",
+        lang: "Rust",
     },
     {
         id: "vizo",
         name: "Vizo",
         description: "Visualizer for structured data formats.",
         url: "https://github.com/kostya-zero/vizo",
+        lang: "Rust",
+    },
+    {
+        id: "kvdb",
+        name: "KVDB",
+        description: "Lightweight key‑value store written in Go.",
+        url: "https://github.com/kostya-zero/kvdb",
+        lang: "Go",
+    },
+    {
+        id: "fugitive-aliases",
+        name: "fugitive-aliases.nvim",
+        description: "A collection of preconfigured aliases for vim-fugitive plugin.",
+        url: "https://github.com/kostya-zero/fugitive-aliases.nvim",
+        lang: "Lua",
     },
     {
         id: "velocity",
         name: "Velocity",
         description: "A pure PowerShell prompt. ",
         url: "https://github.com/kostya-zero/velocity",
+        lang: "PowerShell",
     },
     {
         id: "AnomalyLauncher",
         name: "AnomalyLauncher",
         description: "Launcher for Stalker Anomaly.",
         url: "https://github.com/kostya-zero/AnomalyLauncher",
+        lang: "Rust",
     },
 ];
 

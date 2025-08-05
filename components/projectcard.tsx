@@ -1,6 +1,7 @@
 "use client";
 
 import { Project } from "@/app/projects/page";
+import { cn } from "@/lib/utils";
 import { Octokit } from "@octokit/rest";
 import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
@@ -24,6 +25,25 @@ export default function ProjectCard({ project }: { project: Project }) {
             });
     }, []);
 
+    let languageColor;
+    switch (project.lang.toLowerCase()) {
+        case "rust":
+            languageColor = "bg-language-rust";
+            break;
+        case "go":
+            languageColor = "bg-language-go";
+            break;
+        case "powershell":
+            languageColor = "bg-language-pwsh";
+            break;
+        case "lua":
+            languageColor = "bg-language-lua";
+            break;
+        default:
+            languageColor = "bg-language-unknown";
+            break;
+    }
+
     return (
         <Link
             href={project.url}
@@ -37,12 +57,18 @@ export default function ProjectCard({ project }: { project: Project }) {
                 </div>
             </div>
             <p className={"text-md"}>{project.description}</p>
-            <p className={"text-neutral-600 text-xs"}>
-                Updated{" "}
-                {formatDistanceToNow(new Date(lastUpdated), {
-                    addSuffix: true,
-                })}
-            </p>
+            <div className="flex flex-row items-center text-neutral-500 justify-between text-xs">
+                <p>
+                    Updated{" "}
+                    {formatDistanceToNow(new Date(lastUpdated), {
+                        addSuffix: true,
+                    })}
+                </p>
+                <div className="flex flex-row items-center gap-2">
+                    <div className={cn("size-2.5 rounded-full border-[1px] border-neutral-700", languageColor)}></div>
+                    <p>{project.lang}</p>
+                </div>
+            </div>
         </Link>
     );
 }
