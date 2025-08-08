@@ -94,8 +94,8 @@
     --color-chart-3: var(--chart-3);
     --color-chart-4: var(--chart-4);
     --color-chart-5: var(--chart-5);
-    --color-language-rust: hsl(3 63.3% 38.6%);
-    --color-language-go: hsl(203 88.3% 48.6%);
+    --color-language-rust: hsl(30 90.3% 70.6%);
+    --color-language-go: hsl(193 88.3% 48.6%);
     --color-language-pwsh: hsl(223 70.3% 33%);
     --color-language-lua: hsl(210 100% 40%);
     --color-lanugage-unknown: hsl(0 0% 50%);
@@ -140,4 +140,3 @@
     scrollbar-width: thin;
     scrollbar-color: var(--muted-foreground) transparent;
 }
-
