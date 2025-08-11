@@ -34,6 +34,8 @@ type GuestbookDBEntry = {
     username: string;
 };
 
+export const revalidate = 60;
+
 export default async function Guestbook() {
     const session = await getServerSession(authOptions);
     // For testing purposes
