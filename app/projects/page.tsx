@@ -1,5 +1,5 @@
 import Hero from "@/components/blocks/hero";
-import ProjectCard from "@/components/projectcard";
+import ProjectCard, { Project } from "@/components/projectcard";
 import { Metadata } from "next";
 import Text from "@/components/blocks/text";
 import MainContent from "@/components/blocks/maincontent";
@@ -9,14 +9,6 @@ export const metadata: Metadata = {
     title: "Projects",
     description: "List of my projects.",
 };
-
-export interface Project {
-    id: string;
-    name: string;
-    description: string;
-    url: string;
-    lang: string;
-}
 
 const projects: Project[] = [
     {
