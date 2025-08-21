@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 
 const projects: Project[] = [
     {
-        id: "enjo",
-        name: "Enjo",
+        id: "kanri",
+        name: "kanri",
         description: "Yet another manager for your projects",
-        url: "https://github.com/kostya-zero/enjo",
+        url: "https://github.com/kostya-zero/kanri",
         lang: "Rust",
     },
     {
