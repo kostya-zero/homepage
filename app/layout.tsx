@@ -1,4 +1,4 @@
-import { Inter, Funnel_Display, Geist } from "next/font/google";
+import { Funnel_Display, Geist } from "next/font/google";
 import Footer from "@/components/footer";
 import NavBar from "@/components/navbar";
 import "./globals.css";
@@ -8,7 +8,6 @@ import { authOptions } from "@/lib/authOptions";
 import { Toaster } from "@/components/ui/toaster";
 import { Metadata } from "next";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const funnel_display = Funnel_Display({
     subsets: ["latin"],
     variable: "--font-funnel",
@@ -33,8 +32,8 @@ export default async function RootLayout({
 }>) {
     const session = await getServerSession(authOptions);
     return (
-        <html lang="en" className={`${inter.variable} ${geist.variable} ${funnel_display.variable}`}>
-            <body className="min-h-[85svh] bg-[#101010] max-w-[620px] mx-auto font-geist antialiased">
+        <html lang="en" className={`${geist.variable} ${funnel_display.variable}`}>
+            <body className="min-h-[90svh] bg-page-background max-w-[620px] mx-auto font-geist antialiased">
                 <SessionProvider session={session}>
                     <NavBar />
                     <main className="dark sm:mx-auto mb-2">{children}</main>

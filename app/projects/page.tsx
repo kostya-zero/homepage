@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 const projects: Project[] = [
     {
         id: "kanri",
-        name: "kanri",
-        description: "Yet another manager for your projects",
+        name: "Kanri",
+        description: "Manage your projects within the terminal.",
         url: "https://github.com/kostya-zero/kanri",
         lang: "Rust",
     },

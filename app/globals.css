@@ -1,15 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Geist&display=swap");
 
 @import "tailwindcss";
-
-@plugin "tailwindcss-animate";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
     --background: hsl(0 0% 100%);
+    --page-background: hsl(0 0% 3.9%);
     --foreground: hsl(0 0% 3.9%);
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(0 0% 3.9%);
@@ -28,16 +27,12 @@
     --border: hsl(0 0% 89.8%);
     --input: hsl(0 0% 89.8%);
     --ring: hsl(0 0% 3.9%);
-    --chart-1: hsl(12 76% 61%);
-    --chart-2: hsl(173 58% 39%);
-    --chart-3: hsl(197 37% 24%);
-    --chart-4: hsl(43 74% 66%);
-    --chart-5: hsl(27 87% 67%);
     --radius: 0.6rem;
 }
 
 .dark {
-    --background: hsl(0 0% 3.9%);
+    --background: hsl(0 0% 9%);
+    --page-background: hsl(0 0% 3.9%);
     --foreground: hsl(0 0% 98%);
     --card: hsl(0 0% 3.9%);
     --card-foreground: hsl(0 0% 98%);
@@ -56,21 +51,16 @@
     --border: hsl(0 0% 14.9%);
     --input: hsl(0 0% 14.9%);
     --ring: hsl(0 0% 83.1%);
-    --chart-1: hsl(220 70% 50%);
-    --chart-2: hsl(160 60% 45%);
-    --chart-3: hsl(30 80% 55%);
-    --chart-4: hsl(280 65% 60%);
-    --chart-5: hsl(340 75% 55%);
 }
 
 @theme {
-    --font-inter: "Inter", sans-serif;
     --font-funnel: "Funnel Display", sans-serif;
     --font-geist: "Geist", sans-serif;
 }
 
 @theme inline {
     --color-background: var(--background);
+    --color-page-background: var(--page-background);
     --color-foreground: var(--foreground);
     --color-card: var(--card);
     --color-card-foreground: var(--card-foreground);
@@ -89,11 +79,6 @@
     --color-border: var(--border);
     --color-input: var(--input);
     --color-ring: var(--ring);
-    --color-chart-1: var(--chart-1);
-    --color-chart-2: var(--chart-2);
-    --color-chart-3: var(--chart-3);
-    --color-chart-4: var(--chart-4);
-    --color-chart-5: var(--chart-5);
     --color-language-rust: hsl(30 90.3% 70.6%);
     --color-language-go: hsl(193 88.3% 48.6%);
     --color-language-pwsh: hsl(223 70.3% 33%);
