@@ -35,7 +35,7 @@
         "@eslint/eslintrc": "^3.3.1",
         "@next/eslint-plugin-next": "^15.5.2",
         "@types/node": "^24.3.0",
-        "@types/react": "npm:types-react@19.0.0-alpha.3",
+        "@types/react": "^19.1.12",
         "@types/react-dom": "npm:types-react-dom@19.0.0-alpha.3",
         "eslint": "^9.34.0",
         "eslint-config-next": "15.5.2",
