@@ -26,6 +26,13 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
+        id: "lime",
+        name: "Lime",
+        description: "A lightweight HTML server for a fast website's deployment.",
+        url: "https://github.com/kostya-zero/lime",
+        lang: "Rust",
+    },
+    {
         id: "kvdb",
         name: "KVDB",
         description: "Lightweight key‑value store written in Go.",
