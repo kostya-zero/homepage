@@ -5,6 +5,8 @@ export const metadata: Metadata = {
     description: "I'm a teapot!",
 };
 
+export const dynamic = "force-static";
+
 export default async function Coffee() {
     return (
         <>
