@@ -122,14 +122,14 @@ export default async function Guestbook() {
 
 async function GuestbookEntry({ message, username, postedAt }: GuestbookMessage) {
     return (
-        <div className="flex flex-col my-3 w-full bg-background border border-border p-4 rounded-lg">
-            <p className="text-neutral-400">
+        <div className="flex flex-col my-3 font-semibold bg-background border border-border p-4 rounded-lg">
+            <p className="text-neutral-50">
                 {username}
                 <span className="text-neutral-500 ml-1.5 font-light">
                     {formatDistanceToNow(postedAt, { addSuffix: true, locale: enUS })}
                 </span>
             </p>
-            <p className="text-neutral-50 font-geist font-medium">{message}</p>
+            <p className="text-neutral-300 font-geist font-normal">{message}</p>
         </div>
     );
 }
