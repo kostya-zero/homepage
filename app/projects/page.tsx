@@ -19,13 +19,6 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
-        id: "vizo",
-        name: "Vizo",
-        description: "Visualizer for structured data formats.",
-        url: "https://github.com/kostya-zero/vizo",
-        lang: "Rust",
-    },
-    {
         id: "lime",
         name: "Lime",
         description: "A lightweight HTML server for a fast website's deployment.",
@@ -33,23 +26,9 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
-        id: "kvdb",
-        name: "KVDB",
-        description: "Lightweight key‑value store written in Go.",
-        url: "https://github.com/kostya-zero/kvdb",
-        lang: "Go",
-    },
-    {
-        id: "fugitive-aliases",
-        name: "fugitive-aliases.nvim",
-        description: "A collection of preconfigured aliases for vim-fugitive plugin.",
-        url: "https://github.com/kostya-zero/fugitive-aliases.nvim",
-        lang: "Lua",
-    },
-    {
         id: "velocity",
         name: "Velocity",
-        description: "A pure PowerShell prompt. ",
+        description: "A pure PowerShell prompt.",
         url: "https://github.com/kostya-zero/velocity",
         lang: "PowerShell",
     },
@@ -58,6 +37,13 @@ const projects: Project[] = [
         name: "AnomalyLauncher",
         description: "Launcher for Stalker Anomaly.",
         url: "https://github.com/kostya-zero/AnomalyLauncher",
+        lang: "Rust",
+    },
+    {
+        id: "vizo",
+        name: "Vizo",
+        description: "Visualizer for structured data formats.",
+        url: "https://github.com/kostya-zero/vizo",
         lang: "Rust",
     },
 ];
