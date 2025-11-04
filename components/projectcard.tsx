@@ -26,7 +26,7 @@ export default async function ProjectCard({ project }: { project: Project }) {
     const repo = await res.json();
 
     const stars = repo?.stargazers_count ?? 0;
-    const updated = new Date(repo?.updated_at ?? Date.now());
+    const updated = new Date(repo?.updated_at ?? null);
     const languageColor = langToClass[project.lang.toLowerCase()] ?? "bg-language-unknown";
 
     return (
