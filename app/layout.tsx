@@ -5,7 +5,6 @@ import "./globals.css";
 import SessionProvider from "@/components/sessionwrapper";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
-import { Toaster } from "@/components/ui/toaster";
 import { Metadata } from "next";
 
 const funnel_display = Funnel_Display({
@@ -38,7 +37,6 @@ export default async function RootLayout({
                     <NavBar />
                     <main className="dark sm:mx-auto mb-2">{children}</main>
                     <Footer />
-                    <Toaster />
                 </SessionProvider>
             </body>
         </html>
