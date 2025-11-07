@@ -40,14 +40,6 @@ export default function Home() {
             </BlurOutAnimation>
             <BlurOutAnimation index={3}>
                 <Text>
-                    I’m a <Bold>systems-minded programmer</Bold> who enjoys building fast, minimal, and reliable
-                    software. Most of my work revolves around <Bold>Rust</Bold>, where I focus on creating efficient CLI
-                    tools and backend systems. Occasionally, I dive into <Bold>Next.js</Bold> and <Bold>React</Bold> to
-                    build small web projects like this one (though my heart stays closer to the terminal).
-                </Text>
-            </BlurOutAnimation>
-            <BlurOutAnimation index={3}>
-                <Text>
                     I’m a <Bold>systems programmer</Bold> who enjoys building software. Most of my work revolves around{" "}
                     <Bold>Rust</Bold>, where I focus on creating efficient CLI tools and backend systems. Occasionally,
                     I dive into <Bold>Next.js</Bold> and <Bold>React</Bold> to build small web projects like this one
