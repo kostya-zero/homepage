@@ -2,6 +2,7 @@
 const nextConfig = {
     poweredByHeader: false,
     reactCompiler: true,
+    output: 'standalone'
 };
 
 export default nextConfig;
