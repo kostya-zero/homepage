@@ -34,6 +34,7 @@ export default function NavBar() {
 
             <div className="text-neutral-500 flex flex-row items-center gap-5 transition duration-200">
                 <NavBarLink href="/" route="/" title="Home" pathname={pathname} />
+                <NavBarLink href="/blog" route="/blog" title="Blog" pathname={pathname} />
                 <NavBarLink href="/guestbook" route="/guestbook" title="Guestbook" pathname={pathname} />
                 <NavBarLink href="/projects" route="/projects" title="Projects" pathname={pathname} />
             </div>

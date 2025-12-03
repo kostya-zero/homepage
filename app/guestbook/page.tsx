@@ -12,7 +12,6 @@ import AuthButton from "@/components/authbutton";
 import SignOutButton from "@/components/signoutbutton";
 import { Metadata } from "next";
 import MainContent from "@/components/blocks/maincontent";
-import BlurOutAnimation from "@/components/bluroutanimation";
 import Text from "@/components/blocks/text";
 
 export const metadata: Metadata = {
@@ -70,50 +69,41 @@ export default async function Guestbook() {
 
     return (
         <MainContent>
-            <BlurOutAnimation index={0}>
-                <Hero>Guestbook</Hero>
-            </BlurOutAnimation>
+            <Hero>Guestbook</Hero>
 
             <div>
-                <BlurOutAnimation index={1}>
-                    <Text>
-                        This is a guest book as you can see. You can leave your message here if you wish. Authorization
-                        with GitHub is required.
-                    </Text>
-                </BlurOutAnimation>
+                <Text>
+                    This is a guest book as you can see. You can leave your message here if you wish. Authorization with
+                    GitHub is required.
+                </Text>
 
-                <BlurOutAnimation index={2}>
-                    {!session ? (
-                        <AuthButton />
-                    ) : (
-                        <>
-                            <form action={submitAction} className="mt-4 flex gap-2">
-                                <Input
-                                    placeholder="Your message here..."
-                                    name="message"
-                                    className="w-full text-neutral-50"
-                                />
-                                <Button type="submit">Post</Button>
-                            </form>
+                {!session ? (
+                    <AuthButton />
+                ) : (
+                    <>
+                        <form action={submitAction} className="mt-4 flex gap-2">
+                            <Input
+                                placeholder="Your message here..."
+                                name="message"
+                                className="w-full text-neutral-50"
+                            />
+                            <Button type="submit">Post</Button>
+                        </form>
 
-                            <SignOutButton />
-                        </>
-                    )}
-                </BlurOutAnimation>
+                        <SignOutButton />
+                    </>
+                )}
             </div>
             <div>
-                <BlurOutAnimation index={3}>
-                    <SectionTitle>Messages</SectionTitle>
-                </BlurOutAnimation>
+                <SectionTitle>Messages</SectionTitle>
 
                 {messages.map((message, index) => (
-                    <BlurOutAnimation index={index + 3} key={message.id}>
-                        <GuestbookEntry
-                            message={message.content}
-                            username={message.username}
-                            postedAt={message.postedAt}
-                        />
-                    </BlurOutAnimation>
+                    <GuestbookEntry
+                        key={index}
+                        message={message.content}
+                        username={message.username}
+                        postedAt={message.postedAt}
+                    />
                 ))}
             </div>
         </MainContent>

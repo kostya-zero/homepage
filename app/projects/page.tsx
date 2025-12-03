@@ -3,7 +3,6 @@ import ProjectCard, { Project } from "@/components/projectcard";
 import { Metadata } from "next";
 import Text from "@/components/blocks/text";
 import MainContent from "@/components/blocks/maincontent";
-import BlurOutAnimation from "@/components/bluroutanimation";
 
 export const metadata: Metadata = {
     title: "Projects",
@@ -54,21 +53,15 @@ export const revalidate = 3600;
 export default async function Projects() {
     return (
         <MainContent>
-            <BlurOutAnimation>
-                <Hero>Projects</Hero>
-            </BlurOutAnimation>
-            <BlurOutAnimation index={1}>
-                <Text>
-                    This is a list of my projects that I am currently working on. You can click on a project&apos;s card
-                    to go to its GitHub repository.
-                </Text>
-            </BlurOutAnimation>
+            <Hero>Projects</Hero>
+            <Text>
+                This is a list of my projects that I am currently working on. You can click on a project&apos;s card to
+                go to its GitHub repository.
+            </Text>
 
             <div className="flex-col gap-4 flex items-center mb-4 text-neutral-400 w-full">
                 {projects.map((project, index) => (
-                    <BlurOutAnimation index={index + 2} className="w-full" key={project.id}>
-                        <ProjectCard project={project} key={project.id} />
-                    </BlurOutAnimation>
+                    <ProjectCard project={project} key={project.id} />
                 ))}
             </div>
         </MainContent>
