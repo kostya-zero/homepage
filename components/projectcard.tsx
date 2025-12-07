@@ -3,7 +3,7 @@ import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa6";
 
-export type Project = {
+type Project = {
     id: string;
     name: string;
     description: string;
@@ -18,7 +18,7 @@ const langToClass: Record<string, string> = {
     lua: "bg-language-lua",
 };
 
-export default async function ProjectCard({ project }: { project: Project }) {
+async function ProjectCard({ project }: { project: Project }) {
     const res = await fetch(`https://api.github.com/repos/kostya-zero/${project.id}`, {
         next: { revalidate: 3600 },
         cache: "force-cache",
@@ -50,10 +50,12 @@ export default async function ProjectCard({ project }: { project: Project }) {
                     })}
                 </p>
                 <div className="flex flex-row items-center gap-2">
-                    <div className={cn("size-2.5 rounded-full border-[1px] border-neutral-700", languageColor)}></div>
+                    <div className={cn("size-2.5 rounded-full border border-neutral-700", languageColor)}></div>
                     <p>{project.lang}</p>
                 </div>
             </div>
         </Link>
     );
 }
+
+export { ProjectCard, type Project };

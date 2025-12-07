@@ -1,5 +1,5 @@
 import Hero from "@/components/blocks/hero";
-import ProjectCard, { Project } from "@/components/projectcard";
+import { type Project, ProjectCard } from "@/components/projectcard";
 import { Metadata } from "next";
 import Text from "@/components/blocks/text";
 import MainContent from "@/components/blocks/maincontent";
@@ -60,7 +60,7 @@ export default async function Projects() {
             </Text>
 
             <div className="flex-col gap-4 flex items-center mb-4 text-neutral-400 w-full">
-                {projects.map((project, index) => (
+                {projects.map((project) => (
                     <ProjectCard project={project} key={project.id} />
                 ))}
             </div>

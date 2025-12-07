@@ -27,7 +27,7 @@ export default function NavBar() {
     const pathname = usePathname();
 
     return (
-        <header className="flex items-center justify-between mt-[32px] m-[16px]">
+        <header className="flex items-center justify-between mt-8 m-4">
             <Link href="/">
                 <Icon />
             </Link>
