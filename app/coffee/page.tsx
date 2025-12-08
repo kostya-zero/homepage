@@ -9,9 +9,11 @@ export const dynamic = "force-static";
 
 export default async function Coffee() {
     return (
-        <>
-            <p className="text-7xl font-bold font-funnel text-center leading-[1.0] mt-7 text-neutral-50">418</p>
-            <p className="text-center italic mb-7 text-neutral-300">I am a teapot!</p>
-        </>
+        <figure className="flex flex-col items-center gap-3 my-16">
+            <p className="text-8xl font-bold mt-4 font-funnel leading-[1.1] bg-linear-to-b from-white to-neutral-300 bg-clip-text text-transparent">
+                418
+            </p>
+            <p className="text-neutral-300">I&apos;m a teapot!</p>
+        </figure>
     );
 }
