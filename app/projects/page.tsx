@@ -18,10 +18,24 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
-        id: "lime",
-        name: "Lime",
-        description: "A lightweight HTML server for a fast website's deployment.",
-        url: "https://github.com/kostya-zero/lime",
+        id: "envy",
+        name: "Envy",
+        description: "An environment manager you'll envy.",
+        url: "https://github.com/kostya-zero/envy",
+        lang: "Rust",
+    },
+    {
+        id: "relayx",
+        name: "Relayx",
+        description: "A TCP client with shell-like interface",
+        url: "https://github.com/kostya-zero/relayx",
+        lang: "Rust",
+    },
+    {
+        id: "AnomalyLauncher",
+        name: "AnomalyLauncher",
+        description: "Launcher for Stalker Anomaly.",
+        url: "https://github.com/kostya-zero/AnomalyLauncher",
         lang: "Rust",
     },
     {
@@ -32,10 +46,10 @@ const projects: Project[] = [
         lang: "PowerShell",
     },
     {
-        id: "AnomalyLauncher",
-        name: "AnomalyLauncher",
-        description: "Launcher for Stalker Anomaly.",
-        url: "https://github.com/kostya-zero/AnomalyLauncher",
+        id: "lime",
+        name: "Lime",
+        description: "A lightweight HTML server for a fast website's deployment.",
+        url: "https://github.com/kostya-zero/lime",
         lang: "Rust",
     },
     {

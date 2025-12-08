@@ -1,3 +1,4 @@
+import Hero from "@/components/blocks/hero";
 import { Metadata } from "next";
 
 export const dynamic = "force-static";
@@ -9,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
     return (
-        <>
-            <p className="text-7xl font-bold font-funnel text-center mt-7 text-neutral-50">404</p>
-            <p className="text-center italic mb-7 text-neutral-300">You weren&apos;t supposed to be here...</p>
-        </>
+        <figure className="flex flex-col items-center gap-3 my-16">
+            <Hero>404</Hero>
+            <p className="text-neutral-300">You weren&apos;t supposed to be here...</p>
+        </figure>
     );
 }
