@@ -18,6 +18,13 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
+        id: "seek",
+        name: "Seek",
+        description: "No-nonsense grep-like tool.",
+        url: "https://github.com/kostya-zero/seek",
+        lang: "Rust",
+    },
+    {
         id: "envy",
         name: "Envy",
         description: "An environment manager you'll envy.",
