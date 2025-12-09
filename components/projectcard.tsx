@@ -32,7 +32,7 @@ async function ProjectCard({ project }: { project: Project }) {
     return (
         <Link
             href={project.url}
-            className="w-full flex flex-col p-4 gap-2 bg-background border border-border  rounded-lg cursor-pointer transition duration-200 hover:border-neutral-500 hover:bg-neutral-800"
+            className="w-full flex flex-col p-4 gap-2 bg-background border border-border  rounded-lg cursor-pointer transition duration-200 hover:border-border-highlight hover:bg-background-highlight"
         >
             <div className="flex flex-row justify-between items-center w-full">
                 <p className="text-lg text-white font-bold font-funnel">{project.name}</p>

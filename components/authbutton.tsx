@@ -1,7 +1,7 @@
 "use client";
 
 import { FaGithub } from "react-icons/fa6";
-import { Button } from "./ui/button";
+import Button from "./ui/button";
 import { signIn } from "next-auth/react";
 
 export default function AuthButton() {

@@ -1,6 +1,6 @@
 import Hero from "@/components/blocks/hero";
 import { SectionTitle } from "@/components/blocks/sectiontitle";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
 import { formatDistanceToNow } from "date-fns";
 import { enUS } from "date-fns/locale";
 import { prisma } from "@/lib/prisma";
@@ -37,12 +37,12 @@ export const revalidate = 60;
 
 export default async function Guestbook() {
     const session = await getServerSession(authOptions);
-    // For testing purposes
+    // Uncomment for testing without auth
     // const session = {
-    //   user: {
-    //     name: "Konstantin",
-    //     email: "zero@kostyazero.com",
-    //   },
+    //     user: {
+    //         name: "Konstantin",
+    //         email: "zero@kostyazero.com",
+    //     },
     // };
     const messages: Array<GuestbookDBEntry> = await prisma.guests.findMany({
         orderBy: {
