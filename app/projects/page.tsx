@@ -25,10 +25,10 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
-        id: "envy",
-        name: "Envy",
-        description: "An environment manager you'll envy.",
-        url: "https://github.com/kostya-zero/envy",
+        id: "ev",
+        name: "ev",
+        description: "Control your environment.",
+        url: "https://github.com/kostya-zero/ev",
         lang: "Rust",
     },
     {

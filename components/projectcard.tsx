@@ -35,14 +35,14 @@ async function ProjectCard({ project }: { project: Project }) {
             className="w-full flex flex-col p-4 gap-2 bg-background border border-border  rounded-lg cursor-pointer transition duration-200 hover:border-border-highlight hover:bg-background-highlight"
         >
             <div className="flex flex-row justify-between items-center w-full">
-                <p className="text-lg text-white font-bold font-funnel">{project.name}</p>
-                <div className="flex flex-row gap-2 text-white items-center">
+                <p className="text-lg text-custom-white font-bold font-funnel">{project.name}</p>
+                <div className="flex flex-row gap-2 text-custom-white items-center">
                     <FaStar />
                     {stars ? stars : "0"}
                 </div>
             </div>
-            <p className={"text-md"}>{project.description}</p>
-            <div className="flex flex-row items-center text-neutral-500 justify-between text-xs">
+            <p className={"text-md text-foreground-desc"}>{project.description}</p>
+            <div className="flex flex-row items-center text-foreground-muted justify-between text-xs">
                 <p>
                     Updated{" "}
                     {formatDistanceToNow(new Date(updated), {

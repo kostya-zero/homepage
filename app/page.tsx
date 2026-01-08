@@ -44,7 +44,7 @@ export default function Home() {
                 my second low-level language, mainly because I enjoy understanding what’s happening under the hood.
             </Text>
             <Text>If you’d like to connect, collaborate, or just say hi, you can find me through the links below:</Text>
-            <div className="flex flex-col gap-4 items-center mb-4 text-neutral-400">
+            <div className="flex flex-col gap-4 items-center mb-4 text-foreground">
                 {contacts.map((contact) => (
                     <ContactLink key={contact.id} contact={contact} icon={contact.icon} />
                 ))}

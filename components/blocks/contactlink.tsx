@@ -19,7 +19,7 @@ export const ContactLink: FC<Props> = ({ contact, icon }) => {
                 <p>{contact.name}</p>
             </div>
             <div className="flex flex-row gap-2">
-                <p className=" text-neutral-700 group-hover:text-neutral-500 duration-200 transition">
+                <p className="text-foreground-muted group-hover:text-neutral-500 duration-200 transition">
                     {contact.contact}
                 </p>
                 <FiArrowUpRight className="w-6 h-6" />

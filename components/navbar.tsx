@@ -16,7 +16,7 @@ function NavBarLink({ href, route, title, pathname }: NavBarLinkProps) {
     return (
         <Link
             href={href}
-            className={`hover:text-neutral-50 transition duration-200 ${pathname === route ? "text-neutral-50" : ""}`}
+            className={`hover:text-custom-white transition duration-200 ${pathname === route ? "text-custom-white" : ""}`}
         >
             <HoverText>{title}</HoverText>
         </Link>
@@ -25,14 +25,13 @@ function NavBarLink({ href, route, title, pathname }: NavBarLinkProps) {
 
 export default function NavBar() {
     const pathname = usePathname();
-
     return (
         <header className="flex items-center justify-between mt-10 m-4">
-            <Link href="/">
+            <Link href="/" >
                 <Icon />
             </Link>
 
-            <div className="text-neutral-500 flex flex-row items-center gap-5 transition duration-200">
+            <div className="text-foreground-muted flex flex-row items-center gap-5 transition duration-200">
                 <NavBarLink href="/" route="/" title="Home" pathname={pathname} />
                 <NavBarLink href="/blog" route="/blog" title="Blog" pathname={pathname} />
                 <NavBarLink href="/guestbook" route="/guestbook" title="Guestbook" pathname={pathname} />

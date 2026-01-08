@@ -1,21 +1,18 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-
 /* Can be ignored, cause light theme is not used */
 :root {
-    --background: hsl(0 0% 100%);
-    --page-background: hsl(0 0% 3.9%);
-    --border: hsl(0 0% 89.8%);
-}
-
-.dark {
     --background: hsl(0 0% 9%);
-    --background-highlight: hsl(0 0% 20%);
+    --background-highlight: hsl(201 20% 20%);
     --page-background: hsl(0 0% 3.9%);
-    --border: hsl(0 0% 14.9%);
-    --border-highlight: hsl(0 0% 45.1%);
+    --custom-white: hsl(201,90%,95%);
+    --foreground: hsl(201,25%,85%);
+    --foreground-desc: hsl(201, 10%, 60%);
+    --foreground-muted: hsl(201,10%,45%);
+    --border: hsl(201 20% 20%);
+    --border-highlight: hsl(201 30% 45.1%);
 }
+/* hsl(201,94,86) */
 
 @theme {
     --font-funnel: "Funnel Display", sans-serif;
@@ -26,25 +23,12 @@
     --color-background: var(--background);
     --color-background-highlight: var(--background-highlight);
     --color-page-background: var(--page-background);
+    --color-custom-white: var(--custom-white);
     --color-foreground: var(--foreground);
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-destructive-foreground: var(--destructive-foreground);
+    --color-foreground-desc: var(--foreground-desc);
+    --color-foreground-muted: var(--foreground-muted);
     --color-border: var(--border);
     --color-border-highlight: var(--border-highlight);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
     --color-language-rust: hsl(30 90.3% 70.6%);
     --color-language-go: hsl(193 88.3% 48.6%);
     --color-language-pwsh: hsl(223 70.3% 33%);
@@ -54,7 +38,7 @@
 
 @layer base {
     * {
-        @apply border-border outline-ring/50;
+        @apply border-border;
     }
 
     body {
