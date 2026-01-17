@@ -40,8 +40,8 @@ export default function Home() {
                 my heart stays closer to the terminal).
             </Text>
             <Text>
-                Lately, I’ve been exploring <Bold>network programming in Rust</Bold> and picking up <Bold>C++</Bold> as
-                my second low-level language, mainly because I enjoy understanding what’s happening under the hood.
+                Lately, I’ve been exploring <Bold>network programming in Rust</Bold> and picking up <Bold>Go</Bold> as
+                my second language, mainly because I was really interested about it.
             </Text>
             <Text>If you’d like to connect, collaborate, or just say hi, you can find me through the links below:</Text>
             <div className="flex flex-col gap-4 items-center mb-4 text-foreground">
