@@ -18,11 +18,11 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
-        id: "seek",
-        name: "Seek",
-        description: "No-nonsense grep-like tool.",
-        url: "https://github.com/kostya-zero/seek",
-        lang: "Rust",
+        id: "mk",
+        name: "mk",
+        description: "A lightweight task runner.",
+        url: "https://github.com/kostya-zero/mk",
+        lang: "Go",
     },
     {
         id: "ev",
@@ -51,20 +51,6 @@ const projects: Project[] = [
         description: "A pure PowerShell prompt.",
         url: "https://github.com/kostya-zero/velocity",
         lang: "PowerShell",
-    },
-    {
-        id: "lime",
-        name: "Lime",
-        description: "A lightweight HTML server for a fast website's deployment.",
-        url: "https://github.com/kostya-zero/lime",
-        lang: "Rust",
-    },
-    {
-        id: "vizo",
-        name: "Vizo",
-        description: "Visualizer for structured data formats.",
-        url: "https://github.com/kostya-zero/vizo",
-        lang: "Rust",
     },
 ];
 
