@@ -1,18 +1,16 @@
 @import "tailwindcss";
 
-/* Can be ignored, cause light theme is not used */
 :root {
     --background: hsl(0 0% 9%);
-    --background-highlight: hsl(201 20% 20%);
+    --background-highlight: hsl(201 0% 20%);
     --page-background: hsl(0 0% 3.9%);
-    --custom-white: hsl(201,90%,95%);
-    --foreground: hsl(201,25%,85%);
-    --foreground-desc: hsl(201, 10%, 60%);
-    --foreground-muted: hsl(201,10%,45%);
-    --border: hsl(201 20% 20%);
-    --border-highlight: hsl(201 30% 45.1%);
+    --custom-white: hsl(201, 0%, 95%);
+    --foreground: hsl(201, 0%, 85%);
+    --foreground-desc: hsl(201, 0%, 60%);
+    --foreground-muted: hsl(201, 0%, 45%);
+    --border: hsl(201 0% 20%);
+    --border-highlight: hsl(201 0% 45.1%);
 }
-/* hsl(201,94,86) */
 
 @theme {
     --font-funnel: "Funnel Display", sans-serif;
