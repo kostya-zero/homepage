@@ -1,5 +1,5 @@
 import Bold from "@/components/blocks/bold";
-import { ContactLink } from "@/components/blocks/contactlink";
+import ContactLink from "@/components/blocks/contactlink";
 import Hero from "@/components/blocks/hero";
 import MainContent from "@/components/blocks/maincontent";
 import Text from "@/components/blocks/text";

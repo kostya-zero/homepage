@@ -21,7 +21,14 @@ export const metadata: Metadata = {
         absolute: "Konstantin Zero",
         template: "%s // Konstantin Zero",
     },
-    description: "My own homepage website.",
+    description: "Systems programmer specializing in Rust.",
+    openGraph: {
+        title: "Konstantin Zero",
+        description: "Systems programmer specializing in Rust.",
+        url: "https://kostyazero.com",
+        siteName: "Konstantin Zero",
+        type: "website",
+    },
 };
 
 export default async function RootLayout({

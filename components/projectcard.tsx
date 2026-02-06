@@ -1,15 +1,8 @@
+import { Project } from "@/lib/types/project.types";
 import { cn } from "@/lib/utils";
 import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa6";
-
-type Project = {
-    id: string;
-    name: string;
-    description: string;
-    url: string;
-    lang: string;
-};
 
 const langToClass: Record<string, string> = {
     rust: "bg-language-rust",
@@ -38,7 +31,7 @@ async function ProjectCard({ project }: { project: Project }) {
                 <p className="text-lg text-custom-white font-bold font-funnel">{project.name}</p>
                 <div className="flex flex-row gap-2 text-custom-white items-center">
                     <FaStar />
-                    {stars ? stars : "0"}
+                    {stars ? stars : "?"}
                 </div>
             </div>
             <p className={"text-md text-foreground-desc"}>{project.description}</p>
