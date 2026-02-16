@@ -3,8 +3,14 @@ import MainContent from "@/components/blocks/maincontent";
 import Text from "@/components/blocks/text";
 import PostCard from "@/components/post-card";
 import { getAllPosts } from "@/lib/posts";
+import { Metadata } from "next";
 
 export const revalidate = 120;
+
+export const metadata: Metadata = {
+    title: "Blog",
+    description: "A blog page.",
+};
 
 export default function Blog() {
     const posts = getAllPosts();
