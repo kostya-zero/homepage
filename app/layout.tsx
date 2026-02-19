@@ -1,4 +1,4 @@
-import { Funnel_Display, Geist } from "next/font/google";
+import { Funnel_Display, Geist, JetBrains_Mono } from "next/font/google";
 import Footer from "@/components/footer";
 import NavBar from "@/components/navbar";
 import "./globals.css";
@@ -14,6 +14,11 @@ const funnel_display = Funnel_Display({
 const geist = Geist({
     subsets: ["latin"],
     variable: "--font-geist",
+});
+
+const jetbrains = JetBrains_Mono({
+    subsets: ["latin"],
+    variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -38,7 +43,7 @@ export default async function RootLayout({
 }>) {
     const session = await getServerSession(authOptions);
     return (
-        <html lang="en" className={`${geist.variable} ${funnel_display.variable}`}>
+        <html lang="en" className={`${geist.variable} ${funnel_display.variable} ${jetbrains.variable}`}>
             <body className="min-h-[90svh] bg-page-background max-w-155 mx-auto font-geist antialiased">
                 <NavBar />
                 <SessionProvider session={session}>

@@ -16,6 +16,7 @@
 @theme {
     --font-funnel: "Funnel Display", sans-serif;
     --font-geist: "Geist", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
 }
 
 @theme inline {

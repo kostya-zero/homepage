@@ -4,10 +4,10 @@ import Text from "@/components/blocks/text";
 import { components } from "@/components/mdx-components";
 import { getPostBySlug } from "@/lib/posts";
 import { PostMeta } from "@/lib/types/post.types";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { format } from "date-fns";
 import { enUS } from "date-fns/locale";
 import { Metadata } from "next";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import { use } from "react";
 
