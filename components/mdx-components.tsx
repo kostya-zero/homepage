@@ -7,6 +7,7 @@ export const components = {
     h3: ({ children }) => <h1 className="text-xl font-bold">{children}</h1>,
     p: ({ children }) => <p className="font-light">{children}</p>,
     strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+    code: ({ children }) => <code className="bg-background border border-border rounded-md px-1">{children}</code>,
     CodeBlock,
 } satisfies MDXComponents;
 

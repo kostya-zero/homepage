@@ -18,11 +18,18 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
-        id: "mk",
-        name: "mk",
-        description: "A lightweight task runner.",
-        url: "https://github.com/kostya-zero/mk",
+        id: "hako",
+        name: "hako",
+        description: "An HTTP key-value database.",
+        url: "https://github.com/kostya-zero/hako",
         lang: "Go",
+    },
+    {
+        id: "dock",
+        name: "dock",
+        description: "Control your environment.",
+        url: "https://github.com/kostya-zero/dock",
+        lang: "Rust",
     },
     {
         id: "ev",
