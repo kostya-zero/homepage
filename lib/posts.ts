@@ -14,7 +14,6 @@ function assertSafeSlug(slug: string) {
     const resolved = path.resolve(POSTS_DIR, `${slug}.mdx`);
     const relative = path.relative(POSTS_DIR, resolved);
 
-    // Prevent traversal: the resolved path must stay within POSTS_DIR
     if (relative.startsWith("..") || path.isAbsolute(relative)) {
         throw new Error("Slug resolves outside posts directory");
     }

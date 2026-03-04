@@ -1,0 +1,352 @@
+---
+title: "Building a Blog"
+description: "A story about building this blog system using only Next.js"
+date: 2026-02-22
+---
+
+**Hi there!**
+
+Recently, I finally built a blog system for my website. It took me **2 years** to work on the idea of
+a blog system to life. So why did it take 2 years?
+
+## First concepts
+
+Back in 2023, I was really interested in building a blog engine in Rust. It wasnt really hard for me, as I have made a
+basic prototype that can create users and posts. I've been using Axum with SurrealDB (I was really excited to try this
+database), and it was pretty smooth. But my main problem was **media attachments** to the posts.
+
+I couldn't figure out how to handle them. Attach it with the same request as blog post creation? Well, it could lead to
+the problem when it could have random IDs or I need to edit the post to add new links to attachments. Should I upload them
+separately? I wanted media to be tightly coupled with post itself.
+
+So what was the final concept?
+
+## Final concept
+
+Recently, I started learning Go after spending a lot of time with Rust.
+I've been learning it because I want to build server logic faster, and
+because I want to extend my knowledge. And this correlates with my blog system idea. So I've started to build blog
+system.
+
+After a while, I asked myself -- do I really need to have that big system running on server besides my website?
+
+_This is where I remembered about Next.js's ability to render MDX._
+
+## Explanation
+
+MDX is a flabir if Markdown with ability to use JSX in it. Yes, you read that right. It can extend the work with markdown files so
+that you can, for example, build your pages entirely in just an MDX file. I'll use it to show you a cool component to
+display code snippets.
+
+<CodeBlock language="mdx" filename="document.mdx">
+    ``` This is a code snippet
+    <CodeBlock language="rust" filename="snippet.rs">
+        ... code goes here ...
+    </CodeBlock>
+    ```
+</CodeBlock>
+
+Next.js supports rendering MDX and serving them as regular HTML. I'll use the render from text
+feature, or what it is called **Remote MDX**. You can implement it with `next-mdx-remote` package.
+
+## Structure
+
+I've decided to make all of my posts live in the `posts` directory at the root of the project directory.
+Website will lookup files in this directory and then parse the metadata from these files using `gray-matter` package.
+
+## Implementation
+
+First, we'll add a type called `PostMeta` that will represent a metadata of the post:
+
+<CodeBlock language="typescript" filename="post.types.ts">
+```
+type PostMeta = {
+    slug: string;
+    title: string;
+    description: string;
+    date: string;
+};
+
+export { type PostMeta };
+```
+</CodeBlock>
+
+Then we implement two important function: first to get all posts from directory, and second to get the post.
+I've also implemented an `assertSafeSlug` to make sure that path traversal attack will not be possible.
+
+<CodeBlock language="typescript" filename="posts.ts">
+```
+import path from "node:path";
+import fs from "node:fs";
+import matter from "gray-matter";
+import { PostMeta } from "./types/post.types";
+
+const POSTS_DIR = path.join(process.cwd(), "posts");
+const SAFE_SLUG = /^[a-z0-9-]+$/i;
+
+function assertSafeSlug(slug: string) {
+    if (!SAFE_SLUG.test(slug)) {
+        throw new Error("Invalid slug characters");
+    }
+
+    const resolved = path.resolve(POSTS_DIR, `${slug}.mdx`);
+    const relative = path.relative(POSTS_DIR, resolved);
+
+    if (relative.startsWith("..") || path.isAbsolute(relative)) {
+        throw new Error("Slug resolves outside posts directory");
+    }
+
+    return resolved;
+}
+
+// Reads the directory and returns metadata of all posts in it.
+function getAllPosts(): PostMeta[] {
+    const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".mdx"));
+
+    const posts = files.map((f) => {
+        const slug = f.replace(/\.mdx$/, "");
+        const raw = fs.readFileSync(path.join(POSTS_DIR, f), "utf8");
+        const { data } = matter(raw);
+
+        return {
+            slug,
+            title: String(data.title ?? slug),
+            date: String(data.date ?? ""),
+            description: String(data.description ?? ""),
+        };
+    });
+
+    posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+    return posts;
+}
+
+// Returns post's metadata and content by slug.
+function getPostBySlug(slug: string) {
+    const safePath = assertSafeSlug(slug);
+    const raw = fs.readFileSync(safePath, "utf8");
+    const { data, content } = matter(raw);
+    return { meta: { slug, ...data } as PostMeta, content };
+}
+
+export { getAllPosts, getPostBySlug };
+```
+</CodeBlock>
+
+The core functionality was built.
+Now we can begin to use it on blog page.
+
+## Listing Posts
+
+I've already prepared component to display each post, so let's make it functional.
+Let's edit the main page of our blog page and use `getAllPosts` function to get all available posts and display them.
+
+<CodeBlock language="typescript" filename="post.types.ts">
+```
+import Hero from "@/components/blocks/hero";
+import MainContent from "@/components/blocks/maincontent";
+import Text from "@/components/blocks/text";
+import PostCard from "@/components/post-card";
+import { getAllPosts } from "@/lib/posts";
+import { Metadata } from "next";
+
+export const revalidate = 120;
+
+export const metadata: Metadata = {
+    title: "Blog",
+    description: "A blog page.",
+};
+
+export default function Blog() {
+    const posts = getAllPosts();
+
+    return (
+        <MainContent>
+            <Hero>Blog</Hero>
+            <Text>
+                This is a place of my thoughts. Here I am talking about my programming journey or other stuff. All of
+                these posts are available in Markdown format on GitHub repository of this website.
+            </Text>
+            <ul className="gap-3 flex flex-col">
+                {posts.map((p) => (
+                {/* Display all posts here */}
+                    <PostCard key={p.slug} meta={p} />
+                ))}
+            </ul>
+        </MainContent>
+    );
+}
+```
+</CodeBlock>
+
+We are calling `getAllPosts` function at the top of `Blog` function to get our posts, and then displaying them.
+Remember that `getAllPosts` function returns metadata of posts, without their content.
+
+## Prepare MDX
+
+Before we build the blog post page, we need to set up MDX.
+First, we need to install all required packages to our project.
+I'll use Bun, but you can use any package manager you want.
+
+<CodeBlock language="text" filename="shell">
+```
+bun install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx next-mdx-remote
+```
+</CodeBlock>
+
+Now, let's edit `next.config.ts` to enable MDX.
+
+<CodeBlock language="typescript" filename="next.config.ts">
+```
+import createMDX from "@next/mdx";
+import { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+    pageExtensions: ["tsx", "mdx"],
+    poweredByHeader: false,
+    reactCompiler: true,
+};
+
+const withMDX = createMDX({});
+export default withMDX(nextConfig);
+```
+</CodeBlock>
+
+To make MDX work, we need to prepare all of our components that it will use to display.
+For this, we'll create a file called `mdx-components.tsx` in the components directory to specify component that `MDXRemote` will use to display.
+It also allows us to modify default components styles.
+
+<CodeBlock language="typescript" filename="next.config.ts">
+```
+import { MDXComponents } from "mdx/types";
+
+// I have modified some of components.
+// You can left components empty if you don't want to change them,
+// it won't throw an error.
+export const components = {
+    h1: ({ children }) => <h1 className="text-3xl font-bold">{children}</h1>,
+    h2: ({ children }) => <h1 className="text-2xl font-bold">{children}</h1>,
+    h3: ({ children }) => <h1 className="text-xl font-bold">{children}</h1>,
+    p: ({ children }) => <p className="font-light">{children}</p>,
+    strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+    code: ({ children }) => (
+        <code className="bg-background border text-sm border-border rounded-md px-1">{children}</code>
+    ),
+} satisfies MDXComponents;
+
+export function useMdxComponents(): MDXComponents {
+    return components;
+}
+```
+</CodeBlock>
+
+Preparation is complete! Let's move on viewing our blog posts.
+
+## Post View Page
+
+To display our posts content, we'll use `MDXRemote` from `next-mdx-remote` package.
+I'll create a page on `/app/blog/[slug]`.
+Remember that *slug*, it will be used to get posts by their filenames.
+
+Let's write code that will use slug from to get post using `getPostBySlug` function and generate metadata for this page.
+
+<CodeBlock language="tsx" filename="page.tsx">
+```
+import Hero from "@/components/blocks/hero";
+import MainContent from "@/components/blocks/maincontent";
+import Text from "@/components/blocks/text";
+import { components } from "@/components/mdx-components";
+import { getPostBySlug } from "@/lib/posts";
+import { PostMeta } from "@/lib/types/post.types";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { format } from "date-fns";
+import { enUS } from "date-fns/locale";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { use } from "react";
+
+// Used for caching, recommended.
+export const revalidate = 120;
+
+// We can generate metadata for this page.
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const slug = (await params).slug;
+    let meta: PostMeta;
+
+    try {
+        const post = getPostBySlug(slug);
+        meta = post.meta;
+    } catch {
+        return {
+            title: "Post not found",
+            description: "Cannot found the post that you are looking for.",
+        };
+    }
+
+    return {
+        title: meta.title,
+        description: meta.description,
+    };
+}
+
+// The view page.
+function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = use(params);
+    let content: string;
+    let meta: PostMeta;
+
+    try {
+        const post = getPostBySlug(slug);
+        content = post.content;
+        meta = post.meta;
+    } catch {
+        notFound();
+    }
+
+    return (
+        <MainContent>
+            <div className="flex flex-col gap-1">
+                <Hero>{meta.title}</Hero>
+                <Text>{meta.description}</Text>
+                <p className="text-sm text-neutral-500">{format(meta.date, "d MMMM yyyy", { locale: enUS })}</p>
+            </div>
+            <div className="bg-neutral-700 h-px w-full"></div>
+            <MDXRemote source={content} components={components} />
+        </MainContent>
+    );
+}
+
+export default PostViewPage;
+```
+</CodeBlock>
+
+That's it.
+We built a fully working blog system.
+
+## Writing Posts
+
+To write posts, create files in the `posts` directory with `mdx` extension.
+We've made our system to get all files from `posts` directory.
+
+You can include metadata of blog posts like this:
+
+<CodeBlock language="markdown" filename="test.mdx">
+```
+ ---
+ title: "Test Post"
+ date: 2026-02-28
+ description: "A test blog post"
+ ---
+
+ After the metadata block you can write the text here.
+```
+</CodeBlock>
+
+## Conclusion
+
+We made a blog system using Next.js without making a backend.
+You can check <HoverLink href="https://github.com/kostya-zero/homepage">my website source code</HoverLink> to view how it is actually working.
+
+I would recommend you to check out <HoverLink href="https://nextjs.org/docs/app/guides/mdx">official Next.js MDX documentation</HoverLink> for more information.
+
+**Have a nice day!**
+
