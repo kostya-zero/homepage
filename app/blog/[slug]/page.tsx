@@ -48,8 +48,8 @@ function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
 
     return (
         <MainContent>
-            <div className="flex flex-col gap-1">
-                <Hero>{meta.title}</Hero>
+            <div className="flex flex-col gap-3">
+                <Hero className="text-4xl">{meta.title}</Hero>
                 <Text>{meta.description}</Text>
                 <p className="text-sm text-neutral-500">{format(meta.date, "d MMMM yyyy", { locale: enUS })}</p>
             </div>

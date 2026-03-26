@@ -27,7 +27,7 @@ const projects: Project[] = [
     {
         id: "dock",
         name: "dock",
-        description: "Control your environment.",
+        description: "A lightweight FTP server.",
         url: "https://github.com/kostya-zero/dock",
         lang: "Rust",
     },

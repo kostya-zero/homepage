@@ -13,11 +13,10 @@ function CodeBlock({ filename, language, children }: Props) {
     const code = children!.props.children.props.children;
     return (
         <figure className="border border-border rounded-md overflow-hidden bg-background ">
-            <div className="flex flex-row items-center gap-3 px-3 py-2">
+            <div className="flex flex-row items-center gap-3 px-3 py-2 border-b border-b-border">
                 <FaCode size={16} /> <p className="text-sm">{filename}</p>
             </div>
-            <div className="h-[0.5px] w-full bg-border"></div>
-            <code className="bg-page-background overflow-x-scroll">
+            <code className="bg-page-background overflow-x-scroll ">
                 <SyntaxHighlighter
                     style={zenburn}
                     language={language}

@@ -1,13 +1,15 @@
+import { cn } from "@/lib/utils";
 import * as React from "react";
 
-function Hero({ children, ...props }: { children: React.ReactNode } & React.ComponentProps<"p">) {
+function Hero({
+    className = "",
+    children,
+    ...props
+}: { className?: string; children: React.ReactNode } & React.ComponentProps<"p">) {
     return (
-        <p
-            className="text-4xl font-bold mt-4 font-funnel leading-[1.1] bg-linear-to-b from-white to-neutral-300 bg-clip-text text-transparent"
-            {...props}
-        >
+        <h1 className={cn("text-4xl font-bold mt-4 font-funnel leading-[1.1] text-white", className)} {...props}>
             {children}
-        </p>
+        </h1>
     );
 }
 

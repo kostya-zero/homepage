@@ -2,15 +2,16 @@
 @import "tw-animate-css";
 
 :root {
-    --background: hsl(0 0% 9%);
-    --background-highlight: hsl(201 0% 20%);
+    --background: hsl(0 0% 5%);
+    --background-highlight: hsl(201 0% 10%);
     --page-background: hsl(0 0% 3.9%);
     --custom-white: hsl(201, 0%, 95%);
-    --foreground: hsl(201, 0%, 85%);
+    --foreground: hsl(201, 0%, 60%);
+    --foreground-bold: hsl(201, 0%, 80%);
     --foreground-desc: hsl(201, 0%, 60%);
-    --foreground-muted: hsl(201, 0%, 45%);
+    --foreground-muted: hsl(201, 0%, 35%);
     --border: hsl(201 0% 20%);
-    --border-highlight: hsl(201 0% 45.1%);
+    --border-highlight: hsl(201 0% 35%);
 }
 
 @theme {
@@ -25,6 +26,7 @@
     --color-page-background: var(--page-background);
     --color-custom-white: var(--custom-white);
     --color-foreground: var(--foreground);
+    --color-foreground-bold: var(--foreground-bold);
     --color-foreground-desc: var(--foreground-desc);
     --color-foreground-muted: var(--foreground-muted);
     --color-border: var(--border);

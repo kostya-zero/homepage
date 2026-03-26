@@ -9,7 +9,7 @@ export default function Footer() {
                 <p>The source code is available on</p>
                 <Link
                     href="https://github.com/kostya-zero/homepage"
-                    className="ml-1 text-neutral-500 hover:text-neutral-50 transition duration-200"
+                    className="ml-1 transition duration-200 font-semibold"
                 >
                     {" "}
                     <HoverText>GitHub</HoverText>

@@ -1,3 +1,3 @@
 export default function Bold({ children }: { children: React.ReactNode }) {
-    return <b className="font-semibold">{children}</b>;
+    return <b className="font-semibold text-foreground-bold">{children}</b>;
 }
