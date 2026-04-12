@@ -6,13 +6,13 @@ import { enUS } from "date-fns/locale";
 import { prisma } from "@/lib/prisma";
 import { Input } from "@/components/ui/input";
 import { revalidatePath } from "next/cache";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/authOptions";
 import AuthButton from "@/components/authbutton";
 import SignOutButton from "@/components/signoutbutton";
 import { Metadata } from "next";
 import MainContent from "@/components/blocks/maincontent";
 import Text from "@/components/blocks/text";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
     title: "Guestbook",
@@ -36,7 +36,9 @@ type GuestbookDBEntry = {
 export const revalidate = 60;
 
 export default async function Guestbook() {
-    const session = await getServerSession(authOptions);
+    const session = await auth.api.getSession({
+        headers: await headers(),
+    });
     // Uncomment for testing without auth
     // const session = {
     //     user: {

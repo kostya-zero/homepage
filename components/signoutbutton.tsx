@@ -1,5 +1,5 @@
 "use client";
-import { signOut } from "next-auth/react";
+import { authClient } from "@/lib/auth-client";
 import Button from "./ui/button";
 import { IoIosExit } from "react-icons/io";
 
@@ -8,7 +8,7 @@ export default function SignOutButton() {
         <Button
             className="mt-4"
             onClick={() => {
-                signOut();
+                void authClient.signOut();
             }}
         >
             <IoIosExit /> Sign Out

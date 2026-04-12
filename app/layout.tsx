@@ -2,9 +2,6 @@ import { Funnel_Display, Geist, JetBrains_Mono } from "next/font/google";
 import Footer from "@/components/footer";
 import NavBar from "@/components/navbar";
 import "./globals.css";
-import SessionProvider from "@/components/sessionwrapper";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/authOptions";
 import { Metadata } from "next";
 
 const funnel_display = Funnel_Display({
@@ -41,14 +38,11 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const session = await getServerSession(authOptions);
     return (
         <html lang="en" className={`${geist.variable} ${funnel_display.variable} ${jetbrains.variable}`}>
             <body className="min-h-[90svh] bg-page-background max-w-155 mx-auto font-geist antialiased">
                 <NavBar />
-                <SessionProvider session={session}>
-                    <main className="dark sm:mx-auto mb-2 mt-4">{children}</main>
-                </SessionProvider>
+                <main className="dark sm:mx-auto mb-2 mt-4">{children}</main>
                 <Footer />
             </body>
         </html>
