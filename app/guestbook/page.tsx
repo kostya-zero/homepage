@@ -13,6 +13,7 @@ import MainContent from "@/components/blocks/maincontent";
 import Text from "@/components/blocks/text";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
     title: "Guestbook",
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 };
 
 interface GuestbookMessage {
+    email: string;
     message: string;
     username: string;
     postedAt: Date;
@@ -102,6 +104,7 @@ export default async function Guestbook() {
                 {messages.map((message, index) => (
                     <GuestbookEntry
                         key={index}
+                        email={message.email}
                         message={message.content}
                         username={message.username}
                         postedAt={message.postedAt}
@@ -112,9 +115,20 @@ export default async function Guestbook() {
     );
 }
 
-async function GuestbookEntry({ message, username, postedAt }: GuestbookMessage) {
+async function GuestbookEntry({ email, message, username, postedAt }: GuestbookMessage) {
+    let additionalStyles: string;
+    if (email === "zero@kostyazero.com") {
+        additionalStyles = "ml-auto bg-neutral-900 rounded-br-none";
+    } else {
+        additionalStyles = "rounded-bl-none";
+    }
     return (
-        <div className="flex flex-col my-3 font-semibold bg-background border border-border p-4 rounded-lg">
+        <div
+            className={cn(
+                "flex flex-col my-3 font-semibold bg-background border border-border p-3 text-sm rounded-xl w-fit",
+                additionalStyles
+            )}
+        >
             <p className="text-neutral-50">
                 {username}
                 <span className="text-neutral-500 ml-1.5 font-light">
