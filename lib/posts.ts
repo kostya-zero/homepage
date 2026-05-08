@@ -21,19 +21,27 @@ function assertSafeSlug(slug: string) {
     return resolved;
 }
 
+function calculateReadingTime(content: string): string {
+    const wordsPerMinute = 200;
+    const words = content.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `${minutes} min read`;
+}
+
 function getAllPosts(): PostMeta[] {
     const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".mdx"));
 
     const posts = files.map((f) => {
         const slug = f.replace(/\.mdx$/, "");
         const raw = fs.readFileSync(path.join(POSTS_DIR, f), "utf8");
-        const { data } = matter(raw);
+        const { data, content } = matter(raw);
 
         return {
             slug,
             title: String(data.title ?? slug),
             date: String(data.date ?? ""),
             description: String(data.description ?? ""),
+            readingTime: calculateReadingTime(content),
         };
     });
 
@@ -45,7 +53,7 @@ function getPostBySlug(slug: string) {
     const safePath = assertSafeSlug(slug);
     const raw = fs.readFileSync(safePath, "utf8");
     const { data, content } = matter(raw);
-    return { meta: { slug, ...data } as PostMeta, content };
+    return { meta: { slug, readingTime: calculateReadingTime(content), ...data } as PostMeta, content };
 }
 
 export { getAllPosts, getPostBySlug };

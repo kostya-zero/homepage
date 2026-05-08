@@ -3,6 +3,7 @@ type PostMeta = {
     title: string;
     description: string;
     date: string;
+    readingTime?: string;
 };
 
 export { type PostMeta };

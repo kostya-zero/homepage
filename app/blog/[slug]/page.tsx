@@ -10,6 +10,8 @@ import { enUS } from "date-fns/locale";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { use } from "react";
+import Link from "next/link";
+import { FaChevronLeft } from "react-icons/fa6";
 
 export const revalidate = 120;
 
@@ -48,13 +50,31 @@ function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
 
     return (
         <MainContent>
-            <div className="flex flex-col gap-3">
-                <Hero className="text-4xl">{meta.title}</Hero>
-                <Text>{meta.description}</Text>
-                <p className="text-sm text-neutral-500">{format(meta.date, "d MMMM yyyy", { locale: enUS })}</p>
+            <div className="flex flex-col gap-6 mt-4">
+                <Link
+                    href="/blog"
+                    className="flex items-center gap-2 text-sm text-foreground-muted hover:text-foreground transition-colors w-fit"
+                >
+                    <FaChevronLeft size={12} />
+                    Back to Blog
+                </Link>
+
+                <div className="flex flex-col gap-4">
+                    <Hero className="text-4xl md:text-5xl !mt-0">{meta.title}</Hero>
+                    <div className="flex flex-col gap-2">
+                        <p className="text-lg text-foreground-desc leading-relaxed">{meta.description}</p>
+                        <div className="flex items-center gap-3 text-sm text-foreground-muted mt-1">
+                            <span>{format(meta.date, "MMMM d, yyyy", { locale: enUS })}</span>
+                            <span>•</span>
+                            <span>{meta.readingTime}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="bg-neutral-700 h-px w-full"></div>
-            <MDXRemote source={content} components={components} />
+            <div className="bg-border h-px w-full my-4"></div>
+            <article>
+                <MDXRemote source={content} components={components} />
+            </article>
         </MainContent>
     );
 }

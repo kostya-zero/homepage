@@ -8,14 +8,24 @@ function PostCard({ meta }: { meta: PostMeta }) {
         <li>
             <Link
                 href={`/blog/${meta.slug}`}
-                className="flex flex-col gap-2 bg-background border border-border hover:bg-background-highlight hover:border-border-highlight duration-200 transition-colors select-none cursor-pointer p-4 rounded-lg"
+                className="group flex flex-col gap-1 bg-background border border-border hover:bg-background-highlight hover:border-border-highlight duration-300 transition-all select-none cursor-pointer p-4 rounded-xl active:scale-[0.98]"
             >
-                <p className="text-lg text-custom-white font-bold font-funnel">{meta.title}</p>
-                <p className="text-md text-foreground-desc">{meta.description}</p>
+                <div className="flex justify-between items-start gap-4">
+                    <p className="text-xl text-custom-white font-bold font-funnel group-hover:text-white transition-colors">
+                        {meta.title}
+                    </p>
+                </div>
+                <p className="text-md text-foreground-desc ">{meta.description}</p>
 
-                <p className="text-foreground-muted text-xs">
-                    Posted on {format(meta.date, "d MMMM yyyy", { locale: enUS })}
-                </p>
+                <div className="flex items-center gap-2 mt-2 justify-between">
+                    <p className="text-foreground-muted text-xs font-medium">
+                        {format(meta.date, "MMMM d, yyyy", { locale: enUS })}
+                    </p>
+
+                    {meta.readingTime && (
+                        <span className="text-foreground-muted text-xs font-medium">{meta.readingTime}</span>
+                    )}
+                </div>
             </Link>
         </li>
     );

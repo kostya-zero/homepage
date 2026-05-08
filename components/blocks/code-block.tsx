@@ -12,20 +12,30 @@ function CodeBlock({ filename, language, children }: Props) {
     // @ts-expect-error Props exists for children.
     const code = children!.props.children.props.children;
     return (
-        <figure className="border border-border rounded-md overflow-hidden bg-background ">
-            <div className="flex flex-row items-center gap-3 px-3 py-2 border-b border-b-border">
-                <FaCode size={16} /> <p className="text-sm">{filename}</p>
+        <figure className="my-8 border border-border rounded-xl overflow-hidden bg-background shadow-xl">
+            <div className="flex flex-row items-center justify-between px-4 py-2 bg-background-highlight/50 border-b border-b-border">
+                <div className="flex items-center gap-2">
+                    <FaCode size={14} className="text-foreground-muted" />
+                    <span className="text-xs font-mono text-foreground-desc">{filename}</span>
+                </div>
+                <span className="text-[10px] uppercase text-foreground-muted font-bold">{language}</span>
             </div>
-            <code className="bg-page-background overflow-x-scroll ">
+            <div className="bg-page-background overflow-x-auto">
                 <SyntaxHighlighter
                     style={zenburn}
                     language={language}
-                    customStyle={{ background: "#0a0a0a" }}
-                    codeTagProps={{ className: "font-mono text-sm bg-page-background prose" }}
+                    customStyle={{
+                        background: "transparent",
+                        padding: "1.25rem",
+                        fontSize: "0.875rem",
+                        lineHeight: "1.6",
+                        margin: 0,
+                    }}
+                    codeTagProps={{ className: "font-mono bg-transparent inline-block min-w-full" }}
                 >
                     {code}
                 </SyntaxHighlighter>
-            </code>
+            </div>
         </figure>
     );
 }
