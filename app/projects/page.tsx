@@ -18,10 +18,17 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
-        id: "hako",
-        name: "hako",
-        description: "An HTTP key-value database.",
-        url: "https://github.com/kostya-zero/hako",
+        id: "route",
+        name: "Route",
+        description: "Route is a lightweight API-first URL shortener with powerful CLI.",
+        url: "https://github.com/kostya-zero/route",
+        lang: "Go",
+    },
+    {
+        id: "qry",
+        name: "QRY",
+        description: "A CLI query runner with support for multiple databases with SQL-like syntax.",
+        url: "https://github.com/kostya-zero/qry",
         lang: "Go",
     },
     {
@@ -29,13 +36,6 @@ const projects: Project[] = [
         name: "dock",
         description: "A lightweight FTP server.",
         url: "https://github.com/kostya-zero/dock",
-        lang: "Rust",
-    },
-    {
-        id: "ev",
-        name: "ev",
-        description: "Control your environment.",
-        url: "https://github.com/kostya-zero/ev",
         lang: "Rust",
     },
     {
@@ -51,13 +51,6 @@ const projects: Project[] = [
         description: "Launcher for Stalker Anomaly.",
         url: "https://github.com/kostya-zero/AnomalyLauncher",
         lang: "Rust",
-    },
-    {
-        id: "velocity",
-        name: "Velocity",
-        description: "A pure PowerShell prompt.",
-        url: "https://github.com/kostya-zero/velocity",
-        lang: "PowerShell",
     },
 ];
 
