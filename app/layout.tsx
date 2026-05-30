@@ -1,4 +1,4 @@
-import { Funnel_Display, Geist, JetBrains_Mono, Syne } from "next/font/google";
+import { Funnel_Display, Geist, JetBrains_Mono } from "next/font/google";
 import Footer from "@/components/footer";
 import NavBar from "@/components/navbar";
 import "./globals.css";

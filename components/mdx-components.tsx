@@ -1,6 +1,5 @@
 import { MDXComponents } from "mdx/types";
 import CodeBlock from "./blocks/code-block";
-import HoverText from "./blocks/hovertext";
 import Link from "next/link";
 
 const HoverLink = ({ children, href }: { children: React.ReactNode; href: string }) => {

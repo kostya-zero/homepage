@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import { formatDistanceToNow } from "date-fns";
 import { Star } from "lucide-react";
 import Link from "next/link";
-import { FaStar } from "react-icons/fa6";
 
 const langToClass: Record<string, string> = {
     rust: "bg-language-rust",

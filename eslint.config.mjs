@@ -13,6 +13,11 @@ const eslintConfig = defineConfig([
         "build/**",
         "next-env.d.ts",
     ]),
+    {
+        settings: {
+            react: { version: "19" },
+        },
+    },
 ]);
 
 export default eslintConfig;

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Icon } from "./icon";
 import HoverText from "./blocks/hovertext";
 import { usePathname } from "next/navigation";
 
