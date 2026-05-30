@@ -4,22 +4,21 @@ import Hero from "@/components/blocks/hero";
 import MainContent from "@/components/blocks/maincontent";
 import Text from "@/components/blocks/text";
 import { Contact } from "@/lib/types/contact.types";
-import { FaTelegram } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
+import { Mail, SendHorizontal } from "lucide-react";
 
 const contacts: Contact[] = [
     {
         id: "email",
         name: "Email",
         contact: "zero@kostyazero.com",
-        icon: <MdEmail className="w-6 h-6" />,
+        icon: <Mail size={20} />,
         url: "mailto:zero@kostyazero.com",
     },
     {
         id: "telegram",
         name: "Telegram",
         contact: "@kostya_zero",
-        icon: <FaTelegram className="w-6 h-6" />,
+        icon: <SendHorizontal size={20} />,
         url: "https://t.me/kostya_zero",
     },
 ];

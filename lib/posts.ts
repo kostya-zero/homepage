@@ -42,6 +42,8 @@ function getAllPosts(): PostMeta[] {
             date: String(data.date ?? ""),
             description: String(data.description ?? ""),
             readingTime: calculateReadingTime(content),
+            image: data.image ? String(data.image) : undefined,
+            imageAlt: data.imageAlt ? String(data.imageAlt) : undefined,
         };
     });
 

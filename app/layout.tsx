@@ -1,4 +1,4 @@
-import { Funnel_Display, Geist, JetBrains_Mono } from "next/font/google";
+import { Funnel_Display, Geist, JetBrains_Mono, Syne } from "next/font/google";
 import Footer from "@/components/footer";
 import NavBar from "@/components/navbar";
 import "./globals.css";
@@ -40,7 +40,7 @@ export default async function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${geist.variable} ${funnel_display.variable} ${jetbrains.variable}`}>
-            <body className="min-h-[90svh] bg-page-background max-w-155 mx-auto font-geist antialiased">
+            <body className="min-h-[90svh] bg-page-background max-w-165 mx-auto font-geist antialiased">
                 <NavBar />
                 <main className="dark sm:mx-auto mb-2 mt-4">{children}</main>
                 <Footer />

@@ -34,7 +34,7 @@ const projects: Project[] = [
     {
         id: "dock",
         name: "dock",
-        description: "A lightweight FTP server.",
+        description: "A lightweight and fast FTP server.",
         url: "https://github.com/kostya-zero/dock",
         lang: "Rust",
     },
@@ -66,7 +66,7 @@ export default async function Projects() {
                 go to its GitHub repository.
             </Text>
 
-            <div className="flex-col gap-4 flex items-center mb-4 text-neutral-400 w-full">
+            <div className="flex-col gap-4 flex items-center mb-4 text-neutral-400 w-full grid grid-cols-2">
                 {projects.map((project) => (
                     <ProjectCard project={project} key={project.id} />
                 ))}
