@@ -27,7 +27,7 @@ function PostCard({ meta }: { meta: PostMeta }) {
                 </div>
 
                 <div className="flex flex-col gap-2 p-4">
-                    <p className="text-xl text-custom-white font-bold font-funnel leading-tight transition-colors group-hover:text-white">
+                    <p className="text-xl text-custom-white font-bold font-funnel leading-tight transition-colors group-hover:text-custom-white">
                         {meta.title}
                     </p>
                     <p className="text-sm text-foreground-desc leading-relaxed">{meta.description}</p>

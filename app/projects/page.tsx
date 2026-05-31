@@ -66,7 +66,7 @@ export default async function Projects() {
                 go to its GitHub repository.
             </Text>
 
-            <div className="flex-col gap-4 flex items-center mb-4 text-neutral-400 w-full grid grid-cols-2">
+            <div className=" gap-4 items-center mb-4 text-neutral-400 w-full grid grid-cols-1 md:grid-cols-2">
                 {projects.map((project) => (
                     <ProjectCard project={project} key={project.id} />
                 ))}

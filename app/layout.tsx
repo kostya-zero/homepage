@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import NavBar from "@/components/navbar";
 import "./globals.css";
 import { Metadata } from "next";
+import ThemeProvider from "@/components/theme-provider";
 
 const funnel_display = Funnel_Display({
     subsets: ["latin"],
@@ -39,11 +40,17 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${geist.variable} ${funnel_display.variable} ${jetbrains.variable}`}>
+        <html
+            lang="en"
+            className={`${geist.variable} ${funnel_display.variable} ${jetbrains.variable}`}
+            suppressHydrationWarning
+        >
             <body className="min-h-[90svh] bg-page-background max-w-165 mx-auto font-geist antialiased">
-                <NavBar />
-                <main className="dark sm:mx-auto mb-2 mt-4">{children}</main>
-                <Footer />
+                <ThemeProvider>
+                    <NavBar />
+                    <main className="sm:mx-auto mb-2 mt-4">{children}</main>
+                    <Footer />
+                </ThemeProvider>
             </body>
         </html>
     );

@@ -1,6 +1,9 @@
+"use client";
+
+import { useTheme } from "next-themes";
 import { FaCode } from "react-icons/fa6";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { zenburn } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { atomOneDark, atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 type Props = {
     filename: string;
@@ -9,10 +12,13 @@ type Props = {
 };
 
 function CodeBlock({ filename, language, children }: Props) {
+    const { resolvedTheme } = useTheme();
+    const highlighterStyle = resolvedTheme === "light" ? atomOneLight : atomOneDark;
+
     // @ts-expect-error Props exists for children.
     const code = children!.props.children.props.children;
     return (
-        <figure className="my-8 border border-border rounded-xl overflow-hidden bg-background shadow-xl">
+        <figure className="my-8 border border-border rounded-xl overflow-hidden bg-background shadow-lg">
             <div className="flex flex-row items-center justify-between px-4 py-2 bg-background-highlight/50 border-b border-b-border">
                 <div className="flex items-center gap-2">
                     <FaCode size={14} className="text-foreground-muted" />
@@ -22,7 +28,7 @@ function CodeBlock({ filename, language, children }: Props) {
             </div>
             <div className="bg-page-background overflow-x-auto">
                 <SyntaxHighlighter
-                    style={zenburn}
+                    style={highlighterStyle}
                     language={language}
                     customStyle={{
                         background: "transparent",

@@ -12,14 +12,14 @@ function ContactLink({ contact, icon }: Props) {
     return (
         <Link
             href={contact.url}
-            className="flex flex-row group justify-between items-center w-full cursor-pointer transition duration-200 hover:text-neutral-50 px-1"
+            className="flex flex-row group justify-between items-center w-full cursor-pointer transition duration-200 dark:hover:text-neutral-50 hover:text-neutral-950  px-1"
         >
             <div className="flex flex-row gap-4 items-center">
                 {icon}
                 <p>{contact.name}</p>
             </div>
             <div className="flex flex-row gap-4">
-                <p className="text-foreground-muted group-hover:text-neutral-400 duration-200 transition">
+                <p className="text-foreground-muted group-hover:text-neutral-500 duration-200 transition">
                     {contact.contact}
                 </p>
                 <FiArrowUpRight className="w-6 h-6" />
