@@ -89,7 +89,7 @@ export default async function Guestbook() {
                             <Input
                                 placeholder="Your message here..."
                                 name="message"
-                                className="w-full text-neutral-50"
+                                className="w-full text-foreground-bold placeholder:text-foreground-muted"
                             />
                             <Button type="submit">Post</Button>
                         </form>
@@ -118,7 +118,7 @@ export default async function Guestbook() {
 async function GuestbookEntry({ email, message, username, postedAt }: GuestbookMessage) {
     let additionalStyles: string;
     if (email === "zero@kostyazero.com") {
-        additionalStyles = "ml-auto bg-neutral-900 rounded-br-none";
+        additionalStyles = "ml-auto bg-background-highlight rounded-br-none";
     } else {
         additionalStyles = "rounded-bl-none";
     }
@@ -129,13 +129,13 @@ async function GuestbookEntry({ email, message, username, postedAt }: GuestbookM
                 additionalStyles
             )}
         >
-            <p className="text-neutral-50">
+            <p className="text-foreground-bold">
                 {username}
-                <span className="text-neutral-500 ml-1.5 font-light">
+                <span className="text-foreground-muted ml-1.5 font-light">
                     {formatDistanceToNow(postedAt, { addSuffix: true, locale: enUS })}
                 </span>
             </p>
-            <p className="text-neutral-300 font-geist font-normal">{message}</p>
+            <p className="text-foreground-desc font-geist font-normal">{message}</p>
         </div>
     );
 }
