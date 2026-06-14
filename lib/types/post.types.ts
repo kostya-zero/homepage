@@ -4,8 +4,6 @@ type PostMeta = {
     description: string;
     date: string;
     readingTime?: string;
-    image?: string;
-    imageAlt?: string;
 };
 
 export { type PostMeta };

@@ -6,33 +6,53 @@ import { PostMeta } from "@/lib/types/post.types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { format } from "date-fns";
 import { enUS } from "date-fns/locale";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { use } from "react";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa6";
-import Image from "next/image";
 
 export const revalidate = 120;
 
+const SITE_URL = "https://kostyazero.com";
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-    const slug = (await params).slug;
-    let meta: PostMeta;
+    const { slug } = await params;
 
     try {
-        const post = getPostBySlug(slug);
-        meta = post.meta;
+        const { meta } = getPostBySlug(slug);
+        const url = new URL(`/blog/${meta.slug}`, SITE_URL);
+
+        return {
+            title: meta.title,
+            description: meta.description,
+            alternates: {
+                canonical: url,
+            },
+            openGraph: {
+                title: meta.title,
+                description: meta.description,
+                url,
+                siteName: "Konstantin Zero",
+                type: "article",
+                publishedTime: meta.date,
+            },
+            twitter: {
+                card: "summary",
+                title: meta.title,
+                description: meta.description,
+            },
+        };
     } catch {
         return {
             title: "Post not found",
-            description: "Cannot found the post that you are looking for.",
+            description: "Cannot find the post that you are looking for.",
+            robots: {
+                index: false,
+                follow: false,
+            },
         };
     }
-
-    return {
-        title: meta.title,
-        description: meta.description,
-    };
 }
 
 function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
