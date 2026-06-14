@@ -1,6 +1,7 @@
 import { MDXComponents } from "mdx/types";
 import CodeBlock from "./blocks/code-block";
 import Link from "next/link";
+import Image from "next/image";
 
 const HoverLink = ({ children, href }: { children: React.ReactNode; href: string }) => {
     return (
@@ -8,6 +9,10 @@ const HoverLink = ({ children, href }: { children: React.ReactNode; href: string
             {children}
         </Link>
     );
+};
+
+const PostImage = ({ src, alt }: { src: string; alt: string }) => {
+    return <Image src={src} width={1500} height={1000} className="mb-6 rounded-md shadow-lg" alt={alt} />;
 };
 
 export const components = {
@@ -46,6 +51,7 @@ export const components = {
     ),
     CodeBlock,
     HoverLink,
+    PostImage,
 } satisfies MDXComponents;
 
 export function useMdxComponents(): MDXComponents {

@@ -22,7 +22,7 @@ export default function Blog() {
                 This is a place of my thoughts. Here I am talking about my programming journey or other stuff. All of
                 these posts are available in Markdown format on GitHub repository of this website.
             </Text>
-            <ul className="gap-4 grid grid-cols-1 md:grid-cols-2">
+            <ul className="gap-4 flex flex-col">
                 {posts.map((p) => (
                     <PostCard key={p.slug} meta={p} />
                 ))}

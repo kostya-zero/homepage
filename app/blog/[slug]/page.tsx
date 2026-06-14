@@ -50,7 +50,7 @@ function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
 
     return (
         <MainContent>
-            <div className="flex flex-col gap-6 mt-4">
+            <div className="flex flex-col gap-2 mt-4">
                 <Link
                     href="/blog"
                     className="flex items-center gap-2 text-sm text-foreground-muted hover:text-foreground transition-colors w-fit"
@@ -59,23 +59,14 @@ function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
                     Back to Blog
                 </Link>
 
-                <div className="flex flex-col gap-2 items-center my-2">
-                    <Hero className="text-4xl md:text-5xl !mt-0">{meta.title}</Hero>
-                    <p className="text-lg text-foreground-desc leading-relaxed mt-1">{meta.description}</p>
+                <div className="flex flex-col gap-2 my-2">
+                    <Hero className="text-4xl md:text-5xl">{meta.title}</Hero>
+                    <p className="text-md text-foreground-desc leading-relaxed mt-1">{meta.description}</p>
                     <div className="flex items-center gap-3 text-sm text-foreground-muted">
                         <span>{format(meta.date, "MMMM d, yyyy", { locale: enUS })}</span>
                         <span>•</span>
                         <span>{meta.readingTime}</span>
                     </div>
-                    {meta.image && (
-                        <Image
-                            src={meta.image!}
-                            alt={meta.imageAlt!}
-                            width={2000}
-                            height={1000}
-                            className="rounded-lg mt-5"
-                        />
-                    )}
                 </div>
             </div>
             <div className="bg-border h-px w-full my-4"></div>
