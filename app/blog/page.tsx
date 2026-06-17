@@ -6,7 +6,6 @@ import { getAllPosts } from "@/lib/posts";
 import { Metadata } from "next";
 
 export const revalidate = 120;
-
 export const metadata: Metadata = {
     title: "Blog",
     description: "A blog page.",

@@ -6,5 +6,4 @@ export interface Contact {
     contact: string;
     icon: JSX.Element;
     url: string;
-    wip?: boolean;
 }
