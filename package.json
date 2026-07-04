@@ -6,7 +6,7 @@
         "dev": "next dev ",
         "build": "next build",
         "start": "next start",
-        "lint": "eslint ."
+        "lint": "oxlint"
     },
     "dependencies": {
         "@base-ui/react": "^1.5.0",
@@ -51,6 +51,8 @@
         "eslint-config-next": "^16.2.6",
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^7.1.1",
+        "oxfmt": "^0.57.0",
+        "oxlint": "^1.72.0",
         "postcss": "^8.5.15",
         "prisma": "^7.8.0",
         "typescript": "^6.0.3"

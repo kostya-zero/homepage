@@ -1,39 +1,57 @@
 ---
 title: "Terminal setup on Windows for developement"
-description: "A short overview of my Windows development workflow built around Neovim, WezTerm, Nushell, and modern CLI tools."
+description:
+    "A short overview of my Windows development workflow built around Neovim, WezTerm, Nushell, and modern CLI tools."
 date: 2026-06-14
 ---
 
-When I started using Linux as my main OS, I was really excited about using the terminal for most of my work. At that time, I used VS Code and JetBrains IDEs for development. Then I discovered Vim, and a few months later, Neovim.
+When I started using Linux as my main OS, I was really excited about using the terminal for most of my work. At that
+time, I used VS Code and JetBrains IDEs for development. Then I discovered Vim, and a few months later, Neovim.
 
-Two years ago, I moved back to Windows after buying a better CPU for my computer. I still wanted to use Neovim and other CLI tools, but the experience was not great at first. PowerShell felt slow, Windows Terminal had poor rendering performance for my workflow, and the whole setup did not feel as smooth as I wanted.
+Two years ago, I moved back to Windows after buying a better CPU for my computer. I still wanted to use Neovim and other
+CLI tools, but the experience was not great at first. PowerShell felt slow, Windows Terminal had poor rendering
+performance for my workflow, and the whole setup did not feel as smooth as I wanted.
 
-After trying different tools, I finally built a terminal workflow on Windows that feels fast, comfortable, and close to what I liked on Linux.
+After trying different tools, I finally built a terminal workflow on Windows that feels fast, comfortable, and close to
+what I liked on Linux.
 
 # Neovim
 
-[Neovim](https://github.com/neovim/neovim) has become a part of my development workflow, and I now use it as my main editor. I really enjoy using it. I do not like using large IDEs because most of their features are unnecessary for my workflow, and I prefer editors that are minimal but extensible at the same time.
+[Neovim](https://github.com/neovim/neovim) has become a part of my development workflow, and I now use it as my main
+editor. I really enjoy using it. I do not like using large IDEs because most of their features are unnecessary for my
+workflow, and I prefer editors that are minimal but extensible at the same time.
 
-I cannot even quit using Neovim now. Every time I start using another editor, I immediately struggle with its workflow and switch back to Neovim.
+I cannot even quit using Neovim now. Every time I start using another editor, I immediately struggle with its workflow
+and switch back to Neovim.
 
-<PostImage src="/terminal-on-windows1.png" alt="A screenshot of my Neovim launched inside of WezTerm."/>
+<PostImage src="/terminal-on-windows1.png" alt="A screenshot of my Neovim launched inside of WezTerm." />
 
-In my configuration, I use [LazyVim](https://www.lazyvim.org/) as a base. I got tired of constantly getting errors out of nowhere in my own setup, so I chose to use LazyVim instead of building everything from scratch. I configured it the way I wanted, added some useful plugins, and now I have a ready-to-use editor.
-I do not think I need to go much deeper into my Neovim configuration here, so you can check it out in my [dotfiles](https://github.com/kostya-zero/dotfiles) repository on GitHub.
+In my configuration, I use [LazyVim](https://www.lazyvim.org/) as a base. I got tired of constantly getting errors out
+of nowhere in my own setup, so I chose to use LazyVim instead of building everything from scratch. I configured it the
+way I wanted, added some useful plugins, and now I have a ready-to-use editor. I do not think I need to go much deeper
+into my Neovim configuration here, so you can check it out in my [dotfiles](https://github.com/kostya-zero/dotfiles)
+repository on GitHub.
 
 # WezTerm
 
-In my honest opinion, [WezTerm](https://github.com/wezterm/wezterm) is one of the few terminals for Windows that works really well. I have no issues with WezTerm's performance or its features. WezTerm has plugin support, workspace management, Lua-based configuration, and good Windows support. For now, it is my go-to terminal on Windows. The screenshot of it you have seen above.
+In my honest opinion, [WezTerm](https://github.com/wezterm/wezterm) is one of the few terminals for Windows that works
+really well. I have no issues with WezTerm's performance or its features. WezTerm has plugin support, workspace
+management, Lua-based configuration, and good Windows support. For now, it is my go-to terminal on Windows. The
+screenshot of it you have seen above.
 
-I use the Nerd Font version of [Lilex](https://github.com/mishamyrt/lilex) as my terminal font because Neovim and some of my CLI tools use Nerd Font icons.
+I use the Nerd Font version of [Lilex](https://github.com/mishamyrt/lilex) as my terminal font because Neovim and some
+of my CLI tools use Nerd Font icons.
 
 # Nushell
 
-I was already familiar with [Nushell]() from the time when I used Linux, but I had not used it seriously before. On Windows, it became my main shell.
+I was already familiar with [Nushell]() from the time when I used Linux, but I had not used it seriously before. On
+Windows, it became my main shell.
 
-It caught my attention because it felt much faster than PowerShell. I also liked its idea of treating data as structured values instead of plain text. This means you can build powerful pipelines that work with command output in a much more convenient way.
+It caught my attention because it felt much faster than PowerShell. I also liked its idea of treating data as structured
+values instead of plain text. This means you can build powerful pipelines that work with command output in a much more
+convenient way.
 
-<PostImage src="/terminal-on-windows2.png" alt="A screenshot of nushell running inside of WezTerm."/>
+<PostImage src="/terminal-on-windows2.png" alt="A screenshot of nushell running inside of WezTerm." />
 
 # Miscellaneous
 
@@ -41,7 +59,8 @@ I decided to move these tools to a separate section because there is not much to
 
 - [Kanri](https://github.com/kostya-zero/kanri). My project management tool.
 - [Eza](https://github.com/eza-community/eza). A modern replacement for `ls`.
-- [Lazygit](https://github.com/jesseduffield/lazygit). A TUI for Git. I recently moved to it from the [Neogit](https://github.com/neogitorg/neogit) plugin.
+- [Lazygit](https://github.com/jesseduffield/lazygit). A TUI for Git. I recently moved to it from the
+  [Neogit](https://github.com/neogitorg/neogit) plugin.
 - [chezmoi](https://www.chezmoi.io/). A dotfiles manager.
 - [Just](https://github.com/casey/just). A command runner. I use it for my Go projects.
 
@@ -49,17 +68,21 @@ I decided to move these tools to a separate section because there is not much to
 
 I am a big fan of package managers. I use `winget` on Windows to install most of the software I use daily.
 
-I know that many people prefer `scoop` for CLI tools, but I still prefer `winget` because it is built into modern Windows and works well enough for my needs.
+I know that many people prefer `scoop` for CLI tools, but I still prefer `winget` because it is built into modern
+Windows and works well enough for my needs.
 
 # Why not WSL?
 
-I do not like the idea of working inside a virtual machine. I prefer native performance, and since these tools are officially supported and have release builds for Windows, I see no reason to move my setup to WSL.
+I do not like the idea of working inside a virtual machine. I prefer native performance, and since these tools are
+officially supported and have release builds for Windows, I see no reason to move my setup to WSL.
 
 The only reason I still use WSL is Docker and Podman, where WSL is usually the most convenient option on Windows.
 
 ---
 
-That is it. I do not think Windows is the perfect terminal environment, but with the right tools it can be much better than people expect. If you are interested in my configuration, you can check out [my dotfiles](https://github.com/kostya-zero/dotfiles) repository on GitHub.
+That is it. I do not think Windows is the perfect terminal environment, but with the right tools it can be much better
+than people expect. If you are interested in my configuration, you can check out
+[my dotfiles](https://github.com/kostya-zero/dotfiles) repository on GitHub.
 
 I hope this post helps someone improve their development workflow on Windows too.
 

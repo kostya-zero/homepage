@@ -17,8 +17,7 @@ import {
 import { Menu, MenuContent, MenuItem, MenuTrigger } from "./ui/menu";
 
 export default function NavBar() {
-    const { resolvedTheme, setTheme } = useTheme();
-
+    const { setTheme } = useTheme();
     return (
         <header className="flex items-center justify-between mt-10 mx-6 md:mx-4">
             <Link href="/" className="text-2xl flex flex-row text-custom-white font-funnel font-black">
