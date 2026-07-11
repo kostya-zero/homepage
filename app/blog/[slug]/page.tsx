@@ -1,7 +1,7 @@
 import Hero from "@/components/blocks/hero";
 import MainContent from "@/components/blocks/maincontent";
 import { components } from "@/components/mdx-components";
-import { getPostBySlug } from "@/lib/posts";
+import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { PostMeta } from "@/lib/types/post.types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { format } from "date-fns";
@@ -13,6 +13,10 @@ import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa6";
 
 export const revalidate = 120;
+
+export function generateStaticParams() {
+    return getAllPosts().map(({ slug }) => ({ slug }));
+}
 
 const SITE_URL = "https://kostyazero.com";
 
