@@ -6,7 +6,7 @@ import MainContent from "@/components/blocks/maincontent";
 import Text from "@/components/blocks/text";
 import { Contact } from "@/lib/types/contact.types";
 import { Friend } from "@/lib/types/friend.types";
-import { GitBranch, Mail, SendHorizontal } from "lucide-react";
+import { Bird, GitBranch } from "lucide-react";
 
 const contacts: Contact[] = [
     {
@@ -15,6 +15,13 @@ const contacts: Contact[] = [
         contact: "kostya-zero",
         icon: <GitBranch size={24} />,
         url: "https://github.com/kostya-zero",
+    },
+    {
+        id: "twitter",
+        name: "Twitter",
+        contact: "@kostyazer0",
+        icon: <Bird size={24} />,
+        url: "https://x.com/kostyazer0",
     },
 ];
 
