@@ -21,7 +21,7 @@ const projects: Project[] = [
         id: "quro",
         name: "Quro",
         description: "A CLI query runner with support for multiple databases with SQL-like syntax.",
-        url: "https://github.com/kostya-zero/qyro",
+        url: "https://github.com/kostya-zero/quro",
         lang: "Rust",
     },
     {
