@@ -18,18 +18,11 @@ const projects: Project[] = [
         lang: "Rust",
     },
     {
-        id: "route",
-        name: "Route",
-        description: "Route is a lightweight API-first URL shortener with powerful CLI.",
-        url: "https://github.com/kostya-zero/route",
-        lang: "Go",
-    },
-    {
-        id: "qry",
-        name: "QRY",
+        id: "quro",
+        name: "Quro",
         description: "A CLI query runner with support for multiple databases with SQL-like syntax.",
-        url: "https://github.com/kostya-zero/qry",
-        lang: "Go",
+        url: "https://github.com/kostya-zero/qyro",
+        lang: "Rust",
     },
     {
         id: "dock",
