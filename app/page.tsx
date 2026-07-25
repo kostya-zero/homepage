@@ -6,22 +6,15 @@ import MainContent from "@/components/blocks/maincontent";
 import Text from "@/components/blocks/text";
 import { Contact } from "@/lib/types/contact.types";
 import { Friend } from "@/lib/types/friend.types";
-import { Mail, SendHorizontal } from "lucide-react";
+import { GitBranch, Mail, SendHorizontal } from "lucide-react";
 
 const contacts: Contact[] = [
     {
-        id: "email",
-        name: "Email",
-        contact: "zero@kostyazero.com",
-        icon: <Mail size={24} />,
-        url: "mailto:zero@kostyazero.com",
-    },
-    {
-        id: "telegram",
-        name: "Telegram",
-        contact: "@kostya_zero",
-        icon: <SendHorizontal size={24} />,
-        url: "https://t.me/kostya_zero",
+        id: "github",
+        name: "GitHub",
+        contact: "kostya-zero",
+        icon: <GitBranch size={24} />,
+        url: "https://github.com/kostya-zero",
     },
 ];
 
@@ -75,7 +68,7 @@ export default function Home() {
                 Lately, I’ve been exploring <Bold>network programming in Rust</Bold> and picking up <Bold>Go</Bold> as
                 my second language, mainly because I was really interested about it.
             </Text>
-            <Text>If you’d like to connect, collaborate, or just say hi, you can find me through the links below:</Text>
+            <Text>You can check out my socials:</Text>
             <div className="flex flex-col gap-4 items-center mb-4 text-foreground">
                 {contacts.map((contact) => (
                     <ContactLink key={contact.id} contact={contact} icon={contact.icon} />
