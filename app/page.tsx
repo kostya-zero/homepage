@@ -6,9 +6,9 @@ import MainContent from "@/components/blocks/maincontent";
 import Text from "@/components/blocks/text";
 import { Contact } from "@/lib/types/contact.types";
 import { Friend } from "@/lib/types/friend.types";
-import { Bird, GitBranch } from "lucide-react";
+import { Bird, GitBranch, LoaderPinwheel, Music } from "lucide-react";
 
-const contacts: Contact[] = [
+const socials: Array<Contact> = [
     {
         id: "github",
         name: "GitHub",
@@ -22,6 +22,20 @@ const contacts: Contact[] = [
         contact: "@kostyazer0",
         icon: <Bird size={24} />,
         url: "https://x.com/kostyazer0",
+    },
+    {
+        id: "lastfm",
+        name: "Last.fm",
+        contact: "kostya_zer0",
+        icon: <Music size={24} />,
+        url: "https://www.last.fm/user/kostya_zer0",
+    },
+    {
+        id: "codewars",
+        name: "CodeWars",
+        contact: "kostya-zero",
+        icon: <LoaderPinwheel size={24} />,
+        url: "https://www.codewars.com/users/kostya-zero",
     },
 ];
 
@@ -72,12 +86,12 @@ export default function Home() {
                 my heart stays closer to the terminal).
             </Text>
             <Text>
-                Lately, I’ve been exploring <Bold>network programming in Rust</Bold> and picking up <Bold>Go</Bold> as
-                my second language, mainly because I was really interested about it.
+                Lately, I’ve been exploring <Bold>network programming in Rust</Bold> and <Bold>DevOps</Bold>, mainly
+                because I like to build complex things from the ground up.
             </Text>
             <Text>You can check out my socials:</Text>
             <div className="flex flex-col gap-4 items-center mb-4 text-foreground">
-                {contacts.map((contact) => (
+                {socials.map((contact) => (
                     <ContactLink key={contact.id} contact={contact} icon={contact.icon} />
                 ))}
             </div>
