@@ -80,9 +80,14 @@ import fs from "node:fs";
 import matter from "gray-matter";
 import { PostMeta } from "./types/post.types";
 
-const POSTS_DIR = path.join(process.cwd(), "posts"); const SAFE_SLUG = /^[a-z0-9-]+$/i;
+const POSTS_DIR = path.join(process.cwd(), "posts");
+const SAFE_SLUG = /^[a-z0-9-]+$/i;
 
-function assertSafeSlug(slug: string) { if (!SAFE_SLUG.test(slug)) { throw new Error("Invalid slug characters"); }
+function assertSafeSlug(slug: string) {
+    if (!SAFE_SLUG.test(slug))
+    {
+        throw new Error("Invalid slug characters");
+    }
 
     const resolved = path.resolve(POSTS_DIR, `${slug}.mdx`);
     const relative = path.relative(POSTS_DIR, resolved);
@@ -95,8 +100,9 @@ function assertSafeSlug(slug: string) { if (!SAFE_SLUG.test(slug)) { throw new E
 
 }
 
-// Reads the directory and returns metadata of all posts in it. function getAllPosts(): PostMeta[] { const files =
-fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".mdx"));
+// Reads the directory and returns metadata of all posts in it.
+function getAllPosts(): PostMeta[] {
+    const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".mdx"));
 
     const posts = files.map((f) => {
         const slug = f.replace(/\.mdx$/, "");
@@ -116,9 +122,16 @@ fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".mdx"));
 
 }
 
-// Returns post's metadata and content by slug. function getPostBySlug(slug: string) { const safePath =
-assertSafeSlug(slug); const raw = fs.readFileSync(safePath, "utf8"); const { data, content } = matter(raw); return {
-meta: { slug, ...data } as PostMeta, content }; }
+// Returns post's metadata and content by slug.
+function getPostBySlug(slug: string) {
+    const safePath = assertSafeSlug(slug);
+    const raw = fs.readFileSync(safePath, "utf8");
+    const { data, content } = matter(raw);
+    return {
+        meta: { slug, ...data } as PostMeta,
+        content
+    };
+}
 
 export { getAllPosts, getPostBySlug };
 ```
@@ -167,7 +180,6 @@ export default function Blog() {
     );
 
 }
-
 ```
 </CodeBlock>
 
@@ -182,9 +194,7 @@ I'll use Bun, but you can use any package manager you want.
 
 <CodeBlock language="text" filename="shell">
 ```
-
 bun install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx next-mdx-remote
-
 ```
 </CodeBlock>
 
@@ -192,14 +202,17 @@ Now, let's edit `next.config.ts` to enable MDX.
 
 <CodeBlock language="typescript" filename="next.config.ts">
 ```
-
 import createMDX from "@next/mdx";
 import { NextConfig } from "next";
 
-const nextConfig: NextConfig = { pageExtensions: ["tsx", "mdx"], poweredByHeader: false, reactCompiler: true, };
+const nextConfig: NextConfig = {
+    pageExtensions: ["tsx", "mdx"],
+    poweredByHeader: false,
+    reactCompiler: true,
+};
 
-const withMDX = createMDX({}); export default withMDX(nextConfig);
-
+const withMDX = createMDX({});
+export default withMDX(nextConfig);
 ```
 </CodeBlock>
 
@@ -209,17 +222,19 @@ It also allows us to modify default components styles.
 
 <CodeBlock language="typescript" filename="next.config.ts">
 ```
-
 import { MDXComponents } from "mdx/types";
 
-// I have modified some of components. // You can left components empty if you don't want to change them, // it won't
-throw an error. export const components = { h1: ({ children }) => <h1 className="text-3xl font-bold">{children}</h1>,
-h2: ({ children }) => <h1 className="text-2xl font-bold">{children}</h1>, h3: ({ children }) =>
-
-<h1 className="text-xl font-bold">{children}</h1>, p: ({ children }) => <p className="font-light">{children}</p>,
-strong: ({ children }) => <strong className="font-semibold">{children}</strong>, code: ({ children }) => (
-<code className="bg-background border text-sm border-border rounded-md px-1">{children}</code> ), } satisfies
-MDXComponents;
+// I have modified some of components.
+// You can left components empty if you don't want to change them,
+// it won't throw an error.
+export const components = {
+    h1: ({ children }) => <h1 className="text-3xl font-bold">{children}</h1>,
+    h2: ({ children }) => <h1 className="text-2xl font-bold">{children}</h1>,
+    h3: ({ children }) => <h1 className="text-xl font-bold">{children}</h1>,
+    p: ({ children }) => <p className="font-light">{children}</p>,
+    strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+    code: ({ children }) => (<code className="bg-background border text-sm border-border rounded-md px-1">{children}</code> ),
+} satisfies MDXComponents;
 
 export function useMdxComponents(): MDXComponents {
     return components;
@@ -251,10 +266,13 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { use } from "react";
 
-// Used for caching, recommended. export const revalidate = 120;
+// Used for caching, recommended.
+export const revalidate = 120;
 
-// We can generate metadata for this page. export async function generateMetadata({ params }: { params: Promise<{ slug:
-string }> }): Promise<Metadata> { const slug = (await params).slug; let meta: PostMeta;
+// We can generate metadata for this page.
+export async function generateMetadata({ params }: { params: Promise<{ slug:string }> }): Promise<Metadata> {
+    const slug = (await params).slug;
+    let meta: PostMeta;
 
     try {
         const post = getPostBySlug(slug);
@@ -273,8 +291,11 @@ string }> }): Promise<Metadata> { const slug = (await params).slug; let meta: Po
 
 }
 
-// The view page. function PostViewPage({ params }: { params: Promise<{ slug: string }> }) { const { slug } =
-use(params); let content: string; let meta: PostMeta;
+// The view page.
+function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = use(params);
+    let content: string;
+    let meta: PostMeta;
 
     try {
         const post = getPostBySlug(slug);
@@ -301,7 +322,6 @@ use(params); let content: string; let meta: PostMeta;
 export default PostViewPage;
 ```
 </CodeBlock>
-
 That's it. We built a fully working blog system.
 
 ## Writing Posts
@@ -310,7 +330,6 @@ To write posts, create files in the `posts` directory with `mdx` extension. We'v
 `posts` directory.
 
 You can include metadata of blog posts like this:
-
 <CodeBlock language="mdx" filename="test.mdx">
 ```
  ---
@@ -332,5 +351,3 @@ You can check <HoverLink href="https://github.com/kostya-zero/homepage">my websi
 I would recommend you to check out <HoverLink href="https://nextjs.org/docs/app/guides/mdx">official Next.js MDX documentation</HoverLink> for more information.
 
 **Have a nice day!**
-
-```

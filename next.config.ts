@@ -4,6 +4,9 @@ import { NextConfig } from "next";
 const nextConfig: NextConfig = {
     poweredByHeader: false,
     reactCompiler: true,
+    experimental: {
+        useTypeScriptCli: true,
+    },
     images: {
         remotePatterns: [
             {
