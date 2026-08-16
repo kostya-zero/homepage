@@ -10,5 +10,5 @@
     "proseWrap": "always",
     "trailingComma": "es5",
     "sortPackageJson": false,
-    "ignorePatterns": []
+    "ignorePatterns": ["posts/**"]
 }
