@@ -61,13 +61,6 @@ const friends: Array<Friend> = [
         avatar: "https://avatars.githubusercontent.com/u/155315982?v=4",
         url: "https://shadowcj.site/",
     },
-    {
-        id: "xelframe",
-        name: "Xelframe",
-        contact: "xf.r2squad.ru",
-        avatar: "https://avatars.githubusercontent.com/u/173464454?v=4",
-        url: "https://xf.r2squad.ru",
-    },
 ];
 
 export const dynamic = "force-static";
