@@ -85,7 +85,6 @@ function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
 
                 <div className="flex flex-col gap-2 my-2">
                     <Hero className="text-4xl md:text-5xl">{meta.title}</Hero>
-                    <p className="text-md text-foreground-desc leading-relaxed mt-1">{meta.description}</p>
                     <div className="flex items-center gap-3 text-sm text-foreground-muted">
                         <span>{format(meta.date, "MMMM d, yyyy", { locale: enUS })}</span>
                         <span>•</span>
@@ -94,7 +93,7 @@ function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
                 </div>
             </div>
             <div className="bg-border h-px w-full my-4"></div>
-            <article>
+            <article className="prose max-w-none prose-headings:font-funnel prose-code:font-normal prose-code:bg-background-highlight prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none">
                 <MDXRemote source={content} components={components} />
             </article>
         </MainContent>

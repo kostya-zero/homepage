@@ -16,6 +16,7 @@
         "@prisma/adapter-pg": "^7.10.0",
         "@prisma/client": "^7.10.0",
         "@tailwindcss/postcss": "^4.3.3",
+        "@tailwindcss/typography": "^0.5.20",
         "@types/mdx": "^2.0.14",
         "better-auth": "^1.7.6",
         "class-variance-authority": "^0.7.1",
@@ -52,7 +53,7 @@
         "oxfmt": "^0.71.0",
         "oxlint": "^1.86.0",
         "postcss": "^8.5.28",
-        "prisma": "^8.0.0-rc.18",
+        "prisma": "^7",
         "typescript": "^7.0.2"
     },
     "trustedDependencies": [

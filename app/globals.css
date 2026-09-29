@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -61,6 +62,24 @@
     body {
         @apply bg-page-background text-foreground;
     }
+}
+
+/* Map typography plugin colors to theme tokens, so no prose-invert is needed. */
+.prose {
+    --tw-prose-body: var(--foreground-bold);
+    --tw-prose-headings: var(--custom-white);
+    --tw-prose-lead: var(--foreground-desc);
+    --tw-prose-links: var(--foreground-bold);
+    --tw-prose-bold: var(--custom-white);
+    --tw-prose-counters: var(--foreground-muted);
+    --tw-prose-bullets: var(--foreground-muted);
+    --tw-prose-hr: var(--border);
+    --tw-prose-quotes: var(--foreground-desc);
+    --tw-prose-quote-borders: var(--border-highlight);
+    --tw-prose-captions: var(--foreground-muted);
+    --tw-prose-code: var(--foreground-bold);
+    --tw-prose-th-borders: var(--border);
+    --tw-prose-td-borders: var(--border);
 }
 
 /* Custom Scrollbar */

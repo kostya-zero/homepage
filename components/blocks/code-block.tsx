@@ -1,7 +1,6 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { FaCode } from "react-icons/fa6";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark, atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
@@ -18,12 +17,9 @@ function CodeBlock({ filename, language, children }: Props) {
     // @ts-expect-error Props exists for children.
     const code = children!.props.children.props.children;
     return (
-        <figure className="my-8 border border-border rounded-xl overflow-hidden bg-background shadow-lg">
+        <figure className="not-prose my-8 border border-border rounded-xl overflow-hidden bg-background">
             <div className="flex flex-row items-center justify-between px-4 py-2 bg-background-highlight/50 border-b border-b-border">
-                <div className="flex items-center gap-2">
-                    <FaCode size={14} className="text-foreground-muted" />
-                    <span className="text-xs font-mono text-foreground-desc">{filename}</span>
-                </div>
+                <span className="text-xs font-mono text-foreground-desc">{filename}</span>
                 <span className="text-[10px] uppercase text-foreground-muted font-bold">{language}</span>
             </div>
             <div className="bg-page-background overflow-x-auto">
