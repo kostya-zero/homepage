@@ -7,6 +7,7 @@ import Text from "@/components/blocks/text";
 import { Contact } from "@/lib/types/contact.types";
 import { Friend } from "@/lib/types/friend.types";
 import { Bird, GitBranch, LoaderPinwheel, Music } from "lucide-react";
+import Image from "next/image";
 
 const socials: Array<Contact> = [
     {
@@ -68,7 +69,17 @@ export const dynamic = "force-static";
 export default function Home() {
     return (
         <MainContent>
-            <Hero>Welcome</Hero>
+            <div className="flex flex-row items-center justify-between gap-4">
+                <Hero className="mt-0">Welcome</Hero>
+                <Image
+                    src="https://avatars.githubusercontent.com/u/89439507?v=4"
+                    alt="Kostya's avatar"
+                    width={48}
+                    height={48}
+                    className="size-12 rounded-full"
+                    priority
+                />
+            </div>
             <Text>
                 Hey, I’m <Bold>Konstantin Zhigaylo</Bold>, but you can just call me <Bold>Kostya</Bold>.
             </Text>
