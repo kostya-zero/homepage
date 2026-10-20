@@ -1,5 +1,5 @@
 import Hero from "@/components/blocks/hero";
-import { SectionTitle } from "@/components/blocks/sectiontitle";
+import Section from "@/components/blocks/section";
 import Button from "@/components/ui/button";
 import { formatDistanceToNow } from "date-fns";
 import { enUS } from "date-fns/locale";
@@ -9,7 +9,6 @@ import { revalidatePath } from "next/cache";
 import AuthButton from "@/components/authbutton";
 import SignOutButton from "@/components/signoutbutton";
 import { Metadata } from "next";
-import MainContent from "@/components/blocks/maincontent";
 import Text from "@/components/blocks/text";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
@@ -72,35 +71,35 @@ export default async function Guestbook() {
     }
 
     return (
-        <MainContent>
-            <Hero>Guestbook</Hero>
+        <>
+            <Section>
+                <Hero>Guestbook</Hero>
 
-            <div>
-                <Text>
-                    This is a guest book as you can see. You can leave your message here if you wish. Authorization with
-                    GitHub is required.
-                </Text>
+                <div>
+                    <Text>
+                        This is a guest book as you can see. You can leave your message here if you wish. Authorization
+                        with GitHub is required.
+                    </Text>
 
-                {!session ? (
-                    <AuthButton />
-                ) : (
-                    <>
-                        <form action={submitAction} className="mt-4 flex gap-2">
-                            <Input
-                                placeholder="Your message here..."
-                                name="message"
-                                className="w-full text-foreground-bold placeholder:text-foreground-muted"
-                            />
-                            <Button type="submit">Post</Button>
-                        </form>
+                    {!session ? (
+                        <AuthButton />
+                    ) : (
+                        <>
+                            <form action={submitAction} className="mt-4 flex gap-2">
+                                <Input
+                                    placeholder="Your message here..."
+                                    name="message"
+                                    className="w-full text-foreground-bold placeholder:text-foreground-muted"
+                                />
+                                <Button type="submit">Post</Button>
+                            </form>
 
-                        <SignOutButton />
-                    </>
-                )}
-            </div>
-            <div>
-                <SectionTitle>Messages</SectionTitle>
-
+                            <SignOutButton />
+                        </>
+                    )}
+                </div>
+            </Section>
+            <Section label="Messages" className="gap-3 py-4">
                 {messages.map((message, index) => (
                     <GuestbookEntry
                         key={index}
@@ -110,8 +109,8 @@ export default async function Guestbook() {
                         postedAt={message.postedAt}
                     />
                 ))}
-            </div>
-        </MainContent>
+            </Section>
+        </>
     );
 }
 
@@ -125,7 +124,7 @@ async function GuestbookEntry({ email, message, username, postedAt }: GuestbookM
     return (
         <div
             className={cn(
-                "flex flex-col my-3 font-semibold bg-background border border-border p-3 text-sm rounded-xl w-fit",
+                "flex flex-col font-semibold bg-background border border-border p-3 text-sm rounded-xl w-fit",
                 additionalStyles
             )}
         >

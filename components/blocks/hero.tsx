@@ -7,7 +7,13 @@ function Hero({
     ...props
 }: { className?: string; children: React.ReactNode } & React.ComponentProps<"p">) {
     return (
-        <h1 className={cn("text-4xl font-bold mt-4 font-funnel leading-[1.1] text-custom-white", className)} {...props}>
+        <h1
+            className={cn(
+                "text-4xl sm:text-5xl text-white font-semibold tracking-tight font-funnel leading-[1.1]",
+                className
+            )}
+            {...props}
+        >
             {children}
         </h1>
     );

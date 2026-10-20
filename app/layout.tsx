@@ -45,11 +45,13 @@ export default async function RootLayout({
             className={`${geist.variable} ${funnel_display.variable} ${jetbrains.variable}`}
             suppressHydrationWarning
         >
-            <body className="min-h-[90svh] bg-page-background max-w-165 mx-auto font-geist antialiased">
+            <body className="bg-page-background font-geist antialiased">
                 <ThemeProvider>
-                    <NavBar />
-                    <main className="sm:mx-auto mb-2 mt-4">{children}</main>
-                    <Footer />
+                    <div className="mx-auto min-h-svh w-full max-w-165 border-x">
+                        <NavBar />
+                        <main>{children}</main>
+                        <Footer />
+                    </div>
                 </ThemeProvider>
             </body>
         </html>

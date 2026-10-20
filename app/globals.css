@@ -15,6 +15,7 @@
     --color-foreground-muted: var(--foreground-muted);
     --color-border: var(--border);
     --color-border-highlight: var(--border-highlight);
+    --color-accent: var(--accent);
     --color-language-rust: hsl(30 90.3% 70.6%);
     --color-language-go: hsl(193 88.3% 48.6%);
     --color-language-pwsh: hsl(223 70.3% 33%);
@@ -33,6 +34,7 @@
     --foreground-muted: hsl(201, 0%, 35%);
     --border: hsl(201 0% 20%);
     --border-highlight: hsl(201 0% 35%);
+    --accent: hsl(255 100% 2%);
 }
 
 .light {
@@ -64,6 +66,26 @@
     }
 }
 
+@layer components {
+    .ticks::before,
+    .ticks::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        border: 5px solid transparent;
+    }
+
+    .ticks::before {
+        left: 0;
+        border-left-color: var(--border-highlight);
+    }
+
+    .ticks::after {
+        right: 0;
+        border-right-color: var(--border-highlight);
+    }
+}
+
 /* Map typography plugin colors to theme tokens, so no prose-invert is needed. */
 .prose {
     --tw-prose-body: var(--foreground-bold);
@@ -86,7 +108,8 @@
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
-    background: var(--background); /* Forces non-overlay mode */
+    background: var(--background);
+    /* Forces non-overlay mode */
 }
 
 ::-webkit-scrollbar:horizontal {

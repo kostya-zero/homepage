@@ -11,7 +11,7 @@ function FriendLink({ friend }: Props) {
     return (
         <Link
             href={friend.url}
-            className="flex flex-row group justify-between items-center w-full cursor-pointer transition duration-200 dark:hover:text-neutral-50 hover:text-neutral-950  px-1"
+            className="flex flex-row group justify-between items-center w-full px-6 py-3 transition-colors hover:bg-background-highlight/50 hover:text-custom-white"
         >
             <div className="flex flex-row gap-4 items-center">
                 <Image
@@ -24,9 +24,7 @@ function FriendLink({ friend }: Props) {
                 <p>{friend.name}</p>
             </div>
             <div className="flex flex-row gap-4">
-                <p className="text-foreground-muted group-hover:text-neutral-500 duration-200 transition">
-                    {friend.contact}
-                </p>
+                <p className="text-foreground-muted group-hover:text-foreground transition-colors">{friend.contact}</p>
                 <FiArrowUpRight className="w-6 h-6" />
             </div>
         </Link>

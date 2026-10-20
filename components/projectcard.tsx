@@ -25,27 +25,27 @@ async function ProjectCard({ project }: { project: Project }) {
     return (
         <Link
             href={project.url}
-            className="w-full flex flex-col p-4 gap-2 h-full bg-background border border-border  rounded-lg cursor-pointer transition duration-200 hover:border-border-highlight hover:bg-background-highlight"
+            className="w-full flex flex-col px-6 py-4 gap-1 transition-colors hover:bg-background-highlight/50"
         >
             <div className="flex flex-row justify-between items-center w-full">
-                <p className=" text-custom-white font-bold font-funnel">{project.name}</p>
-                <div className="flex flex-row gap-2 text-custom-white items-center">
-                    <Star size={16} />
+                <p className="text-custom-white font-semibold font-funnel">{project.name}</p>
+                <div className="flex flex-row gap-1.5 text-sm text-foreground-muted items-center">
+                    <Star size={14} />
                     {stars ? stars : "?"}
                 </div>
             </div>
-            <p className={"text-sm text-foreground-desc"}>{project.description}</p>
-            <div className="flex flex-row items-center text-foreground-muted mt-auto justify-between text-xs">
+            <p className="text-sm text-foreground-desc">{project.description}</p>
+            <div className="flex flex-row items-center gap-4 mt-1 font-mono text-xs text-foreground-muted">
+                <div className="flex flex-row items-center gap-2">
+                    <div className={cn("size-2.5 rounded-full border border-neutral-700", languageColor)}></div>
+                    <p>{project.lang}</p>
+                </div>
                 <p>
                     Updated{" "}
                     {formatDistanceToNow(new Date(updated), {
                         addSuffix: true,
                     })}
                 </p>
-                <div className="flex flex-row items-center gap-2 ">
-                    <div className={cn("size-2.5 rounded-full border border-neutral-700", languageColor)}></div>
-                    <p>{project.lang}</p>
-                </div>
             </div>
         </Link>
     );

@@ -2,7 +2,7 @@ import Hero from "@/components/blocks/hero";
 import { type Project, ProjectCard } from "@/components/projectcard";
 import { Metadata } from "next";
 import Text from "@/components/blocks/text";
-import MainContent from "@/components/blocks/maincontent";
+import Section from "@/components/blocks/section";
 
 export const metadata: Metadata = {
     title: "Projects",
@@ -52,18 +52,21 @@ export const revalidate = 3600;
 
 export default async function Projects() {
     return (
-        <MainContent>
-            <Hero>Projects</Hero>
-            <Text>
-                This is a list of my projects that I am currently working on. You can click on a project&apos;s card to
-                go to its GitHub repository.
-            </Text>
-
-            <div className=" gap-4 items-center mb-4 text-neutral-400 w-full grid grid-cols-1 md:grid-cols-2">
-                {projects.map((project) => (
-                    <ProjectCard project={project} key={project.id} />
-                ))}
-            </div>
-        </MainContent>
+        <>
+            <Section>
+                <Hero>Projects</Hero>
+                <Text>
+                    This is a list of my projects that I am currently working on. You can click on a project&apos;s card
+                    to go to its GitHub repository.
+                </Text>
+            </Section>
+            <Section label="Repositories" className="pb-0 pt-4">
+                <div className="-mx-6 flex flex-col divide-y border-t">
+                    {projects.map((project) => (
+                        <ProjectCard project={project} key={project.id} />
+                    ))}
+                </div>
+            </Section>
+        </>
     );
 }

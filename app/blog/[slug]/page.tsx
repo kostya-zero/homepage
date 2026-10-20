@@ -1,5 +1,5 @@
 import Hero from "@/components/blocks/hero";
-import MainContent from "@/components/blocks/maincontent";
+import Section from "@/components/blocks/section";
 import { components } from "@/components/mdx-components";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { PostMeta } from "@/lib/types/post.types";
@@ -73,30 +73,28 @@ function PostViewPage({ params }: { params: Promise<{ slug: string }> }) {
     }
 
     return (
-        <MainContent>
-            <div className="flex flex-col gap-2 mt-4">
+        <>
+            <Section>
                 <Link
                     href="/blog"
-                    className="flex items-center gap-2 text-sm text-foreground-muted hover:text-foreground transition-colors w-fit"
+                    className="flex items-center gap-2 w-fit font-mono text-xs uppercase tracking-wide text-foreground-muted hover:text-foreground transition-colors"
                 >
-                    <FaChevronLeft size={12} />
+                    <FaChevronLeft size={10} />
                     Back to Blog
                 </Link>
-
-                <div className="flex flex-col gap-2 my-2">
-                    <Hero className="text-4xl md:text-5xl">{meta.title}</Hero>
-                    <div className="flex items-center gap-3 text-sm text-foreground-muted">
-                        <span>{format(meta.date, "MMMM d, yyyy", { locale: enUS })}</span>
-                        <span>•</span>
-                        <span>{meta.readingTime}</span>
-                    </div>
+                <Hero className="text-3xl sm:text-4xl">{meta.title}</Hero>
+                <div className="flex items-center gap-3 font-mono text-xs text-foreground-muted">
+                    <span>{format(meta.date, "MMMM d, yyyy", { locale: enUS })}</span>
+                    <span>•</span>
+                    <span>{meta.readingTime}</span>
                 </div>
-            </div>
-            <div className="bg-border h-px w-full my-4"></div>
-            <article className="prose max-w-none prose-headings:font-funnel prose-code:font-normal prose-code:bg-background-highlight prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none">
-                <MDXRemote source={content} components={components} />
-            </article>
-        </MainContent>
+            </Section>
+            <Section>
+                <article className="prose max-w-none prose-headings:font-funnel prose-code:font-normal prose-code:bg-background-highlight prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none">
+                    <MDXRemote source={content} components={components} />
+                </article>
+            </Section>
+        </>
     );
 }
 
